@@ -1,7 +1,6 @@
 package com.op.booktique;
 
-public class hyyyTest {
+public class hyeminTest {
 
 	int a;
-	int aa;
 }
