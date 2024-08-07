@@ -15,7 +15,7 @@
 <body>
 	<div style="width:100%; overflow-x: auto; display: flex; align-items: center;" class="auth-page-content" class="row">
 		<div class="container">
-			<!-- end row -->
+		
 			<div class="row justify-content-center">
 				<div class="col-md-8 col-lg-6 col-xl-6">
 					<div class="card mt-4 card-bg-fill">
@@ -95,21 +95,14 @@
 												placeholder="아이디" aria-label="Email" required>
 											<span class="input-group-text mb-3">@</span> <input type="text"
 												class="form-control mb-3" id="dirEmail" name="dirEmail" value="선택하세요"
-												readonly /> <select class="form-select mb-3" name="selectEmail"
-												id="selectEmail" data-choice="active">
+												readonly /> 
+												<select class="form-select mb-3" name="selectEmail" id="selectEmail" data-choice="active">
 												<option value="" selected>선택하세요</option>
 												<option value="naver.com">naver.com</option>
-												<option value="hanmail.net">hanmail.net</option>
 												<option value="gmail.com">gmail.com</option>
 												<option value="direct">직접입력</option>
 											</select>
 										</div>
-									</div>
-									<div class="mb-3">
-										<label for="JoiningdatInput" class="form-label">우편번호 <span
-												class="text-danger">*</span>
-										</label> 
-										
 									</div>
 									<div class="mb-3">
 										<input type="button" class="btn btn-primary w-100" value="가입신청" id="btn_submit">
@@ -127,4 +120,21 @@
 		<!-- end container -->
 	</div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+
+$('#selectEmail').change(function () {
+	$("#selectEmail option:selected").each(function () {
+		if ($(this).val() == 'direct') {
+			$("#dirEmail").val('');
+			$("#dirEmail").attr("readonly", false);
+		} else {
+			$("#dirEmail").val($(this).text());
+			$("#dirEmail").attr("readonly", true);
+		}
+	})
+});
+
+</script>
 </html>
