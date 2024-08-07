@@ -5,233 +5,126 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	crossorigin="anonymous">
+
 </head>
 <body>
-	<div class="contents">
-		<div class="contentWrapper registContent">
-			<div class="uBlock">
-				<div class="uInputArea">
-					<div class="col">
-						<div class="uInput">
-							<label for="inputId">아이디</label>
-							<div class="inputBox">
-								<input type="text" id="inputId" class="inputText"
-									placeholder="6~20자 영문, 숫자" tabindex="1" value="">
-								<button type="button" class="btnDel" aria-label="삭제"></button>
+	<div style="width:100%; overflow-x: auto; display: flex; align-items: center;" class="auth-page-content" class="row">
+		<div class="container">
+			<!-- end row -->
+			<div class="row justify-content-center">
+				<div class="col-md-8 col-lg-6 col-xl-6">
+					<div class="card mt-4 card-bg-fill">
+						<form id="upForm" enctype="multipart/form-data">
+							<div class="card-body p-4">
+								<div class="text-center mt-2">
+									<h5 class="text-primary">회원가입</h5>
+									<br />
+								</div>
+								<div class="p-2 mt-4">
+									<div class="mb-3">
+										<label for="memId" class="form-label">아이디 <span class="text-danger">*</span></label>
+										<input type="text" class="form-control" id="memId" name="memId"
+											placeholder="아이디를 입력하세요" maxlength=20 required>
+										<div id="dupId"></div>
+									</div>
+									<div class="mb-3">
+										<label class="form-label" for="password-input">비밀번호</label> <span
+											class="text-danger">*</span>
+										<div class="position-relative auth-pass-inputgroup">
+											<input type="password" class="form-control pe-5 password-input"
+												placeholder="비밀번호" id="memPw" name="memPw" required>
+											<button
+												class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon material-shadow-none"
+												type="button" id="lookPw">
+												<i class="ri-eye-fill align-middle"></i>
+											</button>
+										</div>
+									</div>
+									<div class="mb-3">
+										<label class="form-label" for="password-input">비밀번호 확인</label>
+										<span class="text-danger">*</span>
+										<div class="position-relative auth-pass-inputgroup">
+											<input type="password" class="form-control pe-5 password-input"
+												placeholder="비밀번호 확인" id="memPwChk" aria-describedby="passwordInput"
+												pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required
+												aria-autocomplete="list">
+											<button
+												class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon material-shadow-none"
+												type="button" id="lookPwChk">
+												<i class="ri-eye-fill align-middle"></i>
+											</button>
+										</div>
+										<div id="chkPw"></div>
+									</div>
+									<div class="mb-3">
+										<label for="username" class="form-label">이름 <span
+												class="text-danger">*</span></label> <input type="text" class="form-control"
+											id="memNm" name="memNm" placeholder="입주민 명" required>
+									</div>
+									<div class="mb-3">
+										<label for="JoiningdatInput" class="form-label">생년월일 <span
+												class="text-danger">*</span></label>
+												 <input type="date" class="form-control"
+											id="memBirth" name="memBirth" placeholder="생년월일(ex.19970910)">
+									</div>
+									<div class="mb-3">
+										<label for="JoiningdatInput" class="form-label">성별 <span
+												class="text-danger">*</span>
+										</label> <select class="form-select" id="memSex" name="memSex">
+											<option value="">선택하세요</option>
+											<option value="m">남</option>
+											<option value="f">여</option>
+										</select>
+									</div>
+									<div class="mb-3">
+										<label for="JoiningdatInput" class="form-label">연락처 <span
+												class="text-danger">*</span></label> <input type="text" class="form-control"
+											id="memTelno" name="memTelno" placeholder="연락처" maxlength="15" required>
+									</div>
+									<div class="input-group mb-6">
+										<label for="JoiningdatInput" class="form-label">전자주소(이메일)
+											<span class="text-danger">*</span>
+										</label>
+										<div class="input-group mb-6">
+											<input type="text" class="form-control mb-3" id="emailId" name="emailId"
+												placeholder="아이디" aria-label="Email" required>
+											<span class="input-group-text mb-3">@</span> <input type="text"
+												class="form-control mb-3" id="dirEmail" name="dirEmail" value="선택하세요"
+												readonly /> <select class="form-select mb-3" name="selectEmail"
+												id="selectEmail" data-choice="active">
+												<option value="" selected>선택하세요</option>
+												<option value="naver.com">naver.com</option>
+												<option value="hanmail.net">hanmail.net</option>
+												<option value="gmail.com">gmail.com</option>
+												<option value="direct">직접입력</option>
+											</select>
+										</div>
+									</div>
+									<div class="mb-3">
+										<label for="JoiningdatInput" class="form-label">우편번호 <span
+												class="text-danger">*</span>
+										</label> 
+										
+									</div>
+									<div class="mb-3">
+										<input type="button" class="btn btn-primary w-100" value="가입신청" id="btn_submit">
+									</div>
+								</div>
 							</div>
-						</div>
+						</form>
+						<!-- end card body -->
 					</div>
-				</div>
-				<div class="uErrorText" style="display: block;"></div>
-			</div>
-			<div class="uBlock">
-				<div class="uInputArea">
-					<div class="col">
-						<div class="uInput">
-							<label for="inputPw">비밀번호</label>
-							<div class="inputBox">
-								<input type="password" id="inputPw" class="inputText"
-									placeholder="8~12자 영문, 숫자, 특수문자" tabindex="2" value="">
-								<button type="button" class="btnDel" aria-label="삭제"></button>
-							</div>
-						</div>
-					</div>
-					<div class="col">
-						<div class="uBtnArea">
-							<button type="button" class="uBtn">보기</button>
-						</div>
-					</div>
-				</div>
-				<div class="uErrorText" style="display: block;"></div>
-			</div>
-			<div class="uBlock">
-				<div class="uInputArea">
-					<div class="col">
-						<div class="uInput">
-							<label for="inputPwConfirm">비밀번호 확인</label>
-							<div class="inputBox">
-								<input type="password" id="inputPwConfirm" class="inputText"
-									placeholder="8~12자 영문, 숫자, 특수문자" tabindex="3" value="">
-								<button type="button" class="btnDel" aria-label="삭제"></button>
-							</div>
-						</div>
-					</div>
-					<div class="col">
-						<div class="uBtnArea">
-							<button type="button" class="uBtn">보기</button>
-						</div>
-					</div>
-				</div>
-				<div class="uErrorText" style="display: block;"></div>
-			</div>
-			<div class="uBlock">
-				<div class="uInputArea">
-					<div class="col">
-						<div class="uInput">
-							<label for="inputName">이름</label>
-							<div class="inputBox">
-								<input type="text" id="inputName" class="inputText" tabindex="4"
-									value="">
-								<button type="button" class="btnDel" aria-label="삭제"></button>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="uErrorText" style="display: block;"></div>
-			</div>
-			<div class="uBlock">
-				<div class="uInputArea emailType">
-					<div class="col">
-						<div class="uInput">
-							<label for="inputEmail">이메일</label>
-							<div class="inputBox">
-								<input type="text" id="inputEmail" class="inputText"
-									tabindex="5" value="">
-							</div>
-						</div>
-					</div>
-					<div class="col selectCol">
-						<div class="uSelectBox">
-							<label><select tabindex="6"><option
-										value="direct">직접입력</option>
-									<option value="naver.com">@naver.com</option>
-									<option value="hanmail.net">@hanmail.net</option>
-									<option value="gmail.com">@gmail.com</option>
-									<option value="nate.com">@nate.com</option>
-									<option value="hotmail.com">@hotmail.com</option></select></label>
-						</div>
-					</div>
-				</div>
-				<div class="uErrorText" style="display: block;"></div>
-				<div class="accountValiBlock" style="display: none;">
-					<div class="accountGuide"></div>
-					<p class="blockText">동일 정보로 가입된 계정으로 로그인 하시겠습니까?</p>
-					<a href="#" class="btn btnArrow">로그인하기</a>
+					<!-- end card -->
 				</div>
 			</div>
-			<div class="uBlock">
-				<div class="uInputArea">
-					<div class="col">
-						<div class="uInput">
-							<label for="inputCellphone">휴대폰</label>
-							<div class="inputBox">
-								<input type="text" id="inputCellphone" class="inputText"
-									placeholder="010 1234 5678" tabindex="7" value="">
-								<button type="button" class="btnDel" aria-label="삭제"></button>
-							</div>
-						</div>
-					</div>
-					<div class="col">
-						<div class="uBtnArea">
-							<button type="button" class="uBtn borderType">인증번호받기</button>
-						</div>
-					</div>
-				</div>
-				<div class="uErrorText" style="display: none;">점유인증을 하여 휴대폰
-					번호를 등록해주세요. 등록한 번호는 로그인 이후 변경 가능합니다.</div>
-				<div class="accountValiBlock" style="display: none;">
-					<div class="accountGuide"></div>
-					<p class="blockText">동일 정보로 가입된 계정으로 로그인 하시겠습니까?</p>
-					<a href="#" class="btn btnArrow">로그인하기</a>
-				</div>
-			</div>
-			<div class="uBlock" style="display: none;">
-				<div class="uInputArea">
-					<div class="col">
-						<div class="uInput">
-							<label for="inputCertifyNum">인증번호</label>
-							<div class="inputBox">
-								<input type="text" id="inputCertifyNum" class="inputText"
-									tabindex="8" value="">
-								<button type="button" class="btnDel" aria-label="삭제"></button>
-							</div>
-						</div>
-					</div>
-					<div class="col">
-						<div class="uBtnArea">
-							<button type="button" class="uBtn borderType">재발송</button>
-							<button type="button" class="uBtn borderType">확인</button>
-						</div>
-					</div>
-				</div>
-				<div class="certifyTime" style="display: none;">
-					인증유효시간 <span classq="time">00:00</span>
-				</div>
-			</div>
-			<div class="uBlock checkBlock">
-				<div class="uCheckbox">
-					<label><input type="checkbox"><span class="text">SMS,
-							이메일로 상품 및 이벤트 정보를 받겠습니다.(선택)</span></label>
-				</div>
-				<div class="uCheckbox">
-					<label><input type="checkbox"><span class="text">14세
-							미만입니다.</span></label>
-				</div>
-				<div class="uErrorText" style="display: none;">14세 미만 가입시
-					법정대리인 동의 필수 입니다.</div>
-			</div>
-			<div class="uBlock">
-				<p class="blockText">만 14세 미만 회원은 법정대리인(부모님) 동의를 받은 경우만 회원가입이
-					가능합니다.</p>
-			</div>
-			<div class="uBlock" style="display: none;">
-				<div class="uInputArea">
-					<div class="col">
-						<div class="uInput">
-							<label for="inputAgreeName">이름</label>
-							<div class="inputBox">
-								<input type="text" id="inputAgreeName" class="inputText"
-									value="">
-								<button type="button" class="btnDel" aria-label="삭제"></button>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="uErrorText" style="display: block;"></div>
-			</div>
-			<div class="uBlock" style="display: none;">
-				<div class="uInputArea emailType">
-					<div class="col">
-						<div class="uInput">
-							<label for="inputAgreeEmail">이메일</label>
-							<div class="inputBox">
-								<input type="text" id="inputAgreeEmail" class="inputText"
-									value="">
-							</div>
-						</div>
-					</div>
-					<div class="col selectCol">
-						<div class="uSelectBox">
-							<label><select><option value="direct">직접입력</option>
-									<option value="naver.com">@naver.com</option>
-									<option value="hanmail.net">@hanmail.net</option>
-									<option value="gmail.com">@gmail.com</option>
-									<option value="nate.com">@nate.com</option>
-									<option value="hotmail.com">@hotmail.com</option></select></label>
-						</div>
-					</div>
-				</div>
-				<div class="uErrorText" style="display: block;"></div>
-			</div>
-			<div class="uBlock agreeBlock" style="display: none;">
-				<div class="uInputArea">
-					<div class="col">
-						<span class="label">가입동의받기</span>
-					</div>
-					<div class="col">
-						<div class="uBtnArea">
-							<button type="button" class="uBtn borderType sType">법정대리인
-								본인 인증</button>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="ubtnArea">
-				<div class="col">
-					<button type="button" class="uBtn point" disabled="">가입완료</button>
-				</div>
-			</div>
+			<!-- end row -->
 		</div>
+		<!-- end container -->
 	</div>
 </body>
 </html>
