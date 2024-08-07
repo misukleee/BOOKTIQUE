@@ -8,6 +8,7 @@ public class SignUpController {
 
 	@GetMapping("/signUp")
 	public String signUp() {
+		
 		return "member/signUp";
 	}
 }
