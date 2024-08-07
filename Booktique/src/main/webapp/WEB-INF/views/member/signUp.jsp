@@ -93,7 +93,8 @@
 										<div class="input-group mb-6">
 											<input type="text" class="form-control mb-3" id="emailId" name="emailId"
 												placeholder="아이디" aria-label="Email" required>
-											<span class="input-group-text mb-3">@</span> <input type="text"
+											<span class="input-group-text mb-3">@</span>
+											 <input type="text"
 												class="form-control mb-3" id="dirEmail" name="dirEmail" value="선택하세요"
 												readonly /> 
 												<select class="form-select mb-3" name="selectEmail" id="selectEmail" data-choice="active">
