@@ -7,6 +7,9 @@ import javax.mail.internet.MimeMessage;
 
 import org.springframework.stereotype.Service;
 
+/**
+ * 메일 서비스를 위한 인터페이스.
+ */
 @Service
 public interface MailServiceInter {
 
@@ -18,5 +21,4 @@ public interface MailServiceInter {
 
     // 메일 발송
     String sendSimpleMessage(String to) throws Exception;
-
 }
