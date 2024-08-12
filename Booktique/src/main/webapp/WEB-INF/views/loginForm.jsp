@@ -86,11 +86,12 @@
 				
 				<!-- 로그인 상태 유지 체크박스 -->
 				<div class="signinStay">
-					<div class="checkbox">
-						<input type="checkbox" id="saveSess" name="saveSess" value="N">
-						<label for="saveSess">로그인 상태 유지</label>
-					</div>
+				    <div class="checkbox">
+				        <input type="checkbox" id="remember-me" name="remember-me" value="true">
+				        <label for="remember-me">로그인 상태 유지</label>
+				    </div>
 				</div>
+
 				
 				<!-- 로그인 버튼 -->
 				<div class="loginButtonBox">
@@ -103,10 +104,10 @@
 				<div class="findList">
 					<ul>
 						<li>
-							<a id="findId" class="findId" href="#">아이디 찾기</a>
+							<a id="findId" class="findId" href="/searchId">아이디 찾기</a>
 						</li>
 						<li>
-							<a id="findPwd" href="#">비밀번호 찾기</a>
+							<a id="findPwd" href="/searchPw">비밀번호 찾기</a>
 						</li>
 						<li>
 							<a id="join" href="#">회원가입</a>

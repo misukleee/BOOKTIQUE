@@ -39,8 +39,6 @@ public class MainController  {
     @GetMapping
     public String main(Locale locale, Model model, Principal principal, Authentication auth, HttpSession session) {
 
-    	log.info("Welcome home! The client locale is {}.", locale);
-    	
     	if (principal != null) {
             model.addAttribute("username", principal.getName());
         }
