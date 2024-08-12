@@ -4,7 +4,7 @@
        xmlns:security="http://www.springframework.org/schema/security"
        xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    
+     
     <!-- Custom AccessDeniedHandler -->
     <bean id="customAccessDenied"
           class="com.op.booktique.security.AccessDeniedHandlerImpl"></bean>
@@ -42,7 +42,7 @@
         
         <!-- 로그아웃 설정 -->
         <security:logout logout-url="/logout"
-                         logout-success-url="/login?logout"
+                         logout-success-url="/main"
                          invalidate-session="true"
                          delete-cookies="JSESSION_ID" />
         

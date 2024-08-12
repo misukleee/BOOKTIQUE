@@ -152,7 +152,7 @@ $("#checkId").click(function(){
 	$.ajax({
 		url : "/checkId",
         contentType: "application/json;charset=utf-8",
-        data: JSON.stringify(memId),
+        data: memId,
         type: "post",
         dataType: "json",
         beforeSend: function(xhr) {

@@ -14,7 +14,6 @@ public class SignUpServiceImpl implements SignUpService {
 
 	@Override
 	public int checkId(String memId) {
-		System.out.println("impl>> " + memId);
 		return this.signUpMapper.checkId(memId);
 	}
 

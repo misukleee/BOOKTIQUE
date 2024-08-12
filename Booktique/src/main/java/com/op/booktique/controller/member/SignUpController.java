@@ -37,8 +37,6 @@ public class SignUpController {
 	
 		int cnt = signUpService.checkId(memId);
 		log.info("아이디 중복확인 : " +cnt);
-		System.out.println(cnt);
-		System.out.println(">>"+memId);
 		
 		
 		return cnt;

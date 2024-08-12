@@ -13,7 +13,7 @@
 	<!-- Application Loggers -->
 	<logger name="com.op.booktique">
 		<!-- 개발할 때 디버그 레벨로 로그 찍기 -->
-		<level value="debug" />
+		<level value="info" />
 	</logger>
 	
 	<!-- 3rdparty Loggers -->
@@ -34,8 +34,18 @@
 	</logger>
 
 	<!-- Root Logger -->
+	<!-- 
+	appender : 전달된 로그를 어디에 출력할지 결정(콘솔, 파일 기록, DB 저장)
+	priority : 로그 레벨
+		- fatal : 심각한 오류 발생
+		- error : 요청 처리 중 문제 발생
+		- warn : 프로그램 실행에는 문제가 없으나 오류 발생 경고
+		- info : 상태변경 등 정보성 메시지
+		- debug : 개발 시 디버깅 용도*
+		- trace : 상세한 이벤트 용도
+	-->
 	<root>
-		<priority value="warn" />
+		<priority value="info" />
 		<appender-ref ref="console" />
 	</root>
 	
