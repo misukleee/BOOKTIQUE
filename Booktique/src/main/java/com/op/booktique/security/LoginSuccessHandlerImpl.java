@@ -65,6 +65,6 @@ public class LoginSuccessHandlerImpl extends SavedRequestAwareAuthenticationSucc
         log.info("User '{}' logged in with roles: {}", customUser.getUsername(), roleNames);
 
         // 모든 사용자가 ROLE_MEMBER 권한을 가지므로 바로 메인 페이지로 리다이렉트
-        response.sendRedirect("/main/index");
+        response.sendRedirect("/main");
     }
 }

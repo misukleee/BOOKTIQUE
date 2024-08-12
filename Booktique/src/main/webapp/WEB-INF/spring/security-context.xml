@@ -42,7 +42,7 @@
         
         <!-- 로그아웃 설정 -->
         <security:logout logout-url="/logout"
-                         logout-success-url="/login?logout"
+                         logout-success-url="/main"
                          invalidate-session="true"
                          delete-cookies="JSESSION_ID" />
         
