@@ -26,12 +26,13 @@
 									<br />
 								</div>
 								<div class="p-2 mt-4">
-									<div class="mb-3">
 										<label for="memId" class="form-label">아이디 <span class="text-danger">*</span></label>
-										<input type="text" class="form-control" id="memId" name="memId"
+									<div class="mb-3" style="display: flex;">
+										<input type="text" class="form-control" id="memId" name="memId" style="width: 83%;margin-right: 6px;"
 											placeholder="아이디를 입력하세요" maxlength=20 required>
-										<div id="dupId"></div>
+										<button class="btn btn-primary" id="checkId" >중복확인</button>
 									</div>
+									<div id="idChkMe"></div>
 									<div class="mb-3">
 										<label class="form-label" for="password-input">비밀번호</label> <span
 											class="text-danger">*</span>
@@ -64,7 +65,7 @@
 									<div class="mb-3">
 										<label for="username" class="form-label">이름 <span
 												class="text-danger">*</span></label> <input type="text" class="form-control"
-											id="memNm" name="memNm" placeholder="입주민 명" required>
+											id="memNm" name="memNm" placeholder="이름" required>
 									</div>
 									<div class="mb-3">
 										<label for="JoiningdatInput" class="form-label">생년월일 <span
@@ -124,6 +125,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script type="text/javascript">
 
+let dupID;
 
 $('#selectEmail').change(function () {
 	$("#selectEmail option:selected").each(function () {
@@ -136,6 +138,50 @@ $('#selectEmail').change(function () {
 		}
 	})
 });
+
+
+$("#checkId").click(function(){
+	
+	let memId = $("#memId").val().trim();
+	console.log("써진 아이디",memId);
+	
+	// 한글과 특수문자 제거
+	memId = memId.replace(/[^a-zA-Z0-9]/g, '');;
+	$('#memId').val(memId);
+	
+	$.ajax({
+		url : "/checkId",
+        contentType: "application/json;charset=utf-8",
+        data: JSON.stringify(memId),
+        type: "post",
+        dataType: "json",
+        beforeSend: function(xhr) {
+            xhr.setRequestHeader("${_csrf.headerName}", "${_csrf.token}");
+        },
+        success: function(result) {
+        	console.log("result >> " , result);
+        	
+        	if(result > 0 ) {
+        		$("#idChkMe").html("이미 있는 ID입니다.");
+        		$("#idChkMe").css('color', 'red');
+        		dupID = 0;
+        	}else{
+        		$("#idChkMe").html("사용가능한 ID입니다.")
+        		$("#idChkMe").css('color', 'blue');
+        		dupID = 1;
+        	}
+        	
+        },
+        error: function(xhr, status, error) {
+            console.error("요청 실패:", status, error);
+            alert("중복 체크 요청에 실패했습니다. 나중에 다시 시도해 주세요.");
+        }
+	});
+	
+	
+});
+
+
 
 </script>
 </html>
