@@ -33,7 +33,7 @@ public class AccessDeniedHandlerImpl implements AccessDeniedHandler {
     public void handle(HttpServletRequest request, HttpServletResponse response,
                        AccessDeniedException accessDeniedException) throws IOException, ServletException {
     	
-        log.info("CustomAccessDeniedHandler->handle {}", accessDeniedException.getMessage()); // 접근 거부 예외 메시지 로그 출력
+        log.info("AccessDeniedHandlerImpl->handle {}", accessDeniedException.getMessage()); // 접근 거부 예외 메시지 로그 출력
 
         // 사용자를 로그인 페이지로 리다이렉트
         response.sendRedirect("/login");

@@ -36,11 +36,11 @@ public class UserDetailsServiceImpl implements UserDetailsService {
      */
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        log.info("CustomUserDetailsService->username : " + username); // 사용자 이름 로그 출력
+        log.info("UserDetailsServiceImpl->username : " + username); // 사용자 이름 로그 출력
 
         // 사용자 정보 조회
         MemberVO memberVO = this.memberMapper.detail(username);
-        log.info("CustomUserDetailsService->memberVO : " + memberVO); // 사용자 정보 로그 출력
+        log.info("UserDetailsServiceImpl->memberVO : " + memberVO); // 사용자 정보 로그 출력
         
         if (memberVO == null) {
             throw new UsernameNotFoundException("User not found"); // 사용자 정보를 찾지 못했을 때 예외 발생
