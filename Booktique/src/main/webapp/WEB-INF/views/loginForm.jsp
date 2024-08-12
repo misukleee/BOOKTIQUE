@@ -16,15 +16,28 @@
 </head>
 <body>
 <div id="container" class="container login">
-  <div class="loginWrap">
-    <div class="loginLogo">
-      <a href="/main">
-        <h1 class="logo">
-          <span>BOOKTIQUE</span>
-        </h1>
-      </a>
-    </div>
-  </div>
+	<div class="loginWrap">
+		<div class="loginLogo">
+			<a href="https://www.interpark.com/">
+				<h1 class="logo">
+					<span>Booktique</span>
+				</h1>
+			</a>
+		</div>
+		
+		<form id="formAuthentication" action="/login" method="post">
+		    <!-- CSRF Token -->
+		    <sec:csrfInput/>
+		    <!-- 아이디 입력 필드 -->
+		    <input type="text" id="username" name="username" placeholder="아이디" />
+		    <!-- 비밀번호 입력 필드 -->
+		    <input type="password" id="password" name="password" placeholder="비밀번호" />
+		    <!-- 로그인 버튼 -->
+		    <button type="submit">로그인</button>
+		</form>
+
+	</div>
 </div>
+
 </body>
 </html>

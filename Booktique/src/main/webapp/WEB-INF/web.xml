@@ -53,5 +53,26 @@
 		<!-- 모든 요청에서 -->
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+	
+	<!-- multipart filter 추가하기(한글 처리 다음에 넣기!!!) -->
+	<filter>
+		<display-name>springMultipartFilter</display-name>
+		<filter-name>springMultipartFilter</filter-name>
+		<filter-class>org.springframework.web.multipart.support.MultipartFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>springMultipartFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<!-- 스프링 시큐리티가 제공하는 서블릿 필터 클래스를 서블릿 컨테이너에 등록함 -->
+	<filter>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
 
 </web-app>

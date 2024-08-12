@@ -27,10 +27,12 @@
     
     <!-- Security HTTP Configuration -->
     <security:http>
+    
         <!-- 폼 기반 인증 기능 사용 -->
         <!-- 사용자 정의 로그인 페이지 사용 -->
         <security:form-login login-page="/login" 
                              authentication-success-handler-ref="customLoginSuccess" />
+
         
         <!-- Remember-Me 설정 -->
         <security:remember-me 

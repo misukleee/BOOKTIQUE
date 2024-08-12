@@ -78,11 +78,13 @@ public class SecurityController {
     	// 로그인 시 에러가 발생했을 때 에러 메시지를 모델에 추가
         if (error != null) {
             model.addAttribute("error", "아이디 또는 비밀번호가 올바르지 않습니다.");
+            log.info("로그인 에러: " + error);
         }
         
         // 로그아웃했을 때 로그아웃 메시지를 모델에 추가
         if (logout != null) {
             model.addAttribute("logout", "성공적으로 로그아웃되었습니다.");
+            log.info("로그아웃 메시지: " + logout);
         }
         
         // 이미 인증된 사용자일 경우 사용자 정보를 가져와 모델에 추가
