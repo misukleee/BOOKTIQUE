@@ -17,7 +17,7 @@
 	 -->
 	<definition name="*/*" extends="main-layout">
 		<put-attribute name="body" value="/WEB-INF/views/{1}/{2}.jsp"></put-attribute>
-	</definition>
+	</definition> 
 	
 	<!-- 서브 layout -->
 <!-- 	<definition name="sub-layout" template="/WEB-INF/views/tiles/mainTemplate.jsp"> -->
