@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.op.booktique.mapper.member.SignUpMapper;
 import com.op.booktique.service.member.SignUpService;
+import com.op.booktique.vo.MemberVO;
 
 @Service
 public class SignUpServiceImpl implements SignUpService {
@@ -15,6 +16,11 @@ public class SignUpServiceImpl implements SignUpService {
 	@Override
 	public int checkId(String memId) {
 		return this.signUpMapper.checkId(memId);
+	}
+
+	@Override
+	public int signUpAjax(MemberVO memberVO) {
+		return this.signUpMapper.signUpAjax(memberVO);
 	}
 
 }
