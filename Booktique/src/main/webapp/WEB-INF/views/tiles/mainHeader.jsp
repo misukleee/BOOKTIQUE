@@ -62,7 +62,7 @@ $(function(){
 					</div>
 					<div class="Ticket_Account header_userMenu__c408a">
 						<a class="header_menu__720a4" href="#" title="로그인">로그인</a>
-						<a class="header_menu__720a4" href="#" title="회원가입">회원가입</a>
+						<a class="header_menu__720a4" href="/signUp" title="회원가입">회원가입</a>
 						<a class="header_menu__720a4" href="#" title="마이페이지">마이페이지</a>
 					</div>
 				</div>
