@@ -1,73 +1,68 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"  %>
-	
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+
 <!-- 슬라이드 -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
 
-<script>
-/**
- * 인기차트 슬라이드 쇼 Swiper 
- */
-new Swiper('.swiper-container', {
-	slidesPerView : 4,  // 동시에 보여줄 슬라이드 갯수
-	spaceBetween : 10,  // 슬라이드간 간격
-	slidesPerGroup : 2, // 그룸화
 
-	// 그룹수가 맞지 않을 경우 빈칸으로 메우기
-	loopFillGroupWithBlank : true,
+<style>
+.area {
+    position: absolute;
+    background: #fff;
+    border: 1px solid #888;
+    border-radius: 3px;
+    font-size: 12px;
+    top: -5px;
+    left: 15px;
+    padding:2px;
+}
 
-	loop : true, // 무한 반복
-    autoplay: {
-          delay: 3000, // 3초마다 자동 재생
-          dynamicBullets: true,
-          disableOnInteraction: false // 사용자 상호 작용 후에도 자동 재생 유지
-        },  
-	pagination : { // 페이징
-		el : '.swiper-pagination',
-		clickable : true, // 페이징을 클릭하면 해당 영역으로 이동, 필요시 지정해 줘야 기능 작동
-	},
-	navigation : { // 네비게이션
-		nextEl : '.swiper-button-next', // 다음 버튼 클래스명
-		prevEl : '.swiper-button-prev', // 이번 버튼 클래스명
-	},
-    mousewheel: true, // 마우스 휠로 슬라이드 이동 가능
-});
+.info {
+    font-size: 12px;
+    padding: 5px;
+}
+.info .title {
+    font-weight: bold;
+}
+</style>
 
-</script>
 <main id="contents">
 
 	<div id="_Ram_"
 		class="GBigBanner BigBanner_bigBannerWrap__ZIaFE HorizontalList_swiperWrap__4f4d9 HorizontalList_swiperButtonCenter__bd963">
-		<div style="border: 1px solid gray; border-radius: 25px; width: 175px; padding: 6px; display: flex; align-items: center;">
-		    <img src="/resources/img/fire.png" width="50" height="50" style="margin-right: 10px;">
-		    <span style="font-size: 24px; font-weight: bold;">요즘 HOT</span>
+		<div
+			style="border: 1px solid gray; border-radius: 25px; width: 175px; padding: 6px; display: flex; align-items: center;">
+			<img src="/resources/img/fire.png" width="50" height="50"
+				style="margin-right: 10px;"> <span
+				style="font-size: 24px; font-weight: bold;">요즘 HOT</span>
 		</div>
 		<br>
-		
-<!-- 슬라이드  시작 -->
-		<div class="swiper-slide HorizontalList_swiperSlide__fce1f BigBanner_bannerSlide__WNhKi swiper-slide-next"
-					style="width: 305px; margin-right: 20px;">
-			<div class="swiper-container" style="background: linear-gradient(-225deg, #FFFEFF 0%, #f1ffff 100%);">
-				<div class="swiper-wrapper">
 
+		<!-- 슬라이드  시작 -->
+		<div
+			class="HorizontalList_wrap__5c3c0 swiper-initialized swiper-horizontal swiper-pointer-events">
+			<div class="swiper-wrapper"
+				style="transition-duration: 0ms; transform: translate3d(-1950px, 0px, 0px);">
+				<c:forEach var="i" begin="1" end="10">
+					<div
+						class="swiper-slide HorizontalList_swiperSlide__fce1f BigBanner_bannerSlide__WNhKi not-intersecting"
+						style="width: 300px; margin-right: 20px; ">
 
-				</div>
+						<img style="width: 100%; height: 100%;border-radius: 15px;" src="/resources/img/연극이미지1.jpg">
 
-				<div class="swiper-pagination"></div>
-				
+					</div>
+				</c:forEach>
 			</div>
 		</div>
-		
-		
-		<button class="HorizontalList_swiperPrev__b45cd">이전</button>
-		<button class="HorizontalList_swiperNext__1f674">다음</button>
+
+
 	</div>
-	
-<!-- 슬라이드  끝 -->
-	
+
+	<!-- 슬라이드  끝 -->
+
 	<article class="Panel_wrap__b444b">
 		<section class="Panel_subWrap__5147a">
 			<div class="Panel_contents__f7025 Panel_pd-l__27d91">
@@ -351,4 +346,176 @@ new Swiper('.swiper-container', {
 			</div>
 		</section>
 	</article>
+
+
+
+	<article class="GTicketOpen Panel_wrap__b444b">
+		<section class="Panel_subWrap__5147a Panel_btnText__7ccdc">
+			<div class="Panel_title__4b2ff">
+				<h2>지역 별</h2>
+			</div>
+			<div class="Panel_contents__f7025 Panel_fill__79649">
+			
+			<div id="map" style="width:100%;height:350px;"></div>
+			
+			
+			
+			</div>
+		</section>
+	</article>
+	
+
+	
 </main>
+
+
+
+<script>
+	/**
+	 * 인기차트 슬라이드 쇼 Swiper 
+	 */
+	new Swiper('.swiper-horizontal', {
+		slidesPerView : 4, // 동시에 보여줄 슬라이드 갯수
+		spaceBetween : 20, // 슬라이드간 간격
+
+		// 그룹수가 맞지 않을 경우 빈칸으로 메우기
+		loopFillGroupWithBlank : true,
+
+		loop : true, // 무한 반복
+		autoplay : {
+			delay : 3000, // 3초마다 자동 재생
+			dynamicBullets : true,
+			disableOnInteraction : false
+		// 사용자 상호 작용 후에도 자동 재생 유지
+		},
+		navigation : { // 네비게이션
+			nextEl : '.swiper-button-next', // 다음 버튼 클래스명
+			prevEl : '.swiper-button-prev', // 이번 버튼 클래스명
+		},
+		mousewheel : true, // 마우스 휠로 슬라이드 이동 가능
+	});
+	
+
+</script>
+
+
+<!-- 지도  -->
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a0be9147034cf9af1ad5186abfceb5fb"></script>
+<script>
+let mapContainer = document.getElementById('map'), // 지도를 표시할 div
+mapOption = {
+    center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
+    level: 12 // 지도의 확대 레벨
+};
+
+let map = new kakao.maps.Map(mapContainer, mapOption),
+customOverlay = new kakao.maps.CustomOverlay({})
+
+let detailMode = false; // level에 따라 다른 json 파일 사용
+let level = '';
+let polygons = [];
+
+init("resources/sido.json") // 초기 시작
+
+kakao.maps.event.addListener(map, 'zoom_changed', function () {
+level = map.getLevel()
+if (!detailMode && level <= 10) { // level 에 따라 다른 json 파일을 사용한다.
+    detailMode = true;
+    removePolygon();
+    init("resources/sig.json")
+} else if (detailMode && level > 10) { // level 에 따라 다른 json 파일을 사용한다.
+    detailMode = false;
+    removePolygon();
+    init("resources/sido.json")
+}
+});
+
+// 모든 폴리곤을 지우는 함수
+function removePolygon() { 
+for (let i = 0; i < polygons.length; i++) {
+    polygons[i].setMap(null);
+}
+areas = [];
+polygons = [];
+}
+
+// 폴리곤 생성
+function init(path) {
+
+//path 경로의 json 파일 파싱
+$.getJSON(path, function (geojson) {
+    var units = geojson.features; // json key값이 "features"인 것의 value를 통으로 가져온다.
+
+    $.each(units, function (index, unit) { // 1개 지역씩 꺼내서 사용. val은 그 1개 지역에 대한 정보를 담는다
+        var coordinates = []; //좌표 저장할 배열
+        var name = ''; // 지역 이름
+        var cd_location = '';
+        coordinates = unit.geometry.coordinates; // 1개 지역의 영역을 구성하는 다각형의 모든 좌표 배열
+        name = unit.properties.SIG_KOR_NM; // 1개 지역의 이름
+        cd_location = unit.properties.SIG_CD;
+
+
+        var ob = new Object();
+        ob.name = name;
+        ob.path = [];
+        ob.location = cd_location;
+        $.each(coordinates[0], function (index, coordinate) { 
+            ob.path
+                .push(new kakao.maps.LatLng(coordinate[1],
+                    coordinate[0]));
+        });
+
+        areas[index] = ob;
+    });//each
+});//getJSON
+
+// 지도에 영역데이터를 폴리곤으로 표시
+for (var i = 0, len = areas.length; i < len; i++) {
+    displayArea(areas[i]);
+}
+
+function displayArea(area) {
+
+    var polygon = new kakao.maps.Polygon({
+        map: map,
+        path: area.path,
+        strokeWeight: 2,
+        strokeColor: '#004c80',
+        strokeOpacity: 0.8,
+        fillColor: '#fff',
+        fillOpacity: 0.7
+    });
+    polygons.push(polygon);
+
+    kakao.maps.event.addListener(polygon, 'mouseover', function (mouseEvent) {
+        polygon.setOptions({fillColor: '#09f'});
+        customOverlay.setContent('<div class="area">' + area.name + '</div>');
+        customOverlay.setPosition(mouseEvent.latLng);
+        customOverlay.setMap(map);
+    });
+
+    kakao.maps.event.addListener(polygon, 'mousemove', function (mouseEvent) {
+
+        customOverlay.setPosition(mouseEvent.latLng);
+    });
+
+    kakao.maps.event.addListener(polygon, 'mouseout', function () {
+        polygon.setOptions({fillColor: '#fff'});
+        customOverlay.setMap(null);
+    });
+
+    kakao.maps.event.addListener(polygon, 'click', function (mouseEvent) {
+        if (!detailMode) {
+            map.setLevel(10); // level에 따라 이벤트 변경
+            var latlng = mouseEvent.latLng;
+
+            // 지도의 중심을 부드럽게 클릭한 위치로 이동시킵니다.
+            map.panTo(latlng);
+        } else {
+			// 클릭 이벤트 함수
+            // callFunctionWithRegionCode(area.location);
+        }
+    });
+}
+}
+</script>
