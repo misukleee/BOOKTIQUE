@@ -82,6 +82,9 @@ $(function(){
 						<li class="menu-item" data-url="play">
 							<a class="header_link__5ddf2" href="/play/main">연극</a>
 						</li>
+						<li class="menu-item" data-url="camp">
+							<a class="header_link__5ddf2" href="/camp/main">캠핑</a>
+						</li>
 						<li class="menu-item" data-url="book">
 							<a class="header_link__5ddf2" href="/book/main">도서</a>
 						</li>
