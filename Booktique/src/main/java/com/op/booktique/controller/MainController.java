@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.op.booktique.mapper.MemberMapper;
+import com.op.booktique.mapper.member.MemberMapper;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -36,12 +36,12 @@ public class MainController  {
 	@Autowired
 	MemberMapper memberMapper;
 	
-    @GetMapping("/index")
+    @GetMapping
     public String main(Locale locale, Model model, Principal principal, Authentication auth, HttpSession session) {
 
     	log.info("Welcome home! The client locale is {}.", locale);
 		
-		return "home";
+		return "main/home";
     }
 
 

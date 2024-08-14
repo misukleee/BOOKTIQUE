@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.op.booktique.mapper.MemberMapper;
+import com.op.booktique.mapper.member.MemberMapper;
 import com.op.booktique.service.EmailService;
 import com.op.booktique.service.MailServiceInter;
 import com.op.booktique.vo.MemberVO;
@@ -74,6 +74,11 @@ public class SecurityController {
      */
     @GetMapping("/login")
     public String login(String error, String logout, Model model, Authentication authentication) {
+    	
+    	// 이미 인증된 사용자일 경우 메인 페이지로 리다이렉트
+        if (authentication != null && authentication.isAuthenticated()) {
+            return "redirect:/main";
+        }
         
     	// 로그인 시 에러가 발생했을 때 에러 메시지를 모델에 추가
         if (error != null) {
@@ -85,23 +90,6 @@ public class SecurityController {
         if (logout != null) {
             model.addAttribute("logout", "성공적으로 로그아웃되었습니다.");
             log.info("로그아웃 메시지: " + logout);
-        }
-        
-        // 이미 인증된 사용자일 경우 사용자 정보를 가져와 모델에 추가
-        // 즉, 사용자가 이미 로그인된 상태에서 다시 로그인 페이지에 접근했을 때의 처리
-        if (authentication != null && authentication.isAuthenticated()) { // 이미 인증된 사용자일 경우
-            User user = (User) authentication.getPrincipal(); // 인증된 사용자 정보 가져오기
-            String username = user.getUsername(); // 사용자 이름 가져오기
-            MemberVO member = memberMapper.getMemberById(username); // 사용자 정보 조회
-            
-            // 사용자의 정보가 존재하는지 확인 (null이 아닌지 확인)
-            if (member != null) {
-                String encodedPwd = member.getMemPw(); // 인코딩된 비밀번호 가져오기
-                log.info("encodedPwd : " + encodedPwd); // 비밀번호 로그 출력
-                model.addAttribute("encodedPwd", encodedPwd); // 모델에 비밀번호 추가
-            } else {
-                log.info("사용자 정보가 존재하지 않습니다."); // 사용자 정보가 없음을 로그에 출력
-            }
         }
         
         return "loginForm"; // 로그인 폼 페이지로 이동
