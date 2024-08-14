@@ -20,6 +20,7 @@
     padding:2px;
 }
 
+
 .info {
     font-size: 12px;
     padding: 5px;
