@@ -1,4 +1,4 @@
-package com.op.booktique.mapper;
+package com.op.booktique.mapper.member;
 
 import java.util.Date;
 import java.util.List;
