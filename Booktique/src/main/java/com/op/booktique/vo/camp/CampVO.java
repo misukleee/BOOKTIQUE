@@ -4,21 +4,22 @@ import lombok.Data;
 
 @Data
 public class CampVO {
-	private String Areacode;
-	private int Campno;
-	private String Campname;
-	private String Campaddr;
-	private String Campphone;
-	private String Campurl;
-	private String Refundment;
-	private String Campetc;
-	private String Corpname;
-	private String Corpno;
-	private String Campoption;
-	private String Campmainimg;
-	private String Campdetailimg;
-	private String Campsubimg;
-	private String Toilet;
-	private String Shower;
-	private String Firesensor;
+	private String areaCode;
+	private int campNo;
+	private String campName;
+	private String campAddr;
+	private String campPhone;
+	private String campUrl;
+	private String refundment;
+	private String campEtc;
+	private String corpName;
+	private String corpNo;
+	private String campOption;
+	private String campMainImg;
+	private String campDetailImg;
+	private String campSubImg;
+	private String toilet;
+	private String shower;
+	private String firesensor;
+	
 }

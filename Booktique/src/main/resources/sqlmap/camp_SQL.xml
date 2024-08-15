@@ -3,15 +3,24 @@
 <mapper namespace="com.op.booktique.mapper.camp.CampMapper">
 
 	<insert id="insertCamp" parameterType="com.op.booktique.vo.camp.CampVO">
-		INSERT INTO CAMP (CAMP_NO, CAMP_NAME, CAMP_ADDR, CAMP_MAIN_IMG, AREA_CODE)
-		VALUES (CAMP_NO_SEQ.NEXTVAL, #{Campname}, #{Campaddr}, #{Campmainimg}, 
-		<choose>
-			<when test="Campaddr.contains('경기')">ac41</when>
-			<when test="Campaddr.contains('강원')">ac42</when>
-			<when test="Campaddr.contains('충남') or Campaddr.contains('충북')">ac43</when>
-			<when test="Campaddr.contains('전남') or Campaddr.contains('전북')">ac45</when>
-			<when test="Campaddr.contains('제주')">ac50</when>
-			<otherwise>ac51</otherwise>
-		</choose>
+		INSERT INTO CAMP (
+		CAMP_NO,
+		CAMP_NAME,
+		CAMP_ADDR,
+		CAMP_PHONE,
+		CAMP_ETC,
+		CAMP_MAIN_IMG,
+		AREA_CODE
+		)
+		VALUES (
+		CAMP_NO_SEQ.NEXTVAL,
+		#{campName},
+		#{campAddr},
+		#{campPhone},
+		#{campEtc},
+		#{campMainImg},
+		#{areaCode}
+		)
 	</insert>
+
 </mapper>
