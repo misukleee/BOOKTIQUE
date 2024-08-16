@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
     <meta name="description" content="" />
     
-    <title>BOOKTIQUE - 로그인</title>
+    <title>로그인 - BOOKTIQUE</title>
 	
 	<link href="/resources/css/fdfa608d464f1bb9.css" rel="stylesheet" type="text/css">
 	<link href="/resources/css/d9f4e75c2121ddb0.css" rel="stylesheet" type="text/css">

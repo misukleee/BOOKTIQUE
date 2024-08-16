@@ -58,10 +58,10 @@
 			<div class="infoSearchBody">
 				<div class="searhTabWrap">
 					<div class="tabWrap">
-						<div class="tab current">
+						<div class="tab">
 							<a href="/searchId">아이디 찾기</a>
 						</div>
-						<div class="tab">
+						<div class="tab current">
 							<a href="/searchPw">비밀번호 찾기</a>
 						</div>
 					</div>
@@ -72,7 +72,7 @@
 						<div class="contentsWrap">
 							<div class="inner">
 								<div class="searchDiv active">
-									<p class="message">입력하신 이름과 이메일 주소가 회원 정보와 일치한 경우 아이디를 확인하실 수 있습니다.</p>
+									<p class="message">입력하신 이름과 이메일 주소가 회원 정보와 일치한 경우 이메일로 임시 비밀번호가 발송됩니다.</p>
 									<div class="inputForm">
 										<div class="inputStyle">
 											<input id="inputEmailMemNm" type="text" class="searchInput" placeholder="이름">
@@ -93,7 +93,7 @@
 											<div class="activeButton">
 												<button type="button"
 														class="certBtn"
-														onclick="javascript:getCertCheckNo('email'); return false;">아이디 찾기</button>
+														onclick="javascript:getCertCheckNo('email'); return false;">임시 비밀번호 받기</button>
 											</div>
 										</div>
 									</div>
@@ -101,13 +101,13 @@
 									
 								<div class="searchDiv">
 									<div class="searchContentsWrapper" style="display: ">
-										<h3>고객님의<br>아이디를 찾았어요</h3>
+										<h3>임시 비밀번호를<br>이메일로 발송하였습니다</h3>
 										<div class="resultListWrap">
 											<ul>
 												<li class="items">
 													<input type="radio" name="idlist" id="id_1" value="shj88315" data-memno="" checked="">
 													<label for="id_1">
-														<div class="id">shj88315</div>
+														<div class="id">shj88315@gmail.com</div>
 													</label>
 												</li>
 											</ul>
@@ -116,7 +116,7 @@
 											<div class="textBubble" style="display:none;">
 												<span>아이디를 선택해주세요</span>
 											</div>
-											<button type="button" class="basicBtn" onclick="javascript:sendMemId();">비밀번호 찾기</button>
+											<button type="button" class="basicBtn" onclick="javascript:sendMemId();">아이디 찾기</button>
 											<button type="button" class="blueBtn" onclick="javascript:memLogin(); return false;">로그인</button>
 										</div>
 									</div>
@@ -131,8 +131,6 @@
 	</div>
 
 </form>
-
-<script type="text/javascript" src="/resources/js/search.js"></script>
 
 </body>
 </html>
