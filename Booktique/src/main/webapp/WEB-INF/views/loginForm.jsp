@@ -44,7 +44,7 @@
 						<!-- 아이디 입력 필드 -->
 						<div class="inputStyle inputId">
 						    <label>
-						        <input value="" autofocus="" type="text" class="inputText id" id="username" name="username" placeholder="아이디">
+						        <input value="${param.username}" autofocus="" type="text" class="inputText id" id="username" name="username" placeholder="아이디">
 						        <span class="focusLine"></span>
 						        <i>
 						            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">

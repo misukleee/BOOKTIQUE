@@ -103,7 +103,7 @@ html {
 }
 
 .infoSearchBody h3 {
-  margin: 4rem 0;
+  margin: 0 0 4rem 0;
   line-height: 143%;
   font-weight: bold;
   font-size: 2.2rem;
@@ -953,4 +953,15 @@ html {
   .infoSearchBody .searchContentsWrapper .failWrap {
     margin-top: 4rem;
   }
+}
+
+
+.searchContents .searchDiv {
+	visibility: hidden;
+	height: 0;
+}
+
+.searchContents .searchDiv.active {
+	visibility: visible;
+	height: auto;
 }

@@ -1,4 +1,4 @@
-package com.op.booktique.service;
+package com.op.booktique.service.member;
 
 /**
  * 이메일 서비스를 위한 인터페이스.

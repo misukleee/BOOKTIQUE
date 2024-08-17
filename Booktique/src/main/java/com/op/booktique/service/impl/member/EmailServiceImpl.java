@@ -1,11 +1,11 @@
-package com.op.booktique.service.impl;
+package com.op.booktique.service.impl.member;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
-import com.op.booktique.service.EmailService;
+import com.op.booktique.service.member.EmailService;
 
 import lombok.extern.slf4j.Slf4j;
 

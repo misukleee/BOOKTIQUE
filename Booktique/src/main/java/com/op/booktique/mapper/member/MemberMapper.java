@@ -13,7 +13,7 @@ import com.op.booktique.vo.MemberVO;
  */
 @Mapper
 public interface MemberMapper {
-    // 회원 정보 조회
+    // 로그인
     public MemberVO detail(String memId);
     
     // 회원 정보 조회
@@ -25,7 +25,7 @@ public interface MemberMapper {
     // 아이디 찾기
     public List<MemberVO> findMemberByNameBirthdateAndPhone(
     		@Param("memNm") String memNm, 
-            @Param("memBirth") Date memBirth, 
+            @Param("memBirth") String memBirth, 
             @Param("memPhone") String memPhone);
     
     // 비밀번호 찾기

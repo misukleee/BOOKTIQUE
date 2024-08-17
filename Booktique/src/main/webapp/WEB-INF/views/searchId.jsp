@@ -45,14 +45,13 @@
     </div>
 </div>
 
-<form name="MemberMatchPwdForm" method=post action="/member/matchid.do" onSubmit="return false;">
+<form name="formAuthentication" action="/searchId" method=post >
+	<!-- CSRF Token -->
+	<sec:csrfInput/>
 
 	<div id="container" class="container">
 		<div class="infoSearchWrap">
 			<div class="infoSearchHeader">
-				<div class="backButton">
-					<button type="button" onclick="javascript:historyback();">뒤로가기</button>
-				</div>
 				<h2>계정 찾기</h2>
 			</div>
 			<div class="infoSearchBody">
@@ -67,64 +66,67 @@
 					</div>
 				</div>
 				<div class="searchContentsWrapper">
-					 
 					<div class="searchContents current">
 						<div class="contentsWrap">
 							<div class="inner">
-								<div class="searchDiv active">
-									<p class="message">입력하신 이름과 이메일 주소가 회원 정보와 일치한 경우 아이디를 확인하실 수 있습니다.</p>
+							
+								<!-- 아이디 찾기 폼 -->
+								<div class="searchDiv ${empty memberVO.memId ? 'active' : ''}"">
+									<p class="message">입력하신 이름과 생년월일, 전화번호가 회원 정보와 일치한 경우 아이디를 확인하실 수 있습니다.</p>
 									<div class="inputForm">
 										<div class="inputStyle">
-											<input id="inputEmailMemNm" type="text" class="searchInput" placeholder="이름">
+											<input id="inputMemNm" name="memNm" type="text" class="searchInput" placeholder="이름">
 											<button type="button" class="inputBtn btnDel">
 												<span class="blind">삭제</span>
 											</button>
 										</div>
 										<div class="inputStyle">
-											<input id="inputEmail" type="text" class="searchInput" placeholder="이메일 주소">
+											<input id="inputBirth" name="memBirth" type="date" class="searchInput" placeholder="생년월일">
 											<button type="button" class="inputBtn btnDel">
 												<span class="blind">삭제</span>
 											</button>
 										</div>
-										<div class="errorMessage">
-											<div class="message">해당 정보와 일치하는 사용자를 찾을 수 없습니다</div>  <!-- ${message} -->
+										<div class="inputStyle">
+											<input id="inputPhone" name="memPhone" type="text" class="searchInput" placeholder="전화번호">
+											<button type="button" class="inputBtn btnDel">
+												<span class="blind">삭제</span>
+											</button>
 										</div>
+										<c:if test="${not empty message}">
+											<div class="errorMessage">
+												<div class="message">${message}</div>
+											</div>
+										</c:if>
 										<div class="confirmWrap">
 											<div class="activeButton">
-												<button type="button"
-														class="certBtn"
-														onclick="javascript:getCertCheckNo('email'); return false;">아이디 찾기</button>
+												<button type="submit" class="certBtn">아이디 찾기</button>
 											</div>
 										</div>
 									</div>
 								</div>
-									
-								<div class="searchDiv">
-									<div class="searchContentsWrapper" style="display: ">
-										<h3>고객님의<br>아이디를 찾았어요</h3>
-										<div class="resultListWrap">
-											<ul>
-												<li class="items">
-													<input type="radio" name="idlist" id="id_1" value="shj88315" data-memno="" checked="">
-													<label for="id_1">
-														<div class="id">shj88315</div>
-													</label>
-												</li>
-											</ul>
-										</div>
-										<div class="bottomBtnWrap">
-											<div class="textBubble" style="display:none;">
-												<span>아이디를 선택해주세요</span>
-											</div>
-											<button type="button" class="basicBtn" onclick="javascript:sendMemId();">비밀번호 찾기</button>
-											<button type="button" class="blueBtn" onclick="javascript:memLogin(); return false;">로그인</button>
-										</div>
+								
+								<!-- 아이디 찾기 결과 -->
+								<div class="searchDiv ${not empty memberVO.memId ? 'active' : ''}">
+									<h3>고객님의<br>아이디를 찾았어요</h3>
+									<div class="resultListWrap">
+										<ul>
+											<li class="items">
+												<input type="radio" name="idlist" id="id_1" value="${memberVO.memId}" data-memno="" checked="">
+												<label for="id_1">
+													<div class="id">${memberVO.memId}</div>
+												</label>
+											</li>
+										</ul>
+									</div>
+									<div class="bottomBtnWrap">
+										<button type="button" class="basicBtn" onclick="javascript:searchIdToPw();">비밀번호 찾기</button>
+										<button type="button" class="blueBtn" onclick="javascript:searchIdToLogin();">로그인</button>
 									</div>
 								</div>
+								
 							</div>
 						</div>
 					</div>
-					
 				</div>
 			</div>
 		</div>
