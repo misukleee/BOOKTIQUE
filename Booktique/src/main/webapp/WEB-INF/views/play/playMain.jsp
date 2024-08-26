@@ -1,9 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="sec"
-	uri="http://www.springframework.org/security/tags"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 
 <!-- 슬라이드 -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
@@ -50,12 +48,18 @@
 
 	<div id="_Ram_"
 		class="GBigBanner BigBanner_bigBannerWrap__ZIaFE HorizontalList_swiperWrap__4f4d9 HorizontalList_swiperButtonCenter__bd963">
-		<div
-			style="border: 1px solid gray; border-radius: 25px; width: 175px; padding: 6px; display: flex; align-items: center;">
-			<img src="/resources/img/fire.png" width="50" height="50"
-				style="margin-right: 10px;"> <span
-				style="font-size: 24px; font-weight: bold;">요즘 HOT</span>
-		</div>
+<!-- 		<div style="display: flex; margin-right: 10px;"> -->
+		<!-- 	<div
+				style="border: 1px solid gray; border-radius: 25px; width: 195px; padding: 6px; display: flex; align-items: center;">
+				<img src="/resources/img/fire.png" width="50" height="50"
+					style="margin-right: 10px;"> <span
+					style="font-size: 24px; font-weight: bold;">요즘 HOT&nbsp; &gt;</span>
+			</div> -->
+				<div OnClick="location.href ='http://localhost:90/play/list'" 
+					style="cursor:pointer; border: 1px solid gray; border-radius: 25px; width: 190px; padding: 6px; display: flex; align-items: center; padding: 14px;">
+					<span style="font-size: 24px; font-weight: bold;">연극 전체보기 &nbsp; &gt;</span>
+				</div>
+<!-- 		</div> -->
 		<br>
 
 		<!-- 슬라이드  시작 -->
@@ -124,7 +128,7 @@
 	
 	<!-- 오픈공지 슬라이드  시작 -->
 
-	<article class="GTicketOpen Panel_wrap__b444b">
+<%-- 	<article class="GTicketOpen Panel_wrap__b444b">
 		<section class="Panel_subWrap__5147a Panel_btnText__7ccdc">
 			<div class="Panel_title__4b2ff">
 				<h2>티켓 오픈</h2>
@@ -171,7 +175,7 @@
 
 		</section>
 	</article>
-
+ --%>
 	<!-- 오픈공지 슬라이드  끝 -->
 	
 	
