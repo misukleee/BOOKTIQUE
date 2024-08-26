@@ -320,7 +320,7 @@ document.getElementById('listBtn').addEventListener('click', function() {
 		});
 
 	}
-</script>
+</script> 
 
 
 <script>
