@@ -24,7 +24,7 @@
 		FROM
 		    show
 		WHERE
-		    show_sq Like 'P%'
+		    show_sq Like 'P%' 
 	</select>
 
 </mapper>

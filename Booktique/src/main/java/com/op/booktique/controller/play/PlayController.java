@@ -33,7 +33,7 @@ public class PlayController {
 		List<ShowVo> playList = playService.playList();
 		log.info("연극 전체보기 -> playList : {}" ,playList);
 		
-		model.addAttribute("playList", playList);
+		model.addAttribute("playList", playList); 
 		
 		return playList;
 	}
