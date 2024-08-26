@@ -18,7 +18,7 @@ public class MailConfig {
 
     	emailSender.setHost("smtp.naver.com");  // SMTP 서버명
     	emailSender.setUsername("rosy_h"); // 네이버 아이디
-    	emailSender.setPassword("QZFP3PE1RKVK"); // 네이버 애플리케이션 비밀번호
+    	emailSender.setPassword("devpro0315!"); // 네이버 애플리케이션 비밀번호
 
     	emailSender.setPort(465); // SMTP 포트 (SSL)
 

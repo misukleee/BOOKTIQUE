@@ -1,4 +1,4 @@
-package com.op.booktique.service;
+package com.op.booktique.service.member;
 
 import java.io.UnsupportedEncodingException;
 

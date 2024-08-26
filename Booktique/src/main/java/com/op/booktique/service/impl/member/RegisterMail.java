@@ -1,4 +1,4 @@
-package com.op.booktique.service.impl;
+package com.op.booktique.service.impl.member;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Random;
@@ -13,7 +13,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
 import com.op.booktique.config.MailConfig;
-import com.op.booktique.service.MailServiceInter;
+import com.op.booktique.service.member.MailServiceInter;
 
 @Service
 public class RegisterMail implements MailServiceInter {

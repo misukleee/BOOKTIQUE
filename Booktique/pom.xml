@@ -278,6 +278,21 @@
 		  <artifactId>jsoup</artifactId>
 		  <version>1.18.1</version>
 		</dependency>
+		
+		<!-- Selenium dependency -->
+	    <dependency>
+	        <groupId>org.seleniumhq.selenium</groupId>
+	        <artifactId>selenium-java</artifactId>
+	        <version>3.141.59</version>
+	    </dependency>
+	    
+	    <!-- Guava dependency -->
+	    <dependency>
+	        <groupId>com.google.guava</groupId>
+	        <artifactId>guava</artifactId>
+	        <version>25.0-jre</version>
+	    </dependency>
+	    
 	</dependencies>
 	<build>
 		<plugins>

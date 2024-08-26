@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 
 <script>
 $(function(){
@@ -60,11 +60,25 @@ $(function(){
 							</div>
 						</div>
 					</div>
+					
 					<div class="Ticket_Account header_userMenu__c408a">
-						<a class="header_menu__720a4" href="#" title="로그인">로그인</a>
-						<a class="header_menu__720a4" href="#" title="회원가입">회원가입</a>
-						<a class="header_menu__720a4" href="#" title="마이페이지">마이페이지</a>
+					    <!-- 로그인하지 않은 경우에만 '로그인', '회원가입' 링크를 보여줌 -->
+					    <sec:authorize access="!isAuthenticated()">
+					        <a class="header_menu__720a4" href="/login" title="로그인">로그인</a>
+					        <a class="header_menu__720a4" href="/signUp" title="회원가입">회원가입</a>
+					    </sec:authorize>
+					    
+					    <!-- 로그인한 경우에만 '로그아웃' 링크를 보여줌 -->
+					    <sec:authorize access="isAuthenticated()">
+					        <a class="header_menu__720a4" href="#" title="로그아웃" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">로그아웃</a>
+					        <form id="logout-form" action="/logout" method="post" style="display: none;">
+					            <sec:csrfInput />
+					        </form>
+					    </sec:authorize>
+					
+					    <a class="header_menu__720a4" href="#" title="마이페이지">마이페이지</a>
 					</div>
+
 				</div>
 			</div>
 			<div role="presentation" class="header_menu__720a4">
@@ -81,6 +95,9 @@ $(function(){
 						</li>
 						<li class="menu-item" data-url="play">
 							<a class="header_link__5ddf2" href="/play/main">연극</a>
+						</li>
+						<li class="menu-item" data-url="camp">
+							<a class="header_link__5ddf2" href="/camp/main">캠핑</a>
 						</li>
 						<li class="menu-item" data-url="book">
 							<a class="header_link__5ddf2" href="/book/main">도서</a>
