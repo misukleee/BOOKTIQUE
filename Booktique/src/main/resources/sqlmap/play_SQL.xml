@@ -26,5 +26,58 @@
 		WHERE
 		    show_sq Like 'P%'  
 	</select>
+	
+	
+	<resultMap type="com.op.booktique.vo.show.ShowVo" id="showMap">
+		<result property="showSq" column="SHOW_SQ"/>
+		<result property="hallSq" column="HALL_SQ"/>
+		<result property="agencyNo" column="AGENCY_NO"/>
+		<result property="discountNo" column="DISCOUNT_NO"/>
+		<result property="mainImg" column="MAIN_IMG"/>
+		<result property="subImg" column="SUB_IMG"/>
+		<result property="detailImg" column="DETAIL_IMG"/>
+		<result property="startDate" column="START_DATE"/>
+		<result property="endDate" column="END_DATE"/>
+		<result property="reserveDate" column="RESERVE_DATE"/>
+		<result property="showCat" column="SHOW_CAT"/>
+		<result property="showName" column="SHOW_NAME"/>
+		<result property="director" column="DIRECTOR"/>
+		<result property="runningtime" column="RUNNINGTIME"/>
+		<result property="viewAge" column="VIEW_AGE"/>
+		<result property="showStatus" column="SHOW_STATUS"/>
+		<collection property="hallList" resultMap="hallMap"></collection>
+	</resultMap>
+	
+	<resultMap type="com.op.booktique.vo.HallVO" id="hallMap">
+		<result property="hallSq" column="HALL_SQ"/>
+		<result property="hallName" column="HALL_NAME"/>
+		<result property="hallPost" column="HALL_POST"/>
+		<result property="hallAddr" column="HALL_ADDR"/>
+		<result property="hallDeAddr" column="HALL_DE_ADDR"/>
+		<result property="hallWidth" column="HALL_WIDTH"/>
+	</resultMap>
+	
+	
+	<select id="playRecList" parameterType="com.op.booktique.vo.show.ShowVo" resultMap="showMap">
+	 /** com.op.booktique.mapper.play.PlayMapper.playRec : 연극 전체 리스트 출력 */
+		SELECT
+		    a.show_sq,
+		    a.hall_sq,
+		    a.main_img,
+		    TO_CHAR(a.start_date, 'YYYY-MM-DD') AS start_date,
+		    TO_CHAR(a.end_date, 'YYYY-MM-DD') AS end_date,
+		    a.show_name,
+		    a.show_status,
+		    b.hall_sq,
+		    b.hall_name,
+		    substr(b.hall_addr,1,2) hall_addr
+		FROM
+		    show a JOIN hall b 
+		       ON a.hall_sq = b.hall_sq
+		WHERE
+		    a.show_sq LIKE 'P%'
+		and
+		    substr(b.hall_addr,1,2) like #{hallAddr}
+	</select>
 
 </mapper>

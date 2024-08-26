@@ -20,5 +20,10 @@ public class PlayServiceImpl implements PlayService {
 		return this.playMapper.playList();  
 	}
 
+	@Override
+	public List<ShowVo> playRec(ShowVo showVo) {
+		return this.playMapper.playRecList(showVo);
+	}
+
 	
 }

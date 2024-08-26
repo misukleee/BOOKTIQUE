@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.op.booktique.service.play.PlayService;
 import com.op.booktique.vo.show.ShowVo;
@@ -29,6 +32,18 @@ public class PlayController {
 		model.addAttribute("playList", playList);  
 		
 		return "play/playMain";
+	}
+	
+	
+	@PostMapping("/play/playRecList")
+	@ResponseBody
+	public List<ShowVo> areaRecList(@RequestBody ShowVo showVo) {
+		log.info("연극 메인 지도");
+		
+		List<ShowVo> playRecList = playService.playRec(showVo);
+		log.info("연극 메인 지도 -> playRecList : {}", playRecList);
+		
+		return playRecList;
 	}
 	
 

@@ -6,7 +6,9 @@ import com.op.booktique.vo.show.ShowVo;
 
 public interface PlayMapper {
 
-	public List<ShowVo> playList();  
+	public List<ShowVo> playList();
+
+	public List<ShowVo> playRecList(ShowVo showVo);  
 
 }
 

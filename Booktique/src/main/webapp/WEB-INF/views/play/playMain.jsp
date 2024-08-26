@@ -195,8 +195,7 @@
 							<ul class="TicketItem_contentsWrap__xCe3A">
 								<li class="TicketItem_goodsName__Ju76j">${playList.showName}</li>
 								<li class="TicketItem_placeName__ls_9C">${playList.detailImg}</li>
-								<li class="TicketItem_playDate__5ePr2">${playList.startDate}~
-									${playList.endDate}</li>
+								<li class="TicketItem_playDate__5ePr2">${playList.startDate}~${playList.endDate}</li>
 							</ul>
 						</a>
 					</c:forEach>
@@ -231,12 +230,10 @@ document.getElementById('listBtn').addEventListener('click', function() {
 		center : new kakao.maps.LatLng(35.83800509167648, 127.83665269918357), // 지도의 중심좌표
 		level : 13, // 지도의 확대 레벨
 		draggable : false, // 드래그 비활성화
-		zoomable : false
-	// 줌 비활성화
+		zoomable : false // 줌 비활성화
 	};
 
-	let map = new kakao.maps.Map(mapContainer, mapOption), customOverlay = new kakao.maps.CustomOverlay(
-			{});
+	let map = new kakao.maps.Map(mapContainer, mapOption), customOverlay = new kakao.maps.CustomOverlay({});
 
 	let polygons = [];
 	let areas = []; // 지역 정보를 저장할 배열 초기화
@@ -315,7 +312,25 @@ document.getElementById('listBtn').addEventListener('click', function() {
 		});
 
 		kakao.maps.event.addListener(polygon, 'click', function(mouseEvent) {
-			console.log(area.name, "이예용")
+			let areaName = area.name;
+			console.log(areaName," 입니다");
+			
+			let hallAddr = areaName;
+			
+			$.ajax({
+			    url: "/play/playRecList",
+			    contentType: "application/json;charset=utf-8",
+			    data: JSON.stringify({ hallAddr: hallAddr }),
+			    type: "post",
+			    dataType: "json",
+			    beforeSend: function(xhr) {
+			        xhr.setRequestHeader("${_csrf.headerName}", "${_csrf.token}");
+			    },
+			    success: function(result) {
+			        console.log("result >> ", result);
+			    }
+			});
+
 
 		});
 
