@@ -6,7 +6,7 @@ import com.op.booktique.vo.show.ShowVo;
 
 public interface PlayService {
 
-	public List<ShowVo> playList(); 
+	public List<ShowVo> playList();  
 
 	
 }

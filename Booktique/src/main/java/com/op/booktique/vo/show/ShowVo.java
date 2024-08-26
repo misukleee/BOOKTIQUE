@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 public class ShowVo {
-
+ 
 
 	private String showSq;           // 공연일련번호
 	private int hallSq;              // 공연장일련번호
