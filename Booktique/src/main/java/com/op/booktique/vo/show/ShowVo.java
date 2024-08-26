@@ -9,7 +9,7 @@ import lombok.Data;
 @Data
 public class ShowVo {
  
-
+ 
 	private String showSq;           // 공연일련번호
 	private String hallSq;           // 공연장일련번호
 	private String agencyNo;         // 기획사일련번호

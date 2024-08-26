@@ -24,6 +24,6 @@ public class PlayServiceImpl implements PlayService {
 	public List<ShowVo> playRec(ShowVo showVo) {
 		return this.playMapper.playRecList(showVo);
 	}
-
+ 
 	
 }

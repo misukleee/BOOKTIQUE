@@ -10,6 +10,6 @@ public interface PlayMapper {
 
 	public List<ShowVo> playRecList(ShowVo showVo);  
 
-}
+} 
 
 

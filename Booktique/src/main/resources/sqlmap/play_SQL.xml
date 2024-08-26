@@ -56,7 +56,7 @@
 		<result property="hallDeAddr" column="HALL_DE_ADDR"/>
 		<result property="hallWidth" column="HALL_WIDTH"/>
 	</resultMap>
-	
+	 
 	
 	<select id="playRecList" parameterType="com.op.booktique.vo.show.ShowVo" resultMap="showMap">
 	 /** com.op.booktique.mapper.play.PlayMapper.playRec : 연극 전체 리스트 출력 */

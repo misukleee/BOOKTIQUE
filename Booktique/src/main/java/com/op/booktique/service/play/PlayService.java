@@ -10,5 +10,5 @@ public interface PlayService {
 
 	public List<ShowVo> playRec(ShowVo showVo);  
 
-	
+	 
 }
