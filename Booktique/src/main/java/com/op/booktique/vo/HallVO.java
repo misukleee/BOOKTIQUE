@@ -11,4 +11,4 @@ public class HallVO {
 	private String hallDeAddr;
 	private int hallWidth;
 	//왜커밋이안될까
-}
+}                                                                           
