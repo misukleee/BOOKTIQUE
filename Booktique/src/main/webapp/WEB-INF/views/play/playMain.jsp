@@ -1,18 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="sec"
-	uri="http://www.springframework.org/security/tags"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 
 <!-- 슬라이드 -->
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
 
 
 <style>
+/*------------------------------------지도---------------------------------------*/
 .area {
 	position: absolute;
 	background: #fff;
@@ -23,16 +20,13 @@
 	left: 15px;
 	padding: 2px;
 }
-
 .info {
 	font-size: 12px;
 	padding: 5px;
 }
-
 .info .title {
 	font-weight: bold;
 }
-
 #mapDiv {
 	display: flex;
 	align-items: center;
@@ -43,42 +37,38 @@
 	width: 100%;
 	justify-content: center;
 }
-/* /* 전체 페이지를 중앙 정렬 */ */
-/* body { */
-/*   display: flex; */
-/*   align-items: center; */
-/*   justify-content: center; */
-/*   min-height: 100vh; */
-/*   margin: 0; */
-/* } */
- 
-.ProductList_contents__eUxgq {
-  margin-top: 20px;
-  display: grid;
-  grid-template-columns: repeat(5, 210px);
-  gap: 25px; /* 간격을 20px로 조정 */
-  justify-content: center;
-}
+/*------------------------------------지도---------------------------------------*/
 
+
+/*-----------------------------------전체보기--------------------------------------*/
+.ProductList_contents__eUxgq {
+	margin-top: 20px;
+	display: grid;
+	grid-template-columns: repeat(5, 210px);
+	gap: 25px; /* 간격을 20px로 조정 */
+	justify-content: center;
+}
 /* 각 상품 항목 스타일 */
 .TicketItem_ticketItem__ {
-  width: 210px; 
-  height: 410px; 
-  box-sizing: border-box;
-  overflow: hidden;
+	width: 210px;
+	height: 410px;
+	box-sizing: border-box;
+	overflow: hidden;
 }
-
 /* 이미지 스타일 */
 .TicketItem_imageWrap__iVEOw img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
-
 /* 내용물 스타일 */
 .TicketItem_contentsWrap__xCe3A {
-  padding: 5px; 
+	padding: 5px;
 }
+.Panel_subWrap__5147a {
+	min-height: 100vh;
+}
+/*-----------------------------------전체보기--------------------------------------*/
 </style>
 
 
@@ -87,19 +77,12 @@
 
 	<div id="_Ram_"
 		class="GBigBanner BigBanner_bigBannerWrap__ZIaFE HorizontalList_swiperWrap__4f4d9 HorizontalList_swiperButtonCenter__bd963">
-		<!-- 		<div style="display: flex; margin-right: 10px;"> -->
-		<!-- 	<div
-				style="border: 1px solid gray; border-radius: 25px; width: 195px; padding: 6px; display: flex; align-items: center;">
-				<img src="/resources/img/fire.png" width="50" height="50"
-					style="margin-right: 10px;"> <span
-					style="font-size: 24px; font-weight: bold;">요즘 HOT&nbsp; &gt;</span>
-			</div> -->
-		<div 
+
+		<div id="listBtn"
 			style="cursor: pointer; border: 1px solid gray; border-radius: 25px; width: 190px; padding: 6px; display: flex; align-items: center; padding: 14px;">
 			<span style="font-size: 24px; font-weight: bold;">연극 전체보기
 				&nbsp; &gt;</span>
 		</div>
-		<!-- 		</div> -->
 		<br>
 
 		<!-- 슬라이드  시작 -->
@@ -188,37 +171,55 @@
 
 	<!-- 지역별 추천끝 -->
 
-	<br /> <br />
-	
-	<article
-	class="ProductList_productListWrapper__frZE_ GProductList Panel_wrap__b444b">
-	<section class="Panel_subWrap__5147a">
-		<div class="Panel_title__4b2ff">
-			<h2>연극 둘러보기</h2>
-		</div>
-		
-		<div class="ProductList_contents__eUxgq" aria-label="상품 리스트">
 
-		  <c:forEach var="playList" items="${playList}" varStatus="stat">
-		    <a role="link" tabindex="0" class="TicketItem_ticketItem__" gtm-label="런투패밀리">
-		      <div class="TicketItem_imageWrap__iVEOw">
-		        <img src="${playList.mainImg}" data-nimg="fill" class="TicketItem_image__U6xq6" sizes="(max-width: 1023px) 104px, 25vw" 
-		        	 style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
-		      </div>
-		      <ul class="TicketItem_contentsWrap__xCe3A">
-		        <li class="TicketItem_goodsName__Ju76j">${playList.showName}</li>
-		        <li class="TicketItem_placeName__ls_9C">${playList.detailImg}</li>
-		        <li class="TicketItem_playDate__5ePr2">${playList.startDate}~ ${playList.endDate}</li>
-		      </ul>
-		    </a>
-		  </c:forEach>
-		
-		</div>
+	<!-- 전체 리스트  -->
+	<article id="playList" class="ProductList_productListWrapper__frZE_ GProductList Panel_wrap__b444b">
+		<section class="Panel_subWrap__5147a">
+			<div class="Panel_title__4b2ff">
+				<h2>연극 둘러보기</h2>
+			</div>
+			<hr style="border: 1px solid #e8e8e8; width: 80%;" >
+			<div class="Panel_contents__f7025 Panel_fill-scroll__8271f">
 
-	</section>
-</article>
+				<div class="ProductList_contents__eUxgq" aria-label="상품 리스트">
+
+					<c:forEach var="playList" items="${playList}" varStatus="stat">
+						<a role="link" tabindex="0" class="TicketItem_ticketItem__"
+							gtm-label="런투패밀리">
+							<div class="TicketItem_imageWrap__iVEOw">
+								<img src="${playList.mainImg}" data-nimg="fill"
+									class="TicketItem_image__U6xq6"
+									sizes="(max-width: 1023px) 104px, 25vw"
+									style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
+							</div>
+							<ul class="TicketItem_contentsWrap__xCe3A">
+								<li class="TicketItem_goodsName__Ju76j">${playList.showName}</li>
+								<li class="TicketItem_placeName__ls_9C">${playList.detailImg}</li>
+								<li class="TicketItem_playDate__5ePr2">${playList.startDate}~
+									${playList.endDate}</li>
+							</ul>
+						</a>
+					</c:forEach>
+
+				</div>
+			</div>
+
+		</section>
+	</article>
+	<!-- 전체 리스트  -->
+
 
 </main>
+
+<script>
+document.getElementById('listBtn').addEventListener('click', function() {
+    document.getElementById('playList').scrollIntoView({ 
+        behavior: 'smooth' 
+    });
+});
+</script>
+
+
 
 
 <!-- 지도  -->
@@ -319,7 +320,7 @@
 		});
 
 	}
-</script>
+</script> 
 
 
 <script>
