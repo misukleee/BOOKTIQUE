@@ -20,24 +20,18 @@ public class PlayController {
 	PlayService playService;
 	
 	@GetMapping("/play/main")
-	public String playMain() {
+	public String playMain(Model model) {
 		log.info("연극 메인");
-		return "play/playMain";
-	}
-	
-	@GetMapping("/play/list")
-	public List<ShowVo> playList(Model model) {
-		
-		log.info("연극 전체보기");
 		
 		List<ShowVo> playList = playService.playList();
-		log.info("연극 전체보기 -> playList : {}" ,playList);
+		log.info("연극 메인 -> playList : {}" ,playList);
 		
 		model.addAttribute("playList", playList);  
 		
-		return playList;
+		return "play/playMain";
 	}
 	
+
 	
 
 }

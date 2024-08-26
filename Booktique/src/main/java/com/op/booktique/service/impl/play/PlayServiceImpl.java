@@ -18,6 +18,7 @@ public class PlayServiceImpl implements PlayService {
 	@Override
 	public List<ShowVo> playList() {
 		return this.playMapper.playList();  
+	}
 
 	
 }
