@@ -9,7 +9,7 @@ public class ShowVo {
  
 
 	private String showSq;           // 공연일련번호
-	private int hallSq;              // 공연장일련번호
+	private String hallSq;              // 공연장일련번호
 	private String agencyNo;         // 기획사일련번호
 	private int discountNo;          // 할인번호
 	private String mainImg;          // 메인이미지

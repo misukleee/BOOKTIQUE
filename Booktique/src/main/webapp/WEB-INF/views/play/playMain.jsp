@@ -94,7 +94,7 @@
 					style="margin-right: 10px;"> <span
 					style="font-size: 24px; font-weight: bold;">요즘 HOT&nbsp; &gt;</span>
 			</div> -->
-		<div OnClick="location.href ='http://localhost:90/play/list'"
+		<div 
 			style="cursor: pointer; border: 1px solid gray; border-radius: 25px; width: 190px; padding: 6px; display: flex; align-items: center; padding: 14px;">
 			<span style="font-size: 24px; font-weight: bold;">연극 전체보기
 				&nbsp; &gt;</span>
@@ -165,58 +165,6 @@
 	</article>
 
 	<!-- 광고 배너 끝 -->
-
-	<!-- 오픈공지 슬라이드  시작 -->
-
-	<%-- 	<article class="GTicketOpen Panel_wrap__b444b">
-		<section class="Panel_subWrap__5147a Panel_btnText__7ccdc">
-			<div class="Panel_title__4b2ff">
-				<h2>티켓 오픈</h2>
-			</div>
-			<div class="Panel_contents__f7025 Panel_fill__79649">
-				<div id="_R4qm_"
-					class="HorizontalList_swiperWrap__4f4d9 HorizontalList_swiperButton150__c792d">
-					<div
-						class="HorizontalList_wrap__5c3c0 swiper-backface-hidden swiper-initialized swiper-horizontal swiper-pointer-events">
-						<div class="swiper-wrapper">
-
-							<c:forEach var="i" begin="1" end="10">
-								
-								<div
-									class="swiper-slide HorizontalList_swiperSlide__fce1f swiper-slide-active"
-									style="width: 240px; margin-right: 20px;">
-									<a role="link" tabindex="0"
-										class="TicketOpenItem_ticketOpenItem__CocKp"><div
-											class="TicketOpenItem_imageWrap__0L8do">
-											<img alt="하(夏)! 수상한 이야기 " crossorigin="anonymous"
-												loading="eager" decoding="async" data-nimg="fill" class=""
-												style="position: absolute; height: 100%; width: 100%; left: 0; top: 0; right: 0; bottom: 0; color: transparent"
-												sizes="(max-width: 760px) 25vw, (max-width: 1279px) 25vw, 20vw"
-												src="/resources/img/연극이미지1.jpg">
-										</div>
-										<ul class="TicketOpenItem_contents__Z90Pb">
-											<li class="TicketOpenItem_saleBadgeWrap__8U26r"></li>
-											<li class="TicketOpenItem_ticketOpenDate___mmvY">오늘
-												10:00</li>
-											<li class="TicketOpenItem_ticketOpenTitle__KIWtt">하(夏)!
-												수상한 이야기</li>
-											<li class="TicketOpenItem_openType__yEbfb">일반예매</li>
-										</ul></a>
-								</div>
-						
-							</c:forEach>
-
-						</div>
-					</div>
-
-				</div>
-			</div>
-
-
-		</section>
-	</article>
- --%>
-	<!-- 오픈공지 슬라이드  끝 -->
 
 
 	<!-- 지역별 추천 시작 -->
