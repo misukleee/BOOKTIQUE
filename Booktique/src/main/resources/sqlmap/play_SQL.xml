@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.op.booktique.mapper.play.PlayMapper">
+
+	<select id="playList" resultType="com.op.booktique.vo.show.ShowVo">
+	 /** com.op.booktique.mapper.play.PlayMapper.playList : 연극 전체 리스트 출력 */
+		SELECT
+		    show_sq
+		  , hall_sq
+		  , agency_no
+		  , discount_no
+		  , main_img
+		  , sub_img
+		  , detail_img
+		  , to_char(start_date , 'YYYY-MM-DD') start_date
+		  , to_char(end_date , 'YYYY-MM-DD') end_date
+		  , to_char(reserve_date , 'YYYY-MM-DD') reserve_date
+		  , show_cat
+		  , show_name
+		  , director
+		  , runningtime
+		  , view_age
+		  , show_status
+		FROM
+		    show
+		WHERE
+		    show_sq Like 'P%'  
+	</select>
+
+</mapper>
