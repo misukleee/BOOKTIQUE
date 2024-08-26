@@ -31,6 +31,7 @@ public class ConcertController {
 		model.addAttribute("allList",concertList);
 		
 		return "concert/main";
+//		return "concert/test";
 	}
 
 }

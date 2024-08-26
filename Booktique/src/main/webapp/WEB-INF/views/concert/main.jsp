@@ -882,6 +882,13 @@
 				</section>
 			</article>
 <script>
+	let catBtns = document.querySelectorAll(".SubCategory_btnCategory__i_55b");
+	console.log("catBtns : ",catBtns);
+	
+// 	catBtns.addEventListener("click", function(){
+// 		alert("악");
+// 	});
+
 	var swiper = new Swiper(".mySwiper", {
 		loop : true,
 		autoplay : {
@@ -896,5 +903,5 @@
 			nextEl : ".HorizontalList_swiperNext__1f674",
 			prevEl : ".HorizontalList_swiperPrev__b45cd",
 		},
-	});
+	});	
 </script>
