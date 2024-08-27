@@ -39,6 +39,7 @@ img.Image_noImg__96f70 {
     width: 36px;
     position: relative;
     top: 6px;
+    vertical-align: inherit;
 }
 .Button_btn__78ad7.Button_viewStats__76b0a img {
 	position: relative;

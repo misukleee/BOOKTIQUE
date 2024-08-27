@@ -8,7 +8,9 @@
 	</settings>
 
 	<typeAliases>
-		<typeAlias type="com.op.booktique.vo.MemberVO" alias="MemberVO" />
+		<typeAlias type="com.op.booktique.vo.member.MemberVO" alias="MemberVO" />
+		<typeAlias type="com.op.booktique.vo.book.BookVO" alias="BookVO" />
+		<typeAlias type="com.op.booktique.vo.book.CategoryVO" alias="CategoryVO" />
 	</typeAliases>
 
 </configuration>
