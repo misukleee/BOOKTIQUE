@@ -1,6 +1,6 @@
 package com.op.booktique.service.member;
 
-import com.op.booktique.vo.MemberVO;
+import com.op.booktique.vo.member.MemberVO;
 
 public interface SignUpService {
 

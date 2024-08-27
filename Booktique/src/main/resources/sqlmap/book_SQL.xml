@@ -24,57 +24,6 @@
 		<result property="categoryName" column="CATEGORY_NAME"/>
 		<result property="parentId" column="PARENT_ID"/>
     </resultMap>
-    
-    <!-- 책 데이터를 삽입하는 쿼리 -->
-    <insert id="insertBook" parameterType="bookVO">
-        INSERT INTO BOOK (
-            BOOK_ID,
-            CATEGORY_ID,
-            BOOK_TITLE,
-            ISBN,
-            BOOK_PRICE,
-            DISCOUNT_RATE,
-            AUTHOR,
-            PUBLISHER,
-            BOOK_SIZE,
-            BOOK_PAGE,
-            BOOK_DATE,
-            BOOK_EXPLAN,
-            BOOK_IMG,
-            BOOK_SUB
-        )
-        VALUES (
-            #{bookId},
-            #{categoryId},
-            #{bookTitle},
-            #{isbn},
-            #{bookPrice},
-            #{discountRate},
-            #{author},
-            #{publisher},
-            #{bookSize},
-            #{bookPage},
-            #{bookDate},
-            #{bookExplan},
-            #{bookImg},
-            #{bookSub}
-        )
-    </insert>
-    
-    <!-- 모든 책 데이터를 삭제하는 쿼리 -->
-    <delete id="deleteAllBooks">
-        DELETE FROM BOOK
-    </delete>
-
-    <!-- 모든 카테고리 데이터를 삭제하는 쿼리 -->
-    <delete id="deleteAllCategories">
-        DELETE FROM CATEGORY
-    </delete>
-    
-    <!-- 카테고리 코드를 가져오는 쿼리 -->
-    <select id="getCategoryCodes" resultType="string">
-        SELECT category_id FROM CATEGORY
-    </select>
 
     <!-- 전체 책 수를 가져오는 쿼리 (페이징 처리를 위한 총 아이템 수 계산) -->
     <select id="countBooks" resultType="int">
@@ -82,9 +31,19 @@
     </select>
 
     <!-- 페이징을 위해 책 리스트를 가져오는 쿼리 -->
-	<select id="getBooks" resultType="com.op.booktique.vo.book.BookVO">
-	    SELECT * FROM BOOK
-	    ORDER BY #{bookId}
+	<select id="getBooks" parameterType="map" resultType="bookVO">
+	    SELECT *
+	    FROM (
+	        SELECT 
+	            ROWNUM AS RNUM,
+	            B.*
+	        FROM (
+	            SELECT * FROM BOOK ORDER BY TO_NUMBER(BOOK_ID) DESC
+	        ) B
+	        WHERE ROWNUM &lt;= #{currentPage} * #{pageSize}
+	    )
+	    WHERE RNUM &gt;= ((#{currentPage} - 1) * #{pageSize}) + 1
 	</select>
+
 
 </mapper>

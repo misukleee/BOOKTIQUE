@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.op.booktique.mapper.member.SignUpMapper;
 import com.op.booktique.service.member.SignUpService;
-import com.op.booktique.vo.MemberVO;
+import com.op.booktique.vo.member.MemberVO;
 
 @Service
 public class SignUpServiceImpl implements SignUpService {

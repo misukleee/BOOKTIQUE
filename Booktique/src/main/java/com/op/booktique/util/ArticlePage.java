@@ -2,85 +2,96 @@ package com.op.booktique.util;
 
 import java.util.List;
 
+/**
+ * 페이징 처리를 위한 클래스
+ * 특정 페이지에 대한 콘텐츠와 페이징 정보
+ *
+ * @param <T> 페이지에 표시될 콘텐츠의 타입
+ */
 public class ArticlePage<T> {
-    private int total;			// 전체글 수
-    private int currentPage;	// 현재 페이지 번호
-    private int totalPages;		// 전체 페이지수
-    private int startPage;		// 블록의 시작 페이지 번호
-    private int endPage;		// 블록의 종료 페이지 번호
-    private String keyword = "";	// 검색어
-    private String url = "";		// 요청URL
-    private List<T> content;		// select 결과 데이터
-    private String pagingArea = "";	//페이징 처리
+    private int total;           // 전체 글 수
+    private int currentPage;      // 현재 페이지 번호
+    private int totalPages;       // 전체 페이지 수
+    private int startPage;        // 페이지 블록의 시작 페이지 번호
+    private int endPage;          // 페이지 블록의 종료 페이지 번호
+    private String keyword = "";  // 검색어
+    private String url = "";      // 요청 URL
+    private List<T> content;      // 선택된 페이지의 콘텐츠 목록
+    private String pagingArea = "";// 페이징 UI HTML
 
-    public ArticlePage(int total, int currentPage, int size, List<T> content) {
-    	// size : 한 화면에 보여질 목록의 행 수
+    
+    /**
+     * ArticlePage 생성자
+     * 
+     * @param total 전체 글 수
+     * @param currentPage 현재 페이지 번호
+     * @param size 페이지 당 콘텐츠 수
+     * @param content 선택된 페이지의 콘텐츠 목록
+     * @param url 요청 URL
+     */
+    public ArticlePage(int total, int currentPage, int size, List<T> content, String url) {
         this.total = total;
-        this.currentPage = currentPage;
+        this.currentPage = Math.max(1, currentPage);  // currentPage가 1보다 작으면 1로 설정
         this.content = content;
-        
-        // 전체글 수가 0이면?
+        this.url = url;
+
+        // 페이지 수 및 블록 계산
         if (total == 0) {
-        	totalPages = 0; // 전체 페이지 수
-			startPage = 0; // 블록 시작번호
-			endPage = 0; // 블록 종료번호
-        } else {	// 글이 있다면
-        	// 전체글 수 / 한 화면에 보여질 목록의 행 수 => 전체 페이지 수
+            totalPages = 0;
+            startPage = 0;
+            endPage = 0;
+        } else {
             totalPages = total / size;
-            
-            // 전체글 수 % 한 화면에 보여질 목록의 행 수
-			// => 0이아니면. 나머지가 있다면, 페이지 1증가
             if (total % size > 0) {
                 totalPages++;
             }
-            
-            // 페이지 블록  시작페이지를 구하는 공식!
-			// 시작페이지 = 현재페이지 / 페이지크기 * 페이지크기 + 1
-            startPage = currentPage / 5 * 5 + 1;
-            if (currentPage % 5 == 0) {
-            	// 페이지크기를 빼줌
-                startPage -= 5;
-            }
-
-            // 종료페이지번호 = 시작페이지번호 + (페이지크기-1)
+            startPage = (this.currentPage - 1) / 5 * 5 + 1;
             endPage = startPage + 4;
-            
-            // 종료페이지번호 > 전체페이지수보다 클 때
             if (endPage > totalPages) {
                 endPage = totalPages;
             }
         }
 
+        // 페이징 UI 생성
+        
         // 이전 버튼
         pagingArea += "<button class='btn_page prev'";
         if (this.currentPage == 1) {
             pagingArea += " disabled='disabled'";
+        } else {
+        	pagingArea += " onclick='loadBookList(" + (this.currentPage - 1) + ")'";
         }
         pagingArea += "><span class='hidden'>이전</span></button>";
-
-        // 페이지 번호
+        
+        
+        // 페이지 번호들
         pagingArea += "<div class='page_num'>";
         for (int pNo = this.startPage; pNo <= this.endPage; pNo++) {
-            pagingArea += "<a href='?page=" + pNo + "&pageSize=" + size + "&sortType=" + this.keyword + "' class='btn_page_num";
+            pagingArea += "<a href='" + this.url + "?currentPage=" + pNo + "&pageSize=" + size + "' class='btn_page_num";
             if (this.currentPage == pNo) {
                 pagingArea += " active";
             }
             pagingArea += "'>" + pNo + "</a>";
         }
         pagingArea += "</div>";
-
-        // 다음 버튼
+        
+        // 페이지 번호들
         pagingArea += "<button class='btn_page next'";
         if (this.currentPage == this.totalPages) {
             pagingArea += " disabled='disabled'";
+        } else {
+            pagingArea += " onclick='loadBookList(" + (this.currentPage + 1) + ")'";
         }
         pagingArea += "><span class='hidden'>다음</span></button>";
-
-
     }
 
     // getter and setter methods
 
+    /**
+     * 페이징 UI HTML을 반환
+     * 
+     * @return String 페이징 UI HTML
+     */
     public String getPagingArea() {
         return this.pagingArea;
     }
@@ -98,7 +109,7 @@ public class ArticlePage<T> {
     }
 
     public void setCurrentPage(int currentPage) {
-        this.currentPage = currentPage;
+        this.currentPage = Math.max(1, currentPage);
     }
 
     public int getTotalPages() {

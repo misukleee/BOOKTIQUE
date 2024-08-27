@@ -1,15 +1,13 @@
 package com.op.booktique.service.impl.book;
 
-import java.util.HashMap;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import com.op.booktique.mapper.book.BookMapper;
 import com.op.booktique.service.book.BookService;
 import com.op.booktique.vo.book.BookVO;
@@ -19,70 +17,53 @@ public class BookServiceImpl implements BookService {
 
     @Autowired
     private BookMapper bookMapper;
-
-    @Override
-    public void clearData() {
-        bookMapper.deleteAllBooks();
-        bookMapper.deleteAllCategories();
-    }
-
-    @Override
-    public void crawlingData(int startPage, int endPage, String sortType, String searchType) {
-        try {
-            // DB에서 카테고리 코드를 가져옴
-            List<String> categoryCodes = bookMapper.getCategoryCodes();
-
-            for (String categoryCode : categoryCodes) {
-                // 카테고리 코드 변환 (예: KOR0101 -> /KOR/0101)
-                String formattedCategoryCode = formatCategoryCode(categoryCode);
-                String baseUrl = "https://product.kyobobook.co.kr/category/" + formattedCategoryCode;
-
-                for (int pageIndex = startPage; pageIndex <= endPage; pageIndex++) {
-                    String url = String.format("%s#?page=%d&type=%s&sort=%s", baseUrl, pageIndex, searchType, sortType);
-                    Document doc = Jsoup.connect(url).get();
-
-                    // 도서 및 카테고리 데이터 크롤링
-                    Elements bookElements = doc.select("li.prod_item");
-
-                    for (Element element : bookElements) {
-                        BookVO bookVO = new BookVO();
-
-                        // 도서 정보 설정
-                        bookVO.setBookTitle(element.select("div.title > a").text());
-                        bookVO.setAuthor(element.select("div.author > a").text());
-                        bookVO.setPublisher(element.select("div.pub_info > a").text());
-                        bookVO.setBookPrice(Integer.parseInt(element.select("div.price > span.sell_price").text().replaceAll("[^0-9]", "")));
-                        bookVO.setIsbn(element.select("meta[itemprop=isbn]").attr("content"));
-                        bookVO.setBookImg(element.select("div.prod_thumb > a > img").attr("src"));
-                        bookVO.setDiscountRate(10); // 기본 할인율
-
-                        // 카테고리 코드 설정
-                        bookVO.setCategoryId(Integer.parseInt(categoryCode));
-
-                        // 데이터베이스에 삽입
-                        bookMapper.insertBook(bookVO);
-                    }
-                }
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    // 카테고리 코드를 URL 형식에 맞게 변환
-    private String formatCategoryCode(String categoryCode) {
-        return categoryCode.substring(0, 3) + "/" + categoryCode.substring(3);
-    }
     
+    /**
+     * 전체 도서 수를 반환
+     *
+     * @return int 전체 도서 수
+     */
     @Override
     public int countBooks() {
         return bookMapper.countBooks();
     }
 
+    /**
+     * 도서 목록을 페이징하여 반환
+     * 
+     * @param map 페이징 정보 및 기타 조건을 포함하는 맵
+     * @return List<BookVO> 페이징 처리된 도서 목록
+     */
     @Override
-    public List<BookVO> getBooks(String sortType, int currentPage, int pageSize) {
-        // 페이징 처리 없이 모든 책 정보를 가져옵니다.
-        return bookMapper.getBooks(); // 파라미터 없이 호출
-    }
+    public List<BookVO> getBooks(Map<String, Object> map) {
+        List<BookVO> books = bookMapper.getBooks(map);
 
+        // 날짜 형식을 지정
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        
+        for (BookVO book : books) {
+            // 할인 가격 계산
+            int discountPrice = book.getBookPrice() * (100 - book.getDiscountRate()) / 100;
+            book.setDiscountPrice(discountPrice);
+
+            // 도서 출판일을 포맷팅
+            if (book.getBookDate() != null) {
+                String formattedDate = dateFormat.format(book.getBookDate());
+                book.setBookDateFormatted(formattedDate);
+            }
+
+            // 예상 배송 날짜 설정
+            Calendar cal = Calendar.getInstance();
+            cal.add(Calendar.DATE, 1);
+            int month = cal.get(Calendar.MONTH) + 1;
+            int day = cal.get(Calendar.DAY_OF_MONTH);
+            String[] weekDays = {"일", "월", "화", "수", "목", "금", "토"};
+            String dayOfWeek = weekDays[cal.get(Calendar.DAY_OF_WEEK) - 1];
+
+            String deliveryDate = String.format("%02d/%02d(%s)", month, day, dayOfWeek);
+            book.setDeliveryDate(deliveryDate);
+        }
+
+        return books;
+    }
 }

@@ -1,4 +1,4 @@
-package com.op.booktique.vo;
+package com.op.booktique.vo.member;
 
 import java.util.Date;
 

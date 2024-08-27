@@ -4,7 +4,7 @@ import java.util.Collections;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 
-import com.op.booktique.vo.MemberVO;
+import com.op.booktique.vo.member.MemberVO;
 
 /**
  * 사용자 세부 정보를 포함하는 사용자 Principal 클래스.

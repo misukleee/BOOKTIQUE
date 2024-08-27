@@ -9,6 +9,7 @@
 <link href="/resources/css/mf.min.css" rel="stylesheet" type="text/css">
 <link href="/resources/css/7b65a34d28470be3.css" rel="stylesheet" type="text/css">
 <link href="/resources/css/0c7ff060f4519b3e.css" rel="stylesheet" type="text/css">
+<link href="/resources/css/booktique.css" rel="stylesheet" type="text/css">
 <!--jQuery -->    
 <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
 <meta charset="UTF-8">

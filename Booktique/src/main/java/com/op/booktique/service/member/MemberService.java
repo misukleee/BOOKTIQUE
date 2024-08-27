@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.op.booktique.mapper.member.MemberMapper;
-import com.op.booktique.vo.MemberVO;
+import com.op.booktique.vo.member.MemberVO;
 
 @Service
 public class MemberService {

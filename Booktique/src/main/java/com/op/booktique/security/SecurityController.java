@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.op.booktique.service.member.EmailService;
 import com.op.booktique.service.member.MailServiceInter;
 import com.op.booktique.service.member.MemberService;
-import com.op.booktique.vo.MemberVO;
+import com.op.booktique.vo.member.MemberVO;
 
 import javax.servlet.http.HttpSession;
 

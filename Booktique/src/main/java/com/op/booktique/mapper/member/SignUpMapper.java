@@ -1,6 +1,6 @@
 package com.op.booktique.mapper.member;
 
-import com.op.booktique.vo.MemberVO;
+import com.op.booktique.vo.member.MemberVO;
 
 public interface SignUpMapper {
 
