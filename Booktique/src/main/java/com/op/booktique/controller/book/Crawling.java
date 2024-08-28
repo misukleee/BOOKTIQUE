@@ -172,7 +172,7 @@ public class Crawling {
             log.info("파일 저장 디렉토리: " + currentDir);
             log.info("파일에 데이터를 성공적으로 저장했습니다.");
         } catch (IOException e) {
-            e.printStackTrace();
+            e.printStackTrace(); 
         }
     }
 
