@@ -118,8 +118,10 @@ KyoboBookPub.ink = (function () {
 		var headerFixedOffset = 0;
 
 		// header sps set
-		if(_headerWrapper.hasClass('sps')){
-			_headerWrapper.attr('data-sps-offset', Math.round($('.gnb_wrap').offset()?.top || 0));
+		if (_headerWrapper.hasClass('sps')) {
+			var gnbWrapOffset = $('.gnb_wrap').offset();
+			var topOffset = (gnbWrapOffset && gnbWrapOffset.top) ? Math.round(gnbWrapOffset.top) : 0;
+			_headerWrapper.attr('data-sps-offset', topOffset);
 			headerFixedOffset = parseInt(_headerWrapper.attr('data-sps-offset'));
 
 			$(window).off('scroll.uiGnb resize.uiGnb', headerScrollPosX).on('scroll.uiGnb resize.uiGnb', headerScrollPosX);
