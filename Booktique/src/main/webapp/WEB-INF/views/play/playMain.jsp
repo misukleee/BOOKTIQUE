@@ -1,9 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="sec"
-	uri="http://www.springframework.org/security/tags"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 
 <!-- 슬라이드 -->
 <link rel="stylesheet"
@@ -23,8 +21,6 @@
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 35%, rgba(255, 255, 255, 0.8) 90%); /* 위쪽은 투명, 아래쪽은 흰색 그라데이션 */
     pointer-events: none; /* 오버레이가 클릭 이벤트를 방해하지 않도록 설정 */
 }
-
-
 /*------------------------------------인기슬라이드---------------------------------------*/
 /*------------------------------------지도---------------------------------------*/
 .area {
@@ -110,31 +106,26 @@
 
 <main id="contents">
 
-	<div id="_Ram_"
-		class="GBigBanner BigBanner_bigBannerWrap__ZIaFE HorizontalList_swiperWrap__4f4d9 HorizontalList_swiperButtonCenter__bd963">
+	<div id="_Ram_" class="GBigBanner BigBanner_bigBannerWrap__ZIaFE HorizontalList_swiperWrap__4f4d9 HorizontalList_swiperButtonCenter__bd963">
 
 		<div id="listBtn"
 			style="cursor: pointer; border: 1px solid gray; border-radius: 25px; width: 190px; padding: 6px; display: flex; align-items: center; padding: 14px;">
-			<span style="font-size: 24px; font-weight: bold;">연극 전체보기
-				&nbsp; &gt;</span>
+			<span style="font-size: 24px; font-weight: bold;">연극 전체보기 &nbsp; &gt;</span>
 		</div>
 		<br>
 
 		<!-- 슬라이드  시작 -->
-		<div
-			class="HorizontalList_wrap__5c3c0 swiper-initialized swiper-horizontal swiper-pointer-events">
-			<div class="swiper-wrapper"
-				style="transition-duration: 0ms; transform: translate3d(-1615px, 0px, 0px); padding-left: 21px;">
+		<div class="HorizontalList_wrap__5c3c0 swiper-initialized swiper-horizontal swiper-pointer-events">
+			<div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-1615px, 0px, 0px); padding-left: 21px;">
+				
 				<c:forEach var="playHotList" items="${playHotList}" varStatus="stat">
 					<div style="width: 290px; margin-right: 20px;"
 						class="swiper-slide HorizontalList_swiperSlide__fce1f BigBanner_bannerSlide__WNhKi not-intersecting">
 
-						<a href="https://tickets.interpark.com/contents/bridge/24005706"
-							class="BigBanner_link__GCNo8"> 
-							<img 
+						<a href="https://tickets.interpark.com/contents/bridge/24005706" class="BigBanner_link__GCNo8"> 
+							<img src="${playHotList.mainImg}"
 								sizes="(max-width: 1023px) 33vw, 25vw"
-								style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;"
-								src="${playHotList.mainImg}">
+								style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;" >
 								 <div class="gradient-overlay"></div>
 
 							<ul class="BigBanner_contents__R9Ifu" style="color: rgb(0, 0, 0);">
@@ -143,11 +134,11 @@
 								<li class="BigBanner_placeName__tk6Gd">${playHotList.detailImg}</li>
 								<li class="BigBanner_playDate__48Hsf">${playHotList.startDate}~${playHotList.endDate}</li>
 							</ul>
-
 						</a>
 
 					</div>
 				</c:forEach>
+			
 			</div>
 		</div>
 
@@ -159,8 +150,7 @@
 
 	<!-- 광고 배너 시작 -->
 
-	<div class="Panel_contents__f7025 Panel_pd-l__27d91"
-		style="margin-left: 313px;">
+	<div class="Panel_contents__f7025 Panel_pd-l__27d91" style="margin-left: 313px;">
 		<div class="MiniBanner_miniBanner__2ec1f GMiniBanner">
 			<ul class="MiniBanner_miniBannerInner__58520">
 				<li class=""><a class="Ticket_Minibanner_PC"
@@ -195,10 +185,8 @@
 			</div>
 
 			<div id="mapDiv">
-
 				<div id="map" style="width: 17%; height: 610px;"></div>
 				<div id="playRec"></div>
-
 			</div>
 
 		</section>
@@ -208,8 +196,7 @@
 
 
 	<!-- 전체 리스트  -->
-	<article id="playList"
-		class="ProductList_productListWrapper__frZE_ GProductList Panel_wrap__b444b">
+	<article id="playList" class="ProductList_productListWrapper__frZE_ GProductList Panel_wrap__b444b">
 		<section class="Panel_subWrap__5147a">
 			<div class="Panel_title__4b2ff">
 				<h2>연극 둘러보기</h2>
