@@ -58,13 +58,13 @@
 	</insert>
 	
 	<select id="campList" resultType="com.op.booktique.vo.camp.CampVO">
-		SELECT CAMP_NO, CAMP_NAME, CAMP_ADDR, COALESCE(CAMP_ETC, '') AS CAMP_ETC, CAMP_MAIN_IMG
+		SELECT CAMP_NO, CAMP_NAME, CAMP_ADDR, CAMP_ETC, CAMP_MAIN_IMG
 		FROM CAMP
 		ORDER BY CAMP_NO ASC
 	</select>
 
 	<select id="getCampByAreaCode" resultType="com.op.booktique.vo.camp.CampVO">
-		SELECT CAMP_NO, CAMP_NAME, CAMP_ADDR, CAMP_MAIN_IMG
+		SELECT CAMP_NO, CAMP_NAME, CAMP_ADDR, CAMP_MAIN_IMG, CAMP_ETC
 		FROM CAMP
 		WHERE AREA_CODE = #{areaCode}
 		ORDER BY CAMP_NO ASC

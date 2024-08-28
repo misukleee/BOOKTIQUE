@@ -119,7 +119,26 @@ i.ico_ico_sports {
     background: url(https://www.gocamping.or.kr/img/2018/sub/ico_sports.png) no-repeat center 5px;
     width: 100%;
 }
-
+i.ico_walk {
+    background: url(https://www.gocamping.or.kr/img/2018/sub/ico_walk.png) no-repeat center 5px;
+    width: 100%;
+}
+i.ico_ground {
+    background: url(https://www.gocamping.or.kr/img/2018/sub/ico_ground.png) no-repeat center 5px;
+    width: 100%;
+}
+i.ico_sports {
+    background: url(https://www.gocamping.or.kr/img/2018/sub/ico_sports.png) no-repeat center 5px;
+    width: 100%;
+}
+i.ico_tramp {
+    background: url(https://www.gocamping.or.kr/img/2018/sub/ico_tramp.png) no-repeat center 5px;
+    width: 100%;
+}
+i.ico_mart {
+    background: url(https://www.gocamping.or.kr/img/2018/sub/ico_mart.png) no-repeat center 5px;
+    width: 100%;
+}
 </style>
 
 <div id="container">
@@ -331,7 +350,7 @@ i.ico_ico_sports {
 					<div>
 						<div class="prdContents detail">
 							<div class="content">
-								<h3 class="contentTitle">캠핑장 소개</h3>
+								<h3 class="contentTitle"><img alt="캠핑장이미지" src="/resources/img/camp.png" style="width:30px; margin-right:10px;">캠핑장 소개</h3>
 								<div class="contentDetail">
 									<c:forEach var="image" items="${fn:split(campVO.campDetailImg, ',')}">
 										<li class="imgItem"><img src="${image}" alt="캠핑장 이미지" ></li>
@@ -343,71 +362,87 @@ i.ico_ico_sports {
 								</div>
 								<div class="camp_item_g">
 									<ul>
-										<c:forEach var="facility" items="${campVO.facilitiesInfo}">
-										<li>
-											<c:choose>
-												<c:when test="${facility == '전기'}">
-													<i class="ico_volt"><span>${facility}</span></i>
-												</c:when>
-												<c:when test="${facility == '와이파이'}">
-													<i class="ico_wifi"><span>${facility}</span></i>
-												</c:when>
-												<c:when test="${facility == '장작판매'}">
-													<i class="ico_wood"><span>${facility}</span></i>
-												</c:when>
-												<c:when test="${facility == '온수'}">
-													<i class="ico_hotwater"><span>${facility}</span></i>
-												</c:when>
-												<c:when test="${facility == '물놀이장'}">
-													<i class="ico_pool"><span>${facility}</span></i>
-												</c:when>
-												<c:when test="${facility == '놀이터'}">
-													<i class="ico_playzone"><span>${facility}</span></i>
-												</c:when>
-												<c:when test="${facility == '운동시설'}">
-													<i class="ico_sports"><span>${facility}</span></i>
-												</c:when>
-												<c:otherwise>
-													<i class="ico_default"><span>${facility}</span></i>
-												</c:otherwise>
-											</c:choose>
-										</li>
+										<c:forEach var="facility" items="${fn:split(campVO.facilitiesInfo, ',')}">
+											<li>
+												<c:choose>
+													<c:when test="${facility.trim() == '전기'}">
+														<i class="ico_volt"><span>${facility}</span></i>
+													</c:when>
+													<c:when test="${facility.trim() == '와이파이'}">
+														<i class="ico_wifi"><span>${facility}</span></i>
+													</c:when>
+													<c:when test="${facility.trim() == '장작판매'}">
+														<i class="ico_wood"><span>${facility}</span></i>
+													</c:when>
+													<c:when test="${facility.trim() == '온수'}">
+														<i class="ico_hotwater"><span>${facility}</span></i>
+													</c:when>
+													<c:when test="${facility.trim() == '물놀이장'}">
+														<i class="ico_pool"><span>${facility}</span></i>
+													</c:when>
+													<c:when test="${facility.trim() == '놀이터'}">
+														<i class="ico_playzone"><span>${facility}</span></i>
+													</c:when>
+													<c:when test="${facility.trim() == '운동시설'}">
+														<i class="ico_sports"><span>${facility}</span></i>
+													</c:when>
+													<c:when test="${facility.trim() == '산책로'}">
+														<i class="ico_walk"><span>${facility}</span></i>
+													</c:when>
+													<c:when test="${facility.trim() == '운동장'}">
+														<i class="ico_ground"><span>${facility}</span></i>
+													</c:when>
+													<c:when test="${facility.trim() == '운동시설'}">
+														<i class="ico_sports"><span>${facility}</span></i>
+													</c:when>
+													<c:when test="${facility.trim() == '트렘폴린'}">
+														<i class="ico_tramp"><span>${facility}</span></i>
+													</c:when>
+													<c:when test="${facility.trim() == '마트.편의점'}">
+														<i class="ico_mart"><span>${facility}</span></i>
+													</c:when>
+													<c:otherwise>
+														<i class="ico_default"><span>${facility}</span></i>
+													</c:otherwise>
+												</c:choose>
+											</li>
 										</c:forEach>
+
 									</ul>
 								</div>
 							</div>
-							<div class="content">
-								<h3 class="contentTitle">공지사항</h3>
-								<div class="contentDetail">
-									<strong><span style="font-family: 돋움"><span
-											style="font-size: larger">○ 현장 근무자도 누군가의 소중한 가족입니다.
-												존중과 배려 부탁드립니다.<br>
-											<br>○ 캠핑장 이용인원은 성인 4명(영유아포함 6명)이므로 예약시 참고 <br>
-											<br>○ 예약은 최대 2박3일까지 가능하며 1인당 최대 1개면만 예약 가능<br>
-											<br>○ 캠핑장 입장시 예약자 본인 체크인시 이용가능 <br>
-										</span></span></strong><span style="font-family: 돋움"><span
-										style="font-size: larger">(예약자 본인 확인을 위해 신분증 등을 지참)<br>
-										<strong><br>○ 텐트 등 물품대여를 하지 않으므로 본인 텐트 준비</strong><br>(캠핑장
-											사이트(면) 6×8m을 감안하여 텐트 설치)<br>
-										<strong><br>○ 시설 및 이용안내 문의처 및 이용시간</strong><br>
-										<img
-											src="//ticketimage.interpark.com/220026522024/04/30/5c9728c7.jpg"
-											style="width: 100%;" alt=""><br>
-										<br>
-										<strong>○ 캠핑장 이용시 주요사항 <br></strong>- 캠핑장 이용시간은 당일
-											14:00~다음날 12:00이며 입장은 당일 22:00까지입니다(점심시간 12:00~13:00).<br>-
-											캠핑장 사이트 양도 매매시 불익이 있으니 유의하시기 바랍니다(적발시 경범죄 처벌법 제3조에 의거 처벌).<br>-
-											2박 이상 예매하신 고객분들 중 부분 취소를 희망하시는 고객께서는 고객센터(☏1544-1555)로 문의하여
-											주시기 바랍니다. <br>- 노을공원내 차량 출입이 불가(공원내 차량출입 전면금지)하므로
-											노을공원주차장에 주차 후, 맹꽁이 전기차량(유료)을 이용하시거나 도보로 캠핑장까지 이용하셔야 합니다(도보
-											1,400m) <br>- 노을공원주차장은 협소하여 주말, 휴일 등 성수기 12:00~17:00 주차장
-											진입이 어려우니 일찍 오셔서(11시 이전) 공원산책 또는 캠핑장 입장시간(14시)에 맞추어 입장을
-											부탁드립니다. <br>(인근 평화의공원 또는 난지천공원 주차장은 17시 이후 이용 안내)<br>※노을캠핑장
-											주차는 1대/면까지만 1일 할인주차권 허용&nbsp;<br>
-										<br></span></span><span style="font-family: 돋움; font-size: 14.4px;">-
-										단체 이용은 02-300-5576 으로 문의주시기 바랍니다.</span>
-								</div>
-							</div>
+<!-- 							<div class="content"> -->
+<!-- 								<h3 class="contentTitle">공지사항</h3> -->
+<!-- 								<div class="contentDetail"> -->
+<!-- 									<strong><span style="font-family: 돋움"><span -->
+<!-- 											style="font-size: larger">○ 현장 근무자도 누군가의 소중한 가족입니다. -->
+<!-- 												존중과 배려 부탁드립니다.<br> -->
+<!-- 											<br>○ 캠핑장 이용인원은 성인 4명(영유아포함 6명)이므로 예약시 참고 <br> -->
+<!-- 											<br>○ 예약은 최대 2박3일까지 가능하며 1인당 최대 1개면만 예약 가능<br> -->
+<!-- 											<br>○ 캠핑장 입장시 예약자 본인 체크인시 이용가능 <br> -->
+<!-- 										</span></span></strong><span style="font-family: 돋움"><span -->
+<!-- 										style="font-size: larger">(예약자 본인 확인을 위해 신분증 등을 지참)<br> -->
+<!-- 										<strong><br>○ 텐트 등 물품대여를 하지 않으므로 본인 텐트 준비</strong><br>(캠핑장 -->
+<!-- 											사이트(면) 6×8m을 감안하여 텐트 설치)<br> -->
+<!-- 										<strong><br>○ 시설 및 이용안내 문의처 및 이용시간</strong><br> -->
+<!-- 										<img -->
+<!-- 											src="//ticketimage.interpark.com/220026522024/04/30/5c9728c7.jpg" -->
+<!-- 											style="width: 100%;" alt=""><br> -->
+<!-- 										<br> -->
+<!-- 										<strong>○ 캠핑장 이용시 주요사항 <br></strong>- 캠핑장 이용시간은 당일 -->
+<!-- 											14:00~다음날 12:00이며 입장은 당일 22:00까지입니다(점심시간 12:00~13:00).<br>- -->
+<!-- 											캠핑장 사이트 양도 매매시 불익이 있으니 유의하시기 바랍니다(적발시 경범죄 처벌법 제3조에 의거 처벌).<br>- -->
+<!-- 											2박 이상 예매하신 고객분들 중 부분 취소를 희망하시는 고객께서는 고객센터(☏1544-1555)로 문의하여 -->
+<!-- 											주시기 바랍니다. <br>- 노을공원내 차량 출입이 불가(공원내 차량출입 전면금지)하므로 -->
+<!-- 											노을공원주차장에 주차 후, 맹꽁이 전기차량(유료)을 이용하시거나 도보로 캠핑장까지 이용하셔야 합니다(도보 -->
+<!-- 											1,400m) <br>- 노을공원주차장은 협소하여 주말, 휴일 등 성수기 12:00~17:00 주차장 -->
+<!-- 											진입이 어려우니 일찍 오셔서(11시 이전) 공원산책 또는 캠핑장 입장시간(14시)에 맞추어 입장을 -->
+<!-- 											부탁드립니다. <br>(인근 평화의공원 또는 난지천공원 주차장은 17시 이후 이용 안내)<br>※노을캠핑장 -->
+<!-- 											주차는 1대/면까지만 1일 할인주차권 허용&nbsp;<br> -->
+<!-- 										<br></span></span><span style="font-family: 돋움; font-size: 14.4px;">- -->
+<!-- 										단체 이용은 02-300-5576 으로 문의주시기 바랍니다.</span> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
 <!-- 							<div class="content description"> -->
 <!-- 								<h3 class="contentTitle false">상세정보</h3> -->
 <!-- 								<div class="contentDetail"> -->

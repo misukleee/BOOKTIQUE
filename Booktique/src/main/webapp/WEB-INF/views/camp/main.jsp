@@ -3,7 +3,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 
-
+<link rel="stylesheet" href="/resources/css/mf.min.css" />
 <!-- 슬라이드 -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
@@ -27,7 +27,7 @@
 	display: flex;
 	align-items: center;
 	color: #000;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 }
 
 .RadioGroup_radioGroup__70781 {
@@ -36,7 +36,7 @@
 	justify-content: center;
 	align-items: center;
 	gap: 8px;
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 }
 .HorizontalList_swiperButtonCenter__bd963 .HorizontalList_swiperNext__1f674, .HorizontalList_swiperButtonCenter__bd963 .HorizontalList_swiperPrev__b45cd {
 	top: 50%;
@@ -107,17 +107,23 @@
 	<button class="HorizontalList_swiperPrev__b45cd">이전</button>
 	<button class="HorizontalList_swiperNext__1f674">다음</button>
 </div>
+<!-- <div class="Panel_title__4b2ff"> -->
+<!-- 	<h2>지역별 추천 상품</h2> -->
+<!-- </div> -->
+
 <div class="Panel_title__4b2ff">
-	<h2>지역별 추천 상품</h2>
+	<h2><img alt="캠핑장이미지" src="/resources/img/camp.png" style="width:45px; margin-right:15px;">캠핑장 둘러보기</h2>
 </div>
 	<div class="RadioGroup_radioGroup__70781">
-		<button role="tab" class="RadioGroup_regionButton__49f75 RadioGroup_regionButton__49f75 RadioGroup_selected__c06ed" title="선택됨" aria-selected="true" aria-label="전체" data-area="전체">전체</button>
+		<button role="tab" class="RadioGroup_regionButton__49f75 RadioGroup_selected__c06ed" title="선택됨" aria-selected="true" aria-label="전체" data-area="전체">전체</button>
 		<button role="tab" class="RadioGroup_regionButton__49f75" title="" aria-selected="false" aria-label="경기" data-area="ac41">경기</button>
 		<button role="tab" class="RadioGroup_regionButton__49f75" title="" aria-selected="false" aria-label="강원" data-area="ac42">강원</button>
 		<button role="tab" class="RadioGroup_regionButton__49f75" title="" aria-selected="false" aria-label="충남/충북" data-area="ac43">충남/충북</button>
 		<button role="tab" class="RadioGroup_regionButton__49f75" title="" aria-selected="false" aria-label="전남/전북" data-area="ac45">전남/전북</button>
 		<button role="tab" class="RadioGroup_regionButton__49f75" title="" aria-selected="false" aria-label="경남/경북" data-area="ac50">경남/경북</button>
 	</div>
+
+
 	<div class="ProductList_contents__eUxgq InfiniteList_list__3c511 InfiniteList_column-desktop-5__9cab3 InfiniteList_column-mobile-1__853f7 InfiniteList_ticket-list__dfe68" aria-label="상품 리스트" id="campList">
 	</div>
 	
@@ -177,13 +183,14 @@
 					
 					if (data.length > 0) {
 						data.forEach(function(camp) {
+// 							console.log(camp);
 							var campHtml = '<a href="/camp/detail?camp_no=' + encodeURIComponent(camp.campNo) + '" tabindex="0" class="TicketItem_ticketItem__ TicketItem_ticketItem__H51Vs" gtm-label="' + camp.campName + '">' +
 								'<div class="TicketItem_imageWrap__iVEOw">' +
 								'<img alt="" loading="eager" decoding="async" data-nimg="fill" class="TicketItem_image__U6xq6" sizes="(max-width: 1023px) 104px, 25vw" src="' + camp.campMainImg + '" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">' +
 								'</div>' +
 								'<ul class="TicketItem_contentsWrap__xCe3A">' +
 								'<li class="TicketItem_goodsName__Ju76j">' + camp.campName + '</li>' +
-								'<li class="TicketItem_placeName__ls_9C">' + camp.campEtc + '</li>' +
+								'<li class="TicketItem_placeName__ls_9C">' + (camp.campEtc ? camp.campEtc : '') + '</li>' +
 								'<li class="TicketItem_saleBadge__bbqu9">' +
 								'<div class="SaleBadge_labelWrap__d96fb">' +
 								'<span class="SaleBadge_seatBadge__f3f1e SaleBadge_purple__fcbd1">단독판매</span>' +
