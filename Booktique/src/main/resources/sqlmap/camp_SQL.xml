@@ -2,14 +2,41 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.op.booktique.mapper.camp.CampMapper">
 
+	<resultMap type="com.op.booktique.vo.camp.CampVO" id="campMap">
+		<result property="campNo" column="CAMP_NO"/>
+		<result property="campName" column="CAMP_NAME"/>
+		<result property="campAddr" column="CAMP_ADDR"/>
+		<result property="campPhone" column="CAMP_PHONE"/>
+		<result property="campUrl" column="CAMP_URL"/>
+		<result property="facilitiesInfo" column="FACILITIES_INFO"/>
+		<result property="campEtc" column="CAMP_ETC"/>
+		<result property="campCategory" column="CAMP_CATEGORY"/>
+		<result property="period" column="PERIOD"/>
+		<result property="campOption" column="CAMP_OPTION"/>
+		<result property="campMainImg" column="CAMP_MAIN_IMG"/>
+		<result property="campDetailImg" column="CAMP_DETAIL_IMG"/>
+		<result property="campSubImg" column="CAMP_SUB_IMG"/>
+		<result property="toilet" column="TOILET"/>
+		<result property="shower" column="SHOWER"/>
+		<result property="campIntro" column="CAMP_INTRO"/>
+		<result property="areaCode" column="AREA_CODE"/>
+	</resultMap>
+	
 	<insert id="insertCamp" parameterType="com.op.booktique.vo.camp.CampVO">
 		INSERT INTO CAMP (
 		CAMP_NO,
 		CAMP_NAME,
 		CAMP_ADDR,
 		CAMP_PHONE,
+		CAMP_URL,
+		FACILITIES_INFO,
 		CAMP_ETC,
+		CAMP_CATEGORY,
+		PERIOD,
+		CAMP_OPTION,
 		CAMP_MAIN_IMG,
+		CAMP_DETAIL_IMG,
+		CAMP_INTRO,
 		AREA_CODE
 		)
 		VALUES (
@@ -17,10 +44,51 @@
 		#{campName},
 		#{campAddr},
 		#{campPhone},
+		#{campUrl},
+		#{facilitiesInfo},
 		#{campEtc},
+		#{campCategory},
+		#{period},
+		#{campOption},
 		#{campMainImg},
+		#{campDetailImg},
+		#{campIntro},
 		#{areaCode}
 		)
 	</insert>
+	
+	<select id="campList" resultType="com.op.booktique.vo.camp.CampVO">
+		SELECT CAMP_NO, CAMP_NAME, CAMP_ADDR, COALESCE(CAMP_ETC, '') AS CAMP_ETC, CAMP_MAIN_IMG
+		FROM CAMP
+		ORDER BY CAMP_NO ASC
+	</select>
 
+	<select id="getCampByAreaCode" resultType="com.op.booktique.vo.camp.CampVO">
+		SELECT CAMP_NO, CAMP_NAME, CAMP_ADDR, CAMP_MAIN_IMG
+		FROM CAMP
+		WHERE AREA_CODE = #{areaCode}
+		ORDER BY CAMP_NO ASC
+	</select>
+	
+	<select id="detail" parameterType="string" resultMap="campMap">
+		SELECT
+			CAMP_NO,
+			CAMP_NAME, 
+			CAMP_ADDR,
+			CAMP_PHONE,
+			CAMP_URL,
+			FACILITIES_INFO,
+			CAMP_ETC, 
+			CAMP_CATEGORY,
+			PERIOD,
+			CAMP_OPTION,
+			CAMP_MAIN_IMG,
+			CAMP_DETAIL_IMG,
+			CAMP_SUB_IMG,
+			TOILET,
+			SHOWER,
+			CAMP_INTRO   
+		FROM CAMP
+		WHERE CAMP_NO = #{campNo}
+	</select>
 </mapper>
