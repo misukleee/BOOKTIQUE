@@ -1,0 +1,1242 @@
+/*!
+ _ _  _
+| | || | ticket-desktop
+| | || | INTERPARK UI Development Team
+`___'|_| v3.4.0
+
+*/
+.topvisualWrap {
+  background: #fff url("//ticketimage.interpark.com/TicketImage/2015/20150429_main/img/header/blank.png") center 0 no-repeat;
+  position: relative;
+}
+
+.topvisualWrap .topvisualFilter {
+  width: 100%;
+  height: 100%;
+  background: url("//ticketimage.interpark.com/TicketImage/2016/20160304_sports/main/img/pattern.png") 0 0;
+  position: absolute;
+  height: 463px;
+  top: 0;
+  left: 0;
+}
+
+.visualContainer {
+  width: 960px;
+  height: 404px;
+  margin: 0 auto;
+  position: relative;
+  padding: 30px 0 29px;
+  z-index: 1;
+}
+
+.mainVisual {
+  width: 214px;
+  height: 339px;
+  float: left;
+  margin-right: 12px;
+  background: #fff;
+  border-bottom: 1px solid #222;
+}
+
+.mainVisual.type1 {
+  background: #fff url("//ticketimage.interpark.com/TicketImage/2016/20160304_sports/main/img/openSoon.gif") 20px 20px no-repeat;
+  position: relative;
+  width: 214px;
+  height: 339px;
+}
+
+.mainVisual.noItem {
+  background: url("//ticketimage.interpark.com/TicketImage/2016/20160304_sports/main/img/noimg_OpBn.jpg") 0 0 no-repeat;
+}
+
+.mainVisual.type1 > div {
+  display: none;
+  padding: 45px 20px 0;
+  width: 174px;
+  height: 294px;
+}
+
+.mainVisual.type1 > div.banner {
+  padding: 0;
+  width: 214px;
+  height: 339px;
+}
+
+.mainVisual.type1 > div.banner > a img {
+  width: 214px;
+  height: 340px;
+}
+
+.mainVisual.type1 > div.selected {
+  display: block;
+}
+
+.mainVisual.type1 ul.bullet {
+  position: absolute;
+  top: 20px;
+  font-size: 0;
+  line-height: 0;
+  right: 19px;
+  text-align: right;
+}
+
+.mainVisual.type1 ul.bullet li {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin-right: 1px;
+  cursor: pointer;
+  margin-left: 1px;
+  background: url("//ticketimage.interpark.com/TicketImage/2016/20160304_sports/main/img/timerPopBullet.png") 0 0 no-repeat;
+}
+
+.mainVisual.type1 ul.bullet li:first-child {
+  margin-left: 0;
+}
+
+.mainVisual.type1 ul.bullet li.selected {
+  background-position: 0 -9px;
+}
+
+.mainVisual.type1 .teamWrap .matchTitle {
+  font-size: 18px;
+  text-align: center;
+  color: #333;
+  margin-bottom: 11px;
+  width: 100%;
+  height: 24px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.mainVisual.type1 .teamWrap .teamMatch {
+  height: 70px;
+  float: left;
+  width: 174px;
+  background: url("//ticketimage.interpark.com/TicketImage/2016/20160304_sports/detail/img/versus.gif") 74px 25px no-repeat;
+  margin-bottom: 12px;
+}
+
+.mainVisual.type1 .teamWrap .teamMatch > div {
+  width: 70px;
+  float: left;
+  margin-right: 34px;
+  text-align: center;
+}
+
+.mainVisual.type1 .teamWrap .teamMatch > div img {
+  width: 70px;
+  height: 70px;
+}
+
+.mainVisual.type1 .teamWrap .teamMatch > div.team2 {
+  margin-right: 0;
+}
+
+.mainVisual.type1 .teamWrap .nameWrap {
+  font-size: 12px;
+  color: #333;
+  margin-bottom: 14px;
+}
+
+.mainVisual.type1 .teamWrap .date {
+  text-align: left;
+  font-size: 0;
+  line-height: 0;
+}
+
+.mainVisual.type1 .teamWrap .date span {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  padding-right: 9px;
+  font-size: 12px;
+  line-height: 17px;
+  color: #666;
+}
+
+.mainVisual.type1 .teamWrap .date span.dateTitle {
+  width: 42px;
+  padding-right: 0;
+}
+
+.mainVisual.type1 .teamWrap .borderTopWrap {
+  border-top: 1px solid #eee;
+  margin-top: 10px;
+}
+
+.mainVisual.type1 .teamWrap .dDay {
+  margin-top: 12px;
+}
+
+.mainVisual.type1 .teamWrap .dDay > div {
+  font-size: 0;
+  line-height: 0;
+  text-align: left;
+}
+
+.mainVisual.type1 .teamWrap .dDay > div div {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  height: 30px;
+}
+
+.mainVisual.type1 .teamWrap .dDay > div.dDate {
+  margin-bottom: 3px;
+}
+
+.mainVisual.type1 .teamWrap .dDay > div .dMinus {
+  width: 37px;
+  background: url("//ticketimage.interpark.com/TicketImage/2016/20160304_sports/main/img/dDay.gif") 0 0 no-repeat;
+}
+
+.mainVisual.type1 .teamWrap .dDay > div .num {
+  width: 20px;
+  background: url("//ticketimage.interpark.com/TicketImage/2016/20160304_sports/detail/img/numbers.png") 0 -70px no-repeat;
+  margin-right: 2px;
+}
+
+.mainVisual.type1 .teamWrap .dDay > div .num.num1 {
+  width: 11px;
+}
+
+.mainVisual.type1 .teamWrap .dDay > div .num.num2 {
+  background-position: -11px -70px;
+}
+
+.mainVisual.type1 .teamWrap .dDay > div .num.num3 {
+  background-position: -32px -70px;
+}
+
+.mainVisual.type1 .teamWrap .dDay > div .num.num4 {
+  background-position: -52px -70px;
+  width: 23px;
+}
+
+.mainVisual.type1 .teamWrap .dDay > div .num.num5 {
+  background-position: -77px -70px;
+}
+
+.mainVisual.type1 .teamWrap .dDay > div .num.num6 {
+  background-position: -98px -70px;
+  width: 22px;
+}
+
+.mainVisual.type1 .teamWrap .dDay > div .num.num7 {
+  background-position: -120px -70px;
+}
+
+.mainVisual.type1 .teamWrap .dDay > div .num.num8 {
+  background-position: -141px -70px;
+  width: 21px;
+}
+
+.mainVisual.type1 .teamWrap .dDay > div .num.num9 {
+  background-position: -164px -70px;
+  width: 22px;
+}
+
+.mainVisual.type1 .teamWrap .dDay > div .num.num0 {
+  background-position: -187px -70px;
+  width: 24px;
+}
+
+.mainVisual.type1 .teamWrap .dDay > div .num.dot {
+  background-position: -213px -70px;
+  width: 4px;
+}
+
+.mainVisual.type1 .teamWrap .dDay > div .num.colon {
+  background-position: -219px -70px;
+  width: 4px;
+}
+
+.mainVisual.type1 .teamWrap .borderTopWrap .buyTicket {
+  display: block;
+  margin-top: 20px;
+  width: 100%;
+  height: 55px;
+  background: #ff655b;
+  color: #fff;
+  line-height: 55px;
+}
+
+.mainVisual.type1 .teamWrap .borderTopWrap.twoTickets {
+  display: block;
+  width: 100%;
+  height: 55px;
+  color: #fff;
+  font-size: 0;
+  line-height: 0;
+}
+
+.mainVisual.type1 .teamWrap .borderTopWrap.twoTickets a {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  background: #ff655b;
+  width: 86px;
+  height: 43px;
+  margin-left: 2px;
+  font-size: 14px;
+  line-height: 16px;
+  color: #fff;
+  padding-top: 12px;
+  text-decoration: none;
+}
+
+.mainVisual.type1 .teamWrap .borderTopWrap.twoTickets a:first-child {
+  margin-left: 0;
+}
+
+.mainVisual.type1 .teamWrap .borderTopWrap.twoTickets.type2 a {
+  line-height: 31px;
+}
+
+.mainVisual.type1 .teamWrap .borderTopWrap .openSoon {
+  background: url("//ticketimage.interpark.com/TicketImage/2016/20160304_sports/main/img/openSoon.png") center 24px no-repeat;
+  text-align: center;
+  padding-top: 53px;
+  font-size: 11px;
+  color: #8b8e96;
+}
+
+.mainVisual.type1 .teamWrap .borderTopWrap .cancelled {
+  background: url("//ticketimage.interpark.com/TicketImage/2016/20160304_sports/main/img/cancelled.png") center 26px no-repeat;
+  text-align: center;
+  padding-top: 55px;
+  font-size: 11px;
+  color: #8b8e96;
+}
+
+.mainVisual.type1 .teamWrap .borderTopWrap .salesEnd {
+  background: url("//ticketimage.interpark.com/TicketImage/2016/20160304_sports/main/img/salesEnd.png") center 26px no-repeat;
+  text-align: center;
+  padding-top: 55px;
+  font-size: 11px;
+  color: #8b8e96;
+}
+
+.quickBuyBtn {
+  position: absolute;
+  bottom: 29px;
+  left: 0;
+  width: 214px;
+  height: 51px;
+  background: #6fbaff url("//ticketimage.interpark.com/TicketImage/2016/20160304_sports/main/img/quickBuy.gif") 20px 19px no-repeat;
+  color: #fff;
+  z-index: 1;
+  display: block;
+  text-align: left;
+  text-indent: -200px;
+  overflow: hidden;
+  border-bottom: 1px solid #222;
+}
+
+.quickBuyBtn span {
+  display: block;
+  width: 15px;
+  height: 15px;
+  background: url("//ticketimage.interpark.com/TicketImage/2016/20160304_sports/main/img/quickStatus.gif") 0 0 no-repeat;
+  position: absolute;
+  left: 186px;
+  top: 19px;
+}
+
+.quickBuyBtn.open span {
+  background-position: 0 -15px;
+}
+
+.slideVisualWrap {
+  background: #222;
+  width: 734px;
+  height: 403px;
+  float: left;
+  position: relative;
+  border-bottom: 1px solid #222;
+}
+
+.slideVisualWrap .slideVisualTitle {
+  position: absolute;
+  right: 0;
+  top: 206px;
+  text-align: right;
+  background: url("//ticketimage.interpark.com/TicketImage/2016/20160304_sports/main/img/mainVisualTitle.png");
+}
+
+.slideVisualWrap .slideVisual {
+  width: 734px;
+  height: 403px;
+}
+
+.slideVisualWrap .slideVisual .items {
+  width: 734px;
+  height: 403px;
+  display: none;
+  font-size: 0;
+  line-height: 0;
+  vertical-align: top;
+}
+
+.slideVisualWrap .slideVisual .items.selected {
+  display: block;
+}
+
+.slideVisualWrap .slideVisual .items img {
+  width: 734px;
+  height: 403px;
+  font-size: 0;
+  line-height: 0;
+  vertical-align: top;
+}
+
+.slideVisualWrap .slideVisual .paginate {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  height: 12px;
+  font-size: 0;
+  line-height: 0;
+  text-align: right;
+}
+
+.slideVisualWrap .slideVisual .paginate li {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  margin-right: 4px;
+}
+
+.slideVisualWrap .slideVisual .paginate li.last {
+  margin-right: 0;
+}
+
+.slideVisualWrap .slideVisual .paginate li.selected {
+  width: 32px;
+}
+
+.slideVisualWrap .slideVisual .paginate li a {
+  display: block;
+  width: 100%;
+  height: 12px;
+  background: url("//ticketimage.interpark.com/TicketImage/2016/20160304_sports/main/img/mainBullet.png") 0 0 no-repeat;
+}
+
+.slideVisualWrap .slideVisual .paginate li.selected a {
+  background-position: 0 -12px;
+}
+
+.selectWrap {
+  width: 728px;
+  background: #fff;
+  height: 397px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  border: 3px solid #6fbaff;
+}
+
+.selectWrap .stepWrap {
+  width: 176px;
+  height: 349px;
+  overflow: hidden;
+}
+
+.selectWrap ul {
+  width: 734px;
+}
+
+.selectWrap ul li.selectStep {
+  width: 175px;
+  height: 352px;
+  border-right: 1px solid #eee;
+  float: left;
+}
+
+.selectWrap ul li.selectStep p.selectTitle {
+  height: 34px;
+  border-bottom: 1px solid #eee;
+  padding-top: 14px;
+  padding-left: 20px;
+  font-size: 14px;
+  color: #666;
+  text-align: left;
+  position: relative;
+}
+
+.selectWrap ul li.selectStep p.selectTitle a.linkBtn {
+  position: absolute;
+  top: 13px;
+  right: 10px;
+  display: block;
+  width: 67px;
+  height: 24px;
+  background: #f4f4f4 url("//ticketimage.interpark.com/TicketImage/2016/20160304_sports/main/img/nextStep.gif") 54px 8px no-repeat;
+  font-size: 11px;
+  text-indent: 10px;
+  line-height: 26px;
+  color: #999;
+  text-decoration: none;
+  display: none;
+}
+
+.selectWrap ul li.selectStep .stepContents {
+  padding-top: 10px;
+  position: relative;
+}
+
+.selectWrap ul li.selectStep .stepContents .viewport {
+  width: 175px;
+  height: 291px;
+  overflow: hidden;
+  position: relative;
+}
+
+.selectWrap ul li.selectStep .stepContents .overview {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 0;
+  margin: 0;
+  width: 175px;
+}
+
+.selectWrap ul li.selectStep .stepContents .viewport a {
+  display: block;
+  height: 31px;
+  text-indent: 20px;
+  text-align: left;
+  line-height: 27px;
+  color: #666;
+  font-size: 12px;
+}
+
+.selectWrap ul li.selectStep .stepContents .viewport a:hover {
+  background: #f4f4f4;
+  text-decoration: none;
+  color: #666;
+}
+
+.selectWrap ul li.selectStep .stepContents .viewport a.selected {
+  background: #dbedff;
+  font-weight: bold;
+  color: #207dd2;
+}
+
+.selectWrap ul li.selectStep .stepContents .viewport a span {
+  padding-right: 18px;
+}
+
+.selectWrap ul li.selectStep .stepContents .scrollbar {
+  position: absolute;
+  background: #f4f4f4;
+  width: 10px;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.selectWrap ul li.selectStep .stepContents .track {
+  height: 100%;
+  width: 4px;
+  position: relative;
+  padding: 0 1px;
+}
+
+.selectWrap ul li.selectStep .stepContents .thumb {
+  height: 54px;
+  width: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #999;
+}
+
+.selectWrap ul li.selectStep .stepContents .thumb .end {
+  overflow: hidden;
+  height: 5px;
+  width: 4px;
+  background: transparent url("//ticketimage.interpark.com/TicketImage/2016/20160304_sports/main/img/thumb.gif") no-repeat 50% 0%;
+}
+
+.selectWrap ul li.selectStep .stepContents .disable {
+  display: none;
+}
+
+.selectWrap ul li.step2,
+.selectWrap ul li.step2 .stepContents .viewport,
+.selectWrap ul li.step2 .stepContents .overview {
+  width: 209px;
+}
+
+.selectWrap ul li.step3 {
+  border-right: 0;
+  width: 341px;
+}
+
+.selectWrap ul li.step3 .stepContents .viewport,
+.selectWrap ul li.step3 .stepContents .overview {
+  width: 341px;
+}
+
+.selectWrap ul li.step3 .stepContents.noItem {
+  background: url("//ticketimage.interpark.com/TicketImage/2016/20160304_sports/main/img/noitemBg.gif") center 83px no-repeat;
+}
+
+.selectWrap .selectBtnWrap {
+  text-align: right;
+  border-top: 1px solid #eee;
+  font-size: 0;
+  line-height: 0;
+  padding-right: 5px;
+  padding-top: 5px;
+  height: 42px;
+  position: relative;
+}
+
+.selectWrap .selectBtnWrap a {
+  background: #ff655b;
+  width: 116px;
+  height: 40px;
+  color: #fff;
+  display: block;
+  font-size: 14px;
+  line-height: 36px;
+  text-align: center;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  text-decoration: none;
+}
+
+.selectWrap .selectBtnWrap a.type2 {
+  background: #6cd7d8;
+}
+
+.selectWrap .selectBtnWrap a:first-child {
+  margin-right: 8px;
+}
+
+.selectWrap .selectBtnWrap span {
+  position: absolute;
+  display: block;
+  width: 21px;
+  height: 52px;
+  top: -1px;
+  left: -15px;
+  background: url("//ticketimage.interpark.com/TicketImage/2016/20160304_sports/main/img/stepOpen.gif") 0 0 no-repeat;
+}
+
+.selectWrap .layerShadow {
+  height: 2px;
+  border-bottom: 1px solid #222;
+  width: 734px;
+  position: absolute;
+  bottom: -4px;
+  left: -3px;
+}
+
+.wrap {
+  background: #eee;
+}
+
+.reserveGuideWrap {
+  width: 960px;
+  margin: 20px auto 0;
+  background: #fff;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  vertical-align: middle;
+}
+
+.reserveGuideWrap p {
+  padding: 7px 0 8px 0;
+  font-size: 12px;
+  line-height: 1.3;
+  color: #333;
+}
+
+.mainWrap {
+  width: 960px;
+  margin: 20px auto 0;
+  background: #eee;
+}
+
+.sportMenu {
+  float: left;
+  width: 214px;
+  text-align: left;
+}
+
+.sportMenu a {
+  display: block;
+  cursor: pointer;
+}
+
+.sportMenu ul {
+  background: #fff;
+}
+
+.sportMenu ul.menuWrap {
+  margin-bottom: 12px;
+}
+
+.sportMenu p,
+.sportMenu ul li ul li {
+  height: 43px;
+  line-height: 39px;
+  font-size: 12px;
+}
+
+.sportMenu p {
+  padding-left: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.sportMenu .childBtn p {
+  background: url("//ticketimage.interpark.com/TicketImage/2016/20160304_sports/main/img/downArrow.png") 186px 18px no-repeat;
+}
+
+.sportMenu .last p {
+  border-bottom: 1px solid #ddd;
+}
+
+.sportMenu .on p {
+  border-bottom: 1px solid #25282d;
+}
+
+.sportMenu ul li p a {
+  font-size: 14px;
+  color: #666;
+  text-decoration: none;
+  height: 43px;
+  line-height: 41px;
+}
+
+.sportMenu ul li p a span {
+  display: none;
+  width: 43px;
+  height: 43px;
+  float: right;
+  background: #2f323b;
+  background: #2f323b url("//ticketimage.interpark.com/TicketImage/2016/20160304_sports/main/img/leftMenuBg_on.gif") 15px 18px no-repeat;
+}
+
+.sportMenu ul li.bulletMenu {
+  background: url("//ticketimage.interpark.com/TicketImage/2016/20160304_sports/main/img/bullet.gif") 20px 20px no-repeat;
+}
+
+.sportMenu ul li.bulletMenu p a {
+  font-size: 12px;
+  text-indent: 14px;
+}
+
+.sportMenu ul li.rightArrow span {
+  background: url("//ticketimage.interpark.com/TicketImage/2016/20160304_sports/main/img/arrowBullet.gif") 20px 15px no-repeat;
+  display: block;
+}
+
+.sportMenu ul li ul {
+  display: none;
+}
+
+.sportMenu ul li.on ul {
+  display: block;
+}
+
+.sportMenu ul li ul li {
+  padding-left: 34px;
+  background: #2f323b url("//ticketimage.interpark.com/TicketImage/2016/20160304_sports/main/img/whiteBullet.gif") 20px 20px no-repeat;
+  border-bottom: 1px solid #25282d;
+}
+
+.sportMenu ul li ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.mainContents {
+  float: right;
+  width: 716px;
+  padding-bottom: 50px;
+}
+
+.mainWrap .banner {
+  height: 96px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #ddd;
+  padding-top: 18px;
+}
+
+.mainWrap .sportWrap {
+  margin-bottom: 12px;
+}
+
+.mainWrap .sportWrap .sportTitle {
+  height: 45px;
+  background: url("//ticketimage.interpark.com/TicketImage/2016/20160304_sports/main/img/sportsTitle.jpg") 0 0 no-repeat;
+  position: relative;
+  font-size: 12px;
+  overflow: hidden;
+}
+
+.mainWrap .sportWrap.soccer .sportTitle {
+  background-position: 0 -45px;
+}
+
+.mainWrap .sportWrap.basket .sportTitle {
+  background-position: 0 -90px;
+}
+
+.mainWrap .sportWrap.volleyball .sportTitle {
+  background-position: 0 -135px;
+}
+
+.mainWrap .sportWrap.basket {
+  margin-bottom: 30px;
+}
+
+.mainWrap .sportWrap .sportTitle a {
+  display: block;
+  width: 86px;
+  height: 45px;
+  background: url("//ticketimage.interpark.com/TicketImage/2016/20160304_sports/main/img/downArrow.png") 61px 19px no-repeat;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: #ccc;
+  line-height: 41px;
+  text-indent: 9px;
+  text-align: left;
+  text-decoration: none;
+}
+
+.mainWrap .sportWrap.open .sportTitle a {
+  background: #030303 url("//ticketimage.interpark.com/TicketImage/2016/20160304_sports/main/img/upArrow.png") 61px 19px no-repeat;
+}
+
+.mainWrap .sportWrap .matchSelect {
+  width: 716px;
+  height: 257px;
+  overflow: hidden;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
+
+.mainWrap .sportWrap .matchSelect .prev {
+  position: absolute;
+  top: 121px;
+  left: 10px;
+  background: url("//ticketimage.interpark.com/TicketImage/2016/20160304_sports/main/img/prevArrow.png") 0 0 no-repeat;
+  width: 8px;
+  height: 15px;
+  display: block;
+  z-index: 1;
+}
+
+.mainWrap .sportWrap .matchSelect .next {
+  position: absolute;
+  top: 121px;
+  right: 10px;
+  background: url("//ticketimage.interpark.com/TicketImage/2016/20160304_sports/main/img/nextArrow.png") 0 0 no-repeat;
+  width: 8px;
+  height: 15px;
+  display: block;
+  z-index: 1;
+}
+
+.mainWrap .sportWrap .matchSelect .itemWrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2151px;
+  height: 257px;
+}
+
+.mainWrap .sportWrap .matchSelect .itemWrap .items {
+  width: 717px;
+  height: 257px;
+  float: left;
+}
+
+.mainWrap .sportWrap .matchSelect .itemWrap .items > ul > li {
+  width: 238px;
+  height: 249px;
+  border-right: 1px solid #eee;
+  float: left;
+  padding-top: 8px;
+  position: relative;
+  background: #fff;
+}
+
+.mainWrap .sportWrap .matchSelect .itemWrap .items > ul > li .matchMore {
+  height: 16px;
+  text-align: right;
+  padding-right: 4px;
+}
+
+.mainWrap .sportWrap .matchSelect .itemWrap .items > ul > li .matchMore a {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 16px;
+  height: 16px;
+  background: url("//ticketimage.interpark.com/TicketImage/2016/20160304_sports/main/img/matchMore.gif") 6px 0 no-repeat;
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
+  text-indent: -200px;
+}
+
+.mainWrap .sportWrap .matchSelect .itemWrap .items > ul > li .matchContent {
+  width: 178px;
+  margin: 8px auto 4px;
+}
+
+.mainWrap .sportWrap .matchSelect .itemWrap .items > ul > li .matchContent .teamMatch {
+  height: 70px;
+  background: url("//ticketimage.interpark.com/TicketImage/2016/20160304_sports/detail/img/versus.gif") 74px 27px no-repeat;
+  margin-bottom: 16px;
+}
+
+.mainWrap .sportWrap .matchSelect .itemWrap .items > ul > li .matchContent .teamMatch > div {
+  width: 70px;
+  float: left;
+  margin-right: 38px;
+  text-align: center;
+}
+
+.mainWrap .sportWrap .matchSelect .itemWrap .items > ul > li .matchContent .teamMatch > div.team2 {
+  margin-right: 0;
+}
+
+.mainWrap .sportWrap .matchSelect .itemWrap .items > ul > li .matchContent .matchDate {
+  margin-bottom: 3px;
+  text-align: center;
+}
+
+.mainWrap .sportWrap .matchSelect .itemWrap .items > ul > li .matchContent .matchDate a {
+  font-size: 14px;
+  color: #333;
+}
+
+.mainWrap .sportWrap .matchSelect .itemWrap .items > ul > li .matchContent .matchLocation {
+  margin-bottom: 1px;
+  text-align: center;
+}
+
+.mainWrap .sportWrap .matchSelect .itemWrap .items > ul > li .matchContent .matchLocation a {
+  color: #666;
+  font-size: 12px;
+}
+
+.mainWrap .sportWrap .matchSelect .itemWrap .items > ul > li .matchContent .matchTeam {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.mainWrap .sportWrap .matchSelect .itemWrap .items > ul > li .matchContent .matchTeam a {
+  font-size: 11px;
+  color: #999;
+}
+
+.mainWrap .sportWrap .matchSelect .itemWrap .items > ul > li .matchBtn {
+  font-size: 0;
+  line-height: 0;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+}
+
+.mainWrap .sportWrap .matchSelect .itemWrap .items > ul > li .matchBtn a {
+  height: 40px;
+  width: 150px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 38px;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  background: #ff655b;
+  margin: 0 auto;
+  text-decoration: none;
+}
+
+.mainWrap .sportWrap .matchSelect .itemWrap .items > ul > li .matchBtn.preOrder a {
+  background: #6cd7d8;
+  line-height: 16px;
+  padding-top: 3px;
+  height: 37px;
+}
+
+.mainWrap .sportWrap .matchSelect .itemWrap .items > ul > li .matchBtn.preOrder a.noDate {
+  line-height: 37px;
+}
+
+.mainWrap .sportWrap .matchSelect .itemWrap .items > ul > li .matchBtn.preOrder a span {
+  display: block;
+  font-size: 11px;
+}
+
+.mainWrap .sportWrap .matchSelect .itemWrap .items > ul > li .matchBtn.type2 a {
+  width: 96px;
+  margin-left: 6px;
+}
+
+.mainWrap .sportWrap .matchSelect .itemWrap .items > ul > li .matchBtn.type2 a:first-child {
+  margin-left: 0;
+}
+
+.mainWrap .sportWrap .matchSelect .itemWrap .items > ul > li .matchBtn.type3 a {
+  background: #6cd7d8;
+}
+
+.mainWrap .sportWrap .matchSelect .itemWrap .items > ul > li .matchLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 238px;
+  height: 257px;
+  border-top: #1b1d22;
+  background: url("//ticketimage.interpark.com/TicketImage/2016/20160304_sports/main/img/pattern_2.png");
+  display: none;
+}
+
+.mainWrap .sportWrap .matchSelect .itemWrap .items > ul > li .matchLayer .layerClose {
+  width: 15px;
+  height: 15px;
+  display: block;
+  margin-top: 8px;
+  margin-left: 213px;
+  background: url("//ticketimage.interpark.com/TicketImage/2016/20160304_sports/main/img/layerClose.png") 0 0 no-repeat;
+  margin-bottom: 27px;
+}
+
+.mainWrap .sportWrap .matchSelect .itemWrap .items > ul > li .matchLayer .layerContent {
+  padding: 0 24px;
+}
+
+.mainWrap .sportWrap .matchSelect .itemWrap .items > ul > li .matchLayer .layerContent .matchTeam {
+  color: #fff;
+  font-size: 18px;
+  padding-bottom: 26px;
+  border-bottom: 1px solid #181818;
+}
+
+.mainWrap .sportWrap .matchSelect .itemWrap .items > ul > li .matchLayer .layerContent .matchInfo {
+  color: #fff;
+  border-top: 1px solid #424242;
+  line-height: 19px;
+  text-align: left;
+  padding-top: 12px;
+}
+
+.mainWrap .sportWrap .matchSelect .teamselect {
+  width: 716px;
+  height: 257px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url("//ticketimage.interpark.com/TicketImage/2016/20160304_sports/main/img/pattern_2.png") 0 0;
+  z-index: 2;
+  display: none;
+}
+
+.mainWrap .sportWrap .matchSelect .teamselect .teamList {
+  height: 150px;
+  overflow: hidden;
+  width: 716px;
+  margin-top: 66px;
+  position: relative;
+}
+
+.mainWrap .sportWrap .matchSelect .teamselect .teamList .itemWrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 150px;
+}
+
+.mainWrap .sportWrap .matchSelect .teamselect .teamList .prev,
+.mainWrap .sportWrap .matchSelect .teamselect .teamList .next {
+  top: 38px;
+}
+
+.mainWrap .sportWrap .matchSelect .teamselect .teamList .lessItem {
+  text-align: center;
+  width: 716px;
+  font-size: 0;
+  line-height: 0;
+}
+
+.mainWrap .sportWrap .matchSelect .teamselect .teamList .items {
+  width: 100px;
+  padding-left: 36px;
+  float: left;
+  height: 150px;
+}
+
+.mainWrap .sportWrap .matchSelect .teamselect .teamList .items a {
+  display: block;
+  width: 100px;
+  height: 150px;
+  text-decoration: none;
+}
+
+.mainWrap .sportWrap .matchSelect .teamselect .teamList .items a span {
+  display: block;
+  color: #fff;
+  line-height: 14px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.mainWrap .sportWrap .matchSelect .teamselect .teamList .items a span.teamLogo {
+  width: 100px;
+  height: 100px;
+  font-size: 0;
+  line-height: 0;
+  margin-bottom: 9px;
+}
+
+.mainWrap .sportWrap .matchSelect .teamselect .teamList .items a span.teamLogo img {
+  width: 100px;
+  height: 100px;
+}
+
+.mainWrap .sportWrap .matchSelect .teamselect .teamList .lessItem .items {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  float: none;
+  vertical-align: top;
+}
+
+.mainWrap .sportWrap .matchSelect .teamselect .teamList .lessItem .items:first-child {
+  padding-left: 0;
+}
+
+.listContainer {
+  background: #fff;
+  overflow: hidden;
+  border-bottom: 1px solid #ddd;
+  height: 944px;
+}
+
+.listContainer * {
+  vertical-align: top;
+}
+
+.listWrap {
+  clear: both;
+}
+
+.listWrap .leftSide {
+  float: left;
+}
+
+.listWrap .rightSide {
+  float: left;
+}
+
+.listWrap .wide {
+  width: 477px;
+}
+
+.listWrap:first-child .wide {
+  width: 478px;
+}
+
+.listWrap ul li {
+  float: left;
+}
+
+.listWrap p,
+.listWrap ul li {
+  display: block;
+  text-align: center;
+  width: 214px;
+  border-bottom: 1px solid #eee;
+  border-left: 1px solid #eee;
+  padding: 12px;
+}
+
+.listWrap > ul li:first-child {
+  border-left: 0;
+}
+
+.listWrap .leftSide p {
+  border: 0;
+  border-bottom: 1px solid #eee;
+}
+
+.listWrap p {
+  height: 353px;
+}
+
+.listWrap ul li {
+  height: 164px;
+}
+
+.listWrap p img {
+  width: 214px;
+  height: 309px;
+}
+
+.listWrap ul li img {
+  width: 214px;
+  height: 120px;
+}
+
+.listWrap img {
+  display: block;
+  margin-bottom: 7px;
+}
+
+.listWrap a {
+  text-decoration: none;
+}
+
+.listWrap .title {
+  display: block;
+  color: #333;
+  font-size: 15px;
+  height: 21px;
+  width: 204px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 5px;
+}
+
+.listWrap .info {
+  display: block;
+  color: #999;
+  height: 16px;
+  width: 204px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 5px;
+  font-size: 12px;
+}
+
+.footer_wrap {
+  margin-top: 0 !important;
+}
+
+.clearFix {
+  clear: both;
+}
+
+#loadingImg {
+  padding-top: 100px;
+}

@@ -1,0 +1,969 @@
+@charset "UTF-8";
+/*!
+ _ _  _
+| | || | Ticket Desktop SPA Platform v0.2.5
+| | || | INTERPARK UI Development Team
+`___'|_| /styles/common/header.scss
+
+*/
+.gatewayWrapper {
+  height: 32px;
+  background: #f4f6f9;
+  border-bottom: 1px solid #e9edf3;
+  font-weight: normal;
+  font-size: 11px;
+  color: #666;
+}
+
+.gatewayInner {
+  width: 1280px;
+  margin: 0 auto;
+  height: 32px;
+}
+
+.gatewayInterGate {
+  float: left;
+}
+
+.gatewayInterGate ul li {
+  float: left;
+  border-right: 1px solid #e9edf3;
+}
+
+.gatewayInterGate ul li:first-child {
+  border-left: 1px solid #e9edf3;
+}
+
+.gatewayInterGate ul li a {
+  display: block;
+  width: 60px;
+  padding: 9px 0;
+  text-align: center;
+  font-size: 11px;
+  line-height: 14px;
+  color: #666;
+}
+
+.gatewayInterGate ul li.ticket a {
+  background-color: #fff;
+  border-bottom: 1px solid #fff;
+  color: #000;
+}
+
+.gatewayUserMenu {
+  float: right;
+}
+
+.gatewayUserMenu > ul {
+  font-size: 0;
+}
+
+.gatewayUserMenu > ul > li {
+  float: left;
+  position: relative;
+  z-index: 201;
+  margin-right: 12px;
+}
+
+.gatewayUserMenu > ul > li .gatewaySub {
+  display: none;
+  position: absolute;
+  top: 22px;
+  right: 0;
+  padding: 0 5px 5px;
+  border: 1px solid #000;
+  background: #fff;
+}
+
+.gatewayUserMenu > ul > li .gatewaySub ul.gatewaySubMenu li {
+  position: relative;
+  width: auto;
+  margin-top: 6px;
+  padding-left: 5px;
+  text-align: left;
+  background: none;
+}
+
+.gatewayUserMenu > ul > li .gatewaySub ul.gatewaySubMenu li:before {
+  position: absolute;
+  display: block;
+  content: '';
+  top: 5px;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  background: #777;
+}
+
+.gatewayUserMenu > ul > li .gatewaySub ul.gatewaySubMenu li a {
+  white-space: nowrap;
+  font-size: 11px;
+  line-height: 11px;
+  color: #777;
+}
+
+.gatewayUserMenu > ul > li .gatewaySub ul.gatewaySubMenu li a:hover {
+  text-decoration: underline;
+}
+
+.gatewayUserMenu > ul > li > a {
+  display: inline-block;
+  padding: 9px 0;
+  font-size: 11px;
+  line-height: 14px;
+  color: #777;
+}
+
+.gatewayUserMenu > ul > li > a:hover {
+  text-decoration: underline;
+}
+
+.gatewayUserMenu > ul > li.gatewayLogin > a {
+  font-weight: bold;
+}
+
+.gatewayUserMenu > ul > li.gatewayLanguages {
+  margin-right: 0;
+}
+
+.gatewayUserMenu > ul > li.gatewayLanguages .gatewaySub {
+  width: 55px;
+}
+
+.gatewayUserMenu > ul > li.hasSub > a {
+  position: relative;
+  padding-right: 17px;
+}
+
+.gatewayUserMenu > ul > li.hasSub > a:before {
+  content: '';
+  position: absolute;
+  top: 9px;
+  right: 0;
+  width: 13px;
+  height: 13px;
+  background: url('//openimage.interpark.com/.ui/interparkMain/2017/common/header/img_gatewayArrow.png')
+    no-repeat 0 -12px;
+}
+
+.gatewayUserMenu > ul > li.hasSub > a:hover {
+  text-decoration: none;
+}
+
+.gatewayUserMenu > ul > li.active a:before {
+  background-position-y: 0;
+}
+
+.gatewayUserMenu > ul > li.active .gatewaySub {
+  display: block;
+}
+
+.headerWrapper .searchArea {
+  position: relative;
+  width: 1280px;
+  height: 99px;
+  margin: 0 auto;
+}
+
+.headerWrapper .searchArea .headerLogo {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  font-size: 0;
+}
+
+.headerWrapper .searchArea .headerLogo .logoBox a {
+  display: inline-block;
+  height: 35px;
+  text-indent: -9999px;
+}
+
+.headerWrapper .searchArea .headerLogo .logoBox a.ticket {
+  width: 180px;
+  margin-left: 8px;
+  background: url('//openimage.interpark.com/ticket-mobile/common/header/new/bi_ticket_pc.svg')
+    no-repeat;
+  background-size: 100%;
+}
+
+.headerWrapper .searchArea .headerSearch {
+  position: relative;
+  width: 512px;
+  margin: 0 auto;
+  padding-top: 38px;
+}
+
+.headerWrapper .searchArea .headerSearch .searchWrap {
+  position: relative;
+  width: 313px;
+  height: 32px;
+  padding: 0 42px 0 15px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e25147;
+}
+
+.headerWrapper .searchArea .headerSearch .searchWrap legend {
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.headerWrapper .searchArea .headerSearch .searchWrap .placeholder {
+  position: absolute;
+  top: 0;
+  left: 15px;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, '맑은 고딕', 'Malgun Gothic', '돋움',
+    Dotum, Helvetica, 'Apple SD Gothic Neo', sans-serif;
+  font-weight: bold;
+  color: #e25147;
+  line-height: 30px;
+}
+
+.headerWrapper .searchArea .headerSearch .searchWrap input {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, '맑은 고딕', 'Malgun Gothic', '돋움',
+    Dotum, Helvetica, 'Apple SD Gothic Neo', sans-serif;
+  font-weight: bold;
+  color: #e25147;
+}
+
+.headerWrapper .searchArea .headerSearch .searchWrap .btnSearch {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 36px;
+  height: 32px;
+  background: url('//openimage.interpark.com/ticket-desktop/components/header/btn_search.gif')
+    center 0 no-repeat;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  text-indent: -9999px;
+  cursor: pointer;
+}
+
+.headerWrapper .searchArea .headerSearch .subCategory {
+  position: absolute;
+  top: 38px;
+  right: 0;
+}
+
+.headerWrapper .searchArea .headerSearch .subCategory a {
+  font-size: 0;
+}
+
+.headerWrapper .searchArea .headerAD {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.headerWrapper .searchArea .headerAD a {
+  display: block;
+}
+
+.headerWrapper .searchArea .headerAD a img {
+  display: block;
+  width: 267px;
+  height: 90px;
+}
+
+.headerWrapper .keywordDataWrap {
+  display: block;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+  text-indent: -9999%;
+  background: #fff;
+  border: 1px solid #333;
+  box-sizing: border-box;
+  box-shadow: rgba(0, 0, 0, 0.2) 2px 3px 3px;
+  z-index: 101;
+}
+
+.headerWrapper .keywordDataWrap.active {
+  width: 551px;
+  height: 371px;
+  margin: 0;
+  clip: initial;
+  text-indent: 0;
+}
+
+.headerWrapper .keywordDataWrap.active.detailHidden {
+  width: 317px;
+}
+
+.headerWrapper .keywordDataWrap .keywordList {
+  float: left;
+  width: 315px;
+  height: 100%;
+  border-right: 1px solid #dfe5ed;
+}
+
+.headerWrapper .keywordDataWrap .keywordList .list {
+  margin: 16px 20px 18px 19px;
+}
+
+.headerWrapper .keywordDataWrap .keywordList .list li {
+  width: 100%;
+  background: none;
+  padding-left: 0;
+  white-space: inherit;
+}
+
+.headerWrapper .keywordDataWrap .keywordList .list li a {
+  width: 280px;
+  height: 20px;
+  line-height: 20px;
+  display: block;
+  font-weight: normal;
+  color: #000;
+}
+
+.headerWrapper .keywordDataWrap .keywordList .list li a:hover {
+  text-decoration: none;
+}
+
+.headerWrapper .keywordDataWrap .keywordList .list li a em {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 14px;
+}
+
+.headerWrapper .keywordDataWrap .keywordList .list li a em strong {
+  color: #ef3e43;
+  font-weight: normal;
+}
+
+.headerWrapper .keywordDataWrap .keywordList .list li + li {
+  padding-top: 15px;
+}
+
+.headerWrapper .keywordDataWrap .keywordList .list li.active a {
+  color: #ef3e43;
+}
+
+.headerWrapper .keywordDataWrap .keywordList .list li:not(.flag) em {
+  width: 100%;
+}
+
+.headerWrapper .keywordDataWrap .keywordList .list .flag {
+  display: table;
+}
+
+.headerWrapper .keywordDataWrap .keywordList .list .flag a span {
+  padding-left: 5px;
+  font-size: 12px;
+  color: #999;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.headerWrapper .keywordDataWrap .keywordDetail {
+  float: right;
+  width: 230px;
+  text-align: center;
+}
+
+.headerWrapper .keywordDataWrap .keywordDetail a {
+  display: none;
+  height: 380px;
+  padding-top: 20px;
+  box-sizing: border-box;
+}
+
+.headerWrapper .keywordDataWrap .keywordDetail a.active {
+  display: block;
+}
+
+.headerWrapper .keywordDataWrap .keywordDetail a:hover {
+  text-decoration: none;
+}
+
+.headerWrapper .keywordDataWrap .keywordDetail a .imgWrap {
+  width: 155px;
+  height: 200px;
+  margin: 0 auto 15px;
+  overflow: hidden;
+}
+
+.headerWrapper .keywordDataWrap .keywordDetail a .imgWrap img {
+  width: 100%;
+}
+
+.headerWrapper .keywordDataWrap .keywordDetail a .tags {
+  display: block;
+  font-size: 0;
+  font-weight: normal;
+  text-align: center;
+}
+
+.headerWrapper .keywordDataWrap .keywordDetail a .tags .tag {
+  display: inline-block;
+  height: 21px;
+  padding: 0 6px;
+  border: 1px solid #ddd;
+  font-size: 12px;
+  line-height: 21px;
+  border-radius: 5px;
+  color: #333;
+}
+
+.headerWrapper .keywordDataWrap .keywordDetail a .tags .tag.only {
+  border: 1px solid #dc941b;
+  color: #dc941b;
+}
+
+.headerWrapper .keywordDataWrap .keywordDetail a .tags .tag.liveOn {
+  color: #26cec1;
+  border: 1px solid #26cec1;
+}
+
+.headerWrapper .keywordDataWrap .keywordDetail a .tags .tag + .tag {
+  margin-left: 5px;
+}
+
+.headerWrapper .keywordDataWrap .keywordDetail a .itemTitle {
+  font-size: 14px;
+  max-height: 46px;
+  margin: 5px 20px 10px;
+  font-weight: normal;
+  color: #000;
+  line-height: 22px;
+  display: -webkit-box;
+  overflow: hidden;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  white-space: initial;
+  text-align: center;
+}
+
+.headerWrapper .keywordDataWrap .keywordDetail a .item {
+  margin: 0 10px;
+  color: #666;
+  font-weight: normal;
+  font-size: 12px;
+  text-align: center;
+}
+
+.headerWrapper .keywordDataWrap .keywordDetail a .item span {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.navigation {
+  width: 100%;
+  height: 41px;
+  background: url('//openimage.interpark.com/ticket-desktop/components/header/bg_gnb.jpg') center 0
+    no-repeat;
+}
+
+.navigationInner {
+  position: relative;
+  width: 1280px;
+  margin: 0 auto;
+}
+
+.navigationInner .allCategory {
+  position: relative;
+  width: 41px;
+  height: 41px;
+}
+
+.navigationInner .allCategory .allCategoryButton {
+  display: block;
+  width: 41px;
+  height: 41px;
+  text-indent: -9999px;
+  background: url('//openimage.interpark.com/ticket-desktop/components/header/icon_allCategory.png')
+    no-repeat left top;
+}
+
+.navigationInner .allCategory .allCategoryWrapper {
+  display: none;
+  position: absolute;
+  top: 41px;
+  left: 0;
+  width: 1280px;
+  background: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 18px 0 rgba(51, 51, 51, 0.3);
+  z-index: 100;
+}
+
+.navigationInner .allCategory .allCategoryWrapper .allCategoryWrap {
+  overflow: hidden;
+}
+
+.navigationInner .allCategory .allCategoryWrapper .allCategoryWrap dl.sortService dt {
+  margin-bottom: 12px;
+}
+
+.navigationInner .allCategory .allCategoryWrapper .allCategoryWrap dl.sortService dt a {
+  color: #e25147;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.navigationInner .allCategory .allCategoryWrapper .allCategoryWrap dl.sortService dd a {
+  color: #333;
+  font-size: 14px;
+}
+
+.navigationInner .allCategory .allCategoryWrapper .allCategoryWrap dl.sortService dd + dd {
+  margin-top: 4px;
+}
+
+.navigationInner .allCategory .allCategoryWrapper .allCategoryWrap .col {
+  float: left;
+  width: 162px;
+  padding: 0 25px;
+}
+
+.navigationInner .allCategory .allCategoryWrapper .allCategoryWrap .col dl {
+  padding: 26px 0 27px;
+}
+
+.navigationInner .allCategory .allCategoryWrapper .allCategoryWrap .col dl:first-child {
+  height: 195px;
+  position: relative;
+  border-bottom: 1px solid #ddd;
+}
+
+.navigationInner .allCategory .allCategoryWrapper .allCategoryWrap .col + .col {
+  position: relative;
+}
+
+.navigationInner .allCategory .allCategoryWrapper .allCategoryWrap .col + .col:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 1px;
+  height: 1000%;
+  background: #ddd;
+  pointer-events: none;
+}
+
+.navigationInner .allCategory .allCategoryWrapper .reservationWrap .reservationList {
+  overflow: hidden;
+  background: #42495c;
+  border-top: 1px solid #323847;
+}
+
+.navigationInner .allCategory .allCategoryWrapper .reservationWrap .reservationList li {
+  float: left;
+  width: 212px;
+  text-align: center;
+}
+
+.navigationInner .allCategory .allCategoryWrapper .reservationWrap .reservationList li a {
+  display: inline-block;
+  padding: 8px 0 10px;
+  color: #eee;
+  font-size: 14px;
+}
+
+.navigationInner .allCategory .allCategoryWrapper .reservationWrap .reservationList li + li {
+  position: relative;
+}
+
+.navigationInner .allCategory .allCategoryWrapper .reservationWrap .reservationList li + li:before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 2px;
+  height: 20px;
+  background: url('//openimage.interpark.com/ticket-desktop/components/header/icon_gnb_bar_gary.png')
+    no-repeat left top;
+}
+
+.navigationInner .allCategory.on .allCategoryButton {
+  background-position: 0 -41px;
+}
+
+.navigationInner .allCategory.on .allCategoryWrapper {
+  display: block;
+}
+
+.navigationInner .gnbWrapper {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.navigationInner .gnbWrapper > li {
+  display: table-cell;
+}
+
+.navigationInner .gnbWrapper > li > a {
+  display: block;
+  height: 41px;
+  line-height: 41px;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+}
+
+.navigationInner .gnbWrapper > li .subMenuWrap {
+  display: none;
+  position: absolute;
+  left: 0;
+  width: 723px;
+  height: 358px;
+  overflow: hidden;
+  background: #fff;
+  white-space: nowrap;
+  text-align: left;
+  z-index: 99;
+  box-shadow: 0 6px 18px 0 rgba(51, 51, 51, 0.3);
+}
+
+.navigationInner .gnbWrapper > li .subMenuWrap > div + div {
+  border-left: 1px solid #ddd;
+}
+
+.navigationInner .gnbWrapper > li .subMenuWrap > div h3 {
+  padding-top: 20px;
+}
+
+.navigationInner .gnbWrapper > li .subMenuWrap > div h3 a {
+  position: relative;
+  display: block;
+  height: 38px;
+  line-height: 38px;
+  font-size: 18px;
+  font-weight: normal;
+  color: #ef3e43;
+  border-bottom: 1px solid #ef3e43;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.navigationInner .gnbWrapper > li .subMenuWrap > div h3 a:after {
+  content: '';
+  position: absolute;
+  top: 16px;
+  right: 0;
+  width: 4px;
+  height: 5px;
+  background: url('//openimage.interpark.com/ticket-desktop/components/header/icon_subTitle_arrow.png')
+    no-repeat left top;
+}
+
+.navigationInner .gnbWrapper > li .subMenuWrap > div h4 {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #666;
+  font-weight: normal;
+}
+
+.navigationInner .gnbWrapper > li .subMenuWrap > div h4 + .subMenuList {
+  padding-top: 10px;
+}
+
+.navigationInner .gnbWrapper > li .subMenuWrap > div .subMenuList {
+  padding-top: 15px;
+}
+
+.navigationInner .gnbWrapper > li .subMenuWrap > div .subMenuList li {
+  margin-bottom: 8px;
+}
+
+.navigationInner .gnbWrapper > li .subMenuWrap > div .subMenuList li a {
+  display: inline-block;
+  font-size: 12px;
+  color: #666;
+}
+
+.navigationInner .gnbWrapper > li .subMenuWrap > div .subMenuList li a:hover {
+  color: #e25147;
+}
+
+.navigationInner .gnbWrapper > li .subMenuWrap > div .noticeList {
+  position: absolute;
+  bottom: 15px;
+  left: 30px;
+  width: 185px;
+  padding-top: 14px;
+  border-top: 1px solid #ebebeb;
+}
+
+.navigationInner .gnbWrapper > li .subMenuWrap > div .noticeList li {
+  margin-bottom: 8px;
+}
+
+.navigationInner .gnbWrapper > li.toping .subMenuWrap > div .noticeList li:first-child a:hover {
+  font-weight: bold;
+}
+
+.navigationInner .gnbWrapper > li .subMenuWrap > div .noticeList li:first-child a span.NolCard {
+  color: #ef3e43;
+  position: relative;
+}
+
+.navigationInner
+  .gnbWrapper
+  > li
+  .subMenuWrap
+  > div
+  .noticeList
+  li:first-child
+  a
+  span.NolCard:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -5px;
+  width: 3px;
+  height: 3px;
+  border-radius: 100%;
+  background-color: #ef3e43;
+}
+
+.navigationInner .gnbWrapper > li .subMenuWrap > div .noticeList li a {
+  display: inline-block;
+  font-size: 12px;
+  color: #666;
+}
+
+.navigationInner .gnbWrapper > li .subMenuWrap > div .noticeList li a:hover {
+  color: #e25147;
+}
+
+.navigationInner .gnbWrapper > li .subMenuWrap > div .noticeList li a + a {
+  position: relative;
+  padding-left: 5px;
+}
+
+.navigationInner .gnbWrapper > li .subMenuWrap > div .noticeList li a + a:before {
+  content: '/';
+  position: absolute;
+  top: 1px;
+  left: 0;
+}
+
+.navigationInner .gnbWrapper > li .subMenuWrap > div .recommWrap {
+  height: 100px;
+  margin-top: 18px;
+  padding-top: 10px;
+}
+
+.navigationInner .gnbWrapper > li .subMenuWrap > div .recommWrap .recommTitle {
+  float: left;
+  width: 83px;
+  padding-left: 20px;
+  font-size: 14px;
+  color: #000;
+  line-height: 18px;
+  font-weight: bold;
+}
+
+.navigationInner .gnbWrapper > li .subMenuWrap > div .recommWrap .recommTitle .subTitle {
+  display: block;
+}
+
+.navigationInner .gnbWrapper > li .subMenuWrap > div .recommWrap .recommList {
+  float: left;
+}
+
+.navigationInner .gnbWrapper > li .subMenuWrap > div .recommWrap .recommList li {
+  float: left;
+  margin-right: 10px;
+}
+
+.navigationInner .gnbWrapper > li .subMenuWrap > div .recommWrap .recommList li .imageWrap {
+  display: block;
+  width: 79px;
+  height: 99px;
+  border: 1px solid #d9d9d9;
+}
+
+.navigationInner .gnbWrapper > li .subMenuWrap > div .recommWrap .recommList li .imageWrap img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.navigationInner .gnbWrapper > li .subMenuWrap > div .subMenuBanner {
+  border-top: 1px solid #ddd;
+}
+
+.navigationInner .gnbWrapper > li + li > a {
+  position: relative;
+}
+
+.navigationInner .gnbWrapper > li + li > a:before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 2px;
+  height: 20px;
+  background: url('//openimage.interpark.com/ticket-desktop/components/header/icon_gnb_bar.png')
+    no-repeat left top;
+}
+
+.navigationInner .gnbWrapper > li.on > a {
+  position: relative;
+}
+
+.navigationInner .gnbWrapper > li.on > a:after {
+  z-index: 101;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  margin-left: -7px;
+  border-bottom: 8px solid #fff;
+  border-right: 7px solid transparent;
+  border-left: 7px solid transparent;
+  content: '';
+}
+
+.navigationInner .gnbWrapper > li.on .subMenuWrap {
+  display: block;
+}
+
+.navigationInner .gnbWrapper > li.toping a .gnbText {
+  display: block;
+  height: 41px;
+  background: url('//openimage.interpark.com/ticket-desktop/components/header/icon_gnb_toping.png')
+    no-repeat center center;
+  text-indent: -9999px;
+}
+
+.navigationInner .gnbWrapper > li.toping .subMenuWrap .noticeList {
+  bottom: 43px;
+}
+
+.navigationInner .gnbWrapper > li.leisure .subMenuWrap,
+.navigationInner .gnbWrapper > li.exhibition .subMenuWrap,
+.navigationInner .gnbWrapper > li.family .subMenuWrap,
+.navigationInner .gnbWrapper > li.toping .subMenuWrap {
+  right: 0;
+  left: inherit;
+}
+
+.navigationInner .gnbWrapper > li.concert .subMenuWrap .subMenuList,
+.navigationInner .gnbWrapper > li.local .subMenuWrap .subMenuList {
+  overflow: hidden;
+}
+
+.navigationInner .gnbWrapper > li.concert .subMenuWrap .subMenuList li,
+.navigationInner .gnbWrapper > li.local .subMenuWrap .subMenuList li {
+  float: left;
+  width: 50%;
+}
+
+.navigationInner .gnbCateWrapper {
+  position: absolute;
+  left: 42px;
+  top: 0;
+  width: 72.5%;
+  background-color: #e25147;
+}
+
+.navigationInner .gnbCateWrapper .gnbWrapper > li .subMenuLeft {
+  position: relative;
+  float: left;
+  width: 185px;
+  height: 100%;
+  padding: 0 30px;
+}
+
+.navigationInner .gnbCateWrapper .gnbWrapper > li .subMenuRight {
+  float: right;
+  width: 477px;
+  height: 100%;
+}
+
+.navigationInner .gnbPlaceWrapper {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 24.15%;
+  background-color: #42495c;
+}
+
+.navigationInner .gnbPlaceWrapper .gnbWrapper li + li > a:before {
+  background: url('//openimage.interpark.com/ticket-desktop/components/header/icon_gnb_bar_gary.png')
+    no-repeat left top;
+}
+
+.navigationInner .gnbPlaceWrapper .gnbWrapper li .subMenuLeft {
+  float: left;
+  width: 477px;
+  height: 100%;
+  padding: 0;
+}
+
+.navigationInner .gnbPlaceWrapper .gnbWrapper li .subMenuRight {
+  position: relative;
+  float: right;
+  width: 185px;
+  height: 100%;
+  padding: 0 30px;
+}
+
+.navigationInner .gnbPlaceWrapper .gnbWrapper li .subMenuWrap {
+  right: 0;
+  left: inherit;
+}
+
+.navigationInner .gnbPlaceWrapper .gnbWrapper li .gnbText {
+  position: relative;
+  display: inline-block;
+  padding-left: 15px;
+}
+
+.navigationInner .gnbPlaceWrapper .gnbWrapper li .gnbText:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 10px;
+  height: 13px;
+  margin-top: -6px;
+  background: url('//openimage.interpark.com/ticket-desktop/components/header/icon_gnb_local.png')
+    no-repeat left top;
+}
+
+.navigationInner .gnbPlaceWrapper .gnbWrapper li.local .gnbText:before {
+  background-position: 0 -13px;
+}
+
+.navigationInner .gnbPlaceWrapper .gnbWrapper li.place .gnbText:before {
+  height: 16px;
+  background-position: 0 -26px;
+}
+

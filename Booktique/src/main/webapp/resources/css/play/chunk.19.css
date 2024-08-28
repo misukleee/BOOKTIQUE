@@ -1,0 +1,34 @@
+/*!
+ _ _  _
+| | || | Ticket Desktop SPA Platform
+| | || | INTERPARK UI Development Team
+`___'|_| v0.0.16
+
+*/
+.leftWingWrapper {
+  position: absolute;
+  top: 185px;
+  left: 50%;
+  width: 80px;
+  margin-left: -740px;
+  z-index: 100;
+}
+
+.leftWingWrapper.fixed {
+  position: fixed;
+  top: 0;
+}
+
+.leftWingWrapper ul li a {
+  display: block;
+  width: 80px;
+}
+
+.leftWingWrapper ul li a img {
+  width: 100%;
+}
+
+.leftWingWrapper ul li + li {
+  margin-top: 15px;
+}
+

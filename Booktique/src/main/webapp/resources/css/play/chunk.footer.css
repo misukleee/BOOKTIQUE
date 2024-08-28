@@ -1,0 +1,295 @@
+/*!
+ _ _  _
+| | || | Ticket Desktop SPA Platform
+| | || | INTERPARK UI Development Team
+`___'|_| v0.0.16
+
+*/
+.topButtonWrapper {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    bottom: 10px;
+    z-index: 100;
+    left: calc(50% - 640px);
+    width: 1280px;
+    height: 52px;
+    margin: 0 auto;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    -webkit-transition: visibility .15s, opacity .15s;
+    transition: visibility .15s, opacity .15s;
+}
+
+.topButtonWrapper .topButton {
+    position: absolute;
+    right: -62px;
+    display: block;
+    width: 54px;
+    height: 52px;
+    background-color: #fff;
+    border: 1px solid #e1e4e9;
+    border-radius: 10px;
+    -webkit-user-select: auto;
+    -moz-user-select: auto;
+    user-select: auto;
+    pointer-events: auto;
+    background-image: url("//openimage.interpark.com/ticket-desktop/components/topButton/topButton.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.topButtonWrapper .blind {
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+}
+
+.topButtonWrapper.notFixed {
+    position: absolute;
+    bottom: 380px;
+}
+
+.topButtonWrapper.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media screen and (max-width: 1344px) {
+    .topButtonWrapper {
+        overflow: hidden;
+        height: 0;
+    }
+}
+
+@charset "UTF-8";
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+}
+
+.intFooter {
+  width: 100%;
+  height: 338px;
+  min-width: 1280px;
+  border-top: 1px solid #ebebeb;
+  background-color: #fff;
+  margin: 0 auto;
+  font-family: -apple-system, system-ui, blinkmacsystemfont, "맑은 고딕", "Malgun Gothic", "돋움", dotum, helvetica, "Apple SD Gothic Neo", sans-serif;
+}
+
+.intFooter .footerMenuBox {
+  padding: 17px 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 1280px;
+  margin: 0 auto;
+}
+
+.intFooter .footerItemList {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  line-height: 14px;
+  font-size: 13px;
+}
+
+.intFooter .footerMenuBox .footerItemList li {
+  list-style: none;
+  box-sizing: border-box;
+  position: relative;
+  padding: 0 27px;
+}
+
+.intFooter .footerMenuBox .footerItemList li:first-child {
+  padding-left: 0;
+}
+
+.intFooter .footerMenuBox .footerItemList > li:not(:first-child)::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 12px;
+  background-color: #aaa;
+}
+
+.intFooter .footerMenuBox .footerItemList li > a {
+  text-decoration: none;
+  color: #666;
+  font-size: 13px;
+  line-height: 14px;
+  cursor: pointer;
+}
+
+.intFooter .footerMenuBox .footerItemList li > a.arrow:after {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-top: 1px solid #121212;
+  border-right: 1px solid #121212;
+  transform: rotate(135deg);
+  position: absolute;
+  margin-left: 4px;
+  margin-top: 2px;
+}
+
+.intFooter .footerItemList .bold {
+  font-weight: 700;
+}
+
+.intFooter .footerMenuBox .buttonBox {
+  display: flex;
+}
+
+.intFooter .footerItemList .intFooterSelect:after {
+  content: '';
+  display: flex;
+  margin-left: 4px;
+  margin-top: -4px;
+  width: 5px;
+  height: 5px;
+  border-top: 1px solid #121212;
+  border-right: 1px solid #121212;
+  transform: rotate(135deg);
+}
+
+.intFooter .footerItemList .intFooterSelect.up:after {
+  margin-top: 0;
+  transform: rotate(313deg);
+}
+
+.intFooter .infoWrap {
+  width: 100%;
+  min-width: 1280px;
+  border-top: 1px solid #ebebeb;
+  padding-top: 30px;
+}
+
+.intFooter .infoWrap .innerContent {
+  display: flex;
+  width: 1280px;
+  margin: 0 auto;
+}
+
+.intFooter .infoWrap .innerContent .box {
+  margin-right: 100px;
+}
+
+.intFooter .infoWrap .innerContent .title {
+  color: #000;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 4px;
+}
+
+.intFooter .infoWrap .innerContent dl {
+  color: #666;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  line-height: 17px;
+}
+
+.intFooter .infoWrap .innerContent dd.gbn {
+  position: relative;
+  margin-right: 18px;
+}
+
+.intFooter .infoWrap .innerContent .gbn:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  right: -9px;
+  width: 1px;
+  height: 11px;
+  background-color: #7a7a7a;
+  margin-top: 2px;
+}
+
+.intFooter .infoWrap .innerContent dt {
+  margin-right: 3px;
+}
+
+.intFooter .infoWrap .innerContent a {
+  color: #4A95FF;
+  text-decoration: underline;
+}
+
+.intFooter .infoWrap .innerContent  .intFooterTel {
+  display: inline-flex;
+}
+
+.intFooter .infoWrap .innerContent .intFooterTel:not(:last-child)::after  {
+  content: "";
+  width: 1px;
+  height: 12px;
+  background-color: #666666;
+  margin-left: 4px;
+  margin-right: 4px;
+  margin-top: 2px;
+}
+
+.intFooter .intFooterInner .innerContent a {
+  color: #4A95FF;
+  text-decoration: underline;
+  font-size: 12px;
+}
+
+.intFooter .footerMenuBox .footerItemList ul.dropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  position: absolute;
+  padding: 16px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 16px 0 rgb(0 0 0 / 20%);
+  margin-top: 1px;
+  left: 20px;
+}
+
+.intFooter .footerMenuBox .footerItemList ul.dropdown li {
+  white-space: nowrap;
+  display: list-item;
+  padding: 0;
+}
+
+.intFooter .footerMenuBox .footerItemList ul.dropdown li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.intFooter .footerMenuBox .footerItemList ul.dropdown li > a {
+  color: #333333;
+  font-size: 13px;
+  line-height: 16px;
+  margin-bottom: 10px;
+}
+
+.intFooter .copyrightWrap {
+  width: 100%;
+  min-width: 1280px;
+  height: 152px;
+}
+
+.intFooter .copyrightWrap div {
+  color: rgba(17, 17, 17, 0.5019607843);
+  width: 1280px;
+  margin: 0 auto;
+  padding-top: 30px;
+  font-size: 12px;
+  line-height: 17px;
+}

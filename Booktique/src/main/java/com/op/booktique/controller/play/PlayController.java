@@ -53,6 +53,12 @@ public class PlayController {
 	}
 	
 
+	@GetMapping("/play/playDetail")
+	public String playDetail() {
+		
+		return "play/playDetail";
+	}
+
  
 	
 
