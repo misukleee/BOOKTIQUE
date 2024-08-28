@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.op.booktique.mapper.sports.SportsMapper">
+
+	<resultMap id="gameVOMap" type="com.op.booktique.vo.sports.GameVO">
+	    <result property="gameSq" column="GAME_SQ"/>
+	    <result property="stadiumId" column="STADIUM_ID"/>
+	    <result property="teamId" column="TEAM_ID"/>
+	    <result property="gameOpenDt" column="GAME_OPEN_DT"/>
+	    <result property="gameDt" column="GAME_DT"/>
+	    <result property="gameStartTm" column="GAME_START_TM"/>
+	    <result property="gameHt" column="GAME_HT"/>
+	    <result property="gameAt" column="GAME_AT"/>
+	    <collection property="teamVOList" resultMap="teamVOMap"></collection>
+	</resultMap>
+	    
+	 <resultMap id="teamVOMap" type="com.op.booktique.vo.sports.TeamVO">   
+	    <result property="teamId" column="TEAM_ID" />
+	    <result property="teamName" column="TEAM_NAME" />
+	    <result property="teamDirector" column="TEAM_DIRECTOR" />
+	    <result property="teamInfo" column="TEAM_INFO" />
+	    <result property="teamLogoImg1" column="TEAM_LOGO_IMG1"/>
+	    <result property="teamLogoImg2" column="TEAM_LOGO_IMG2"/>
+	</resultMap>
+
+ 
+    <insert id="insertGame" parameterType="com.op.booktique.vo.sports.GameVO">
+        INSERT INTO GAME (
+            GAME_SQ
+   		   ,STADIUM_ID
+   		   ,TEAM_ID
+	       ,GAME_OPEN_DT
+	       ,GAME_DT
+	       ,GAME_START_TM
+	       ,GAME_HT
+	       ,GAME_AT
+        )
+        VALUES (
+            #{gameSq},
+            #{stadiumId},
+            #{teamId},
+            #{gameOpenDt},
+            #{gameDt},
+            #{gameStartTm},
+            #{gameHt},
+            #{gameAt}
+        )
+    </insert>
+    
+    <insert id="insertMatch" parameterType="com.op.booktique.vo.sports.GameVO">
+        INSERT INTO GAME (
+            GAME_SQ
+   		   ,STADIUM_ID
+   		   ,TEAM_ID
+	       ,GAME_OPEN_DT
+	       ,GAME_DT
+	       ,GAME_START_TM
+	       ,GAME_HT
+	       ,GAME_AT
+        )
+        VALUES (
+            #{gameSq},
+            #{stadiumId},
+            #{teamId},
+            #{gameOpenDt},
+            #{gameDt},
+            #{gameStartTm},
+            #{gameHt},
+            #{gameAt}
+        )
+    </insert>
+    
+    
+    
+    
+</mapper>
+ 
+

@@ -1,0 +1,1731 @@
+/*!
+ _ _  _
+| | || | ticket-desktop v4.0.22
+| | || | INTERPARK UI Development Team
+`___'|_| /styles/pages/category/sports/sportsDetail.scss
+
+*/
+.swiperPopupSection {
+  position: fixed;
+  top: 132px;
+  left: 50%;
+  z-index: 100;
+  width: 960px;
+  margin: 0 auto;
+  margin-left: -480px;
+}
+
+.swiperPopupSection .dimmed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: none;
+}
+
+.swiperPopupWrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 21;
+  width: 438px;
+  margin-left: 10px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.swiperPopupWrap:first-child:nth-last-child(1) {
+  left: 50%;
+  margin-left: -219px;
+}
+
+.swiperPopupWrap .blind {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  font-size: 0;
+  text-indent: -9999rem;
+}
+
+.swiperPopupWrap img {
+  vertical-align: top;
+}
+
+.swiperPopupWrap:first-child + .swiperPopupWrap {
+  left: 448px;
+}
+
+.swiperPopupWrap .popupImage img {
+  width: 100%;
+}
+
+.swiperPopupWrap .popupInput:after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+.swiperPopupWrap .inputBox {
+  float: left;
+  height: 18px;
+  padding: 12px 0;
+}
+
+.swiperPopupWrap .inputBox .inputCheck {
+  display: none;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #b6bdc7;
+  -webkit-appearance: none;
+  appearance: none;
+  vertical-align: top;
+}
+
+.swiperPopupWrap .inputBox .inputCheck:checked + label {
+  background-image: url("//ticketImage.interpark.com/TicketImage/uidev/desktop/images/pages/promotion/promotionTemplate/ico_chk_on.png");
+}
+
+.swiperPopupWrap .inputBox label {
+  position: relative;
+  display: inline-block;
+  height: 20px;
+  margin-left: 12px;
+  padding-left: 30px;
+  font-size: 14px;
+  background: url("//ticketImage.interpark.com/TicketImage/uidev/desktop/images/pages/promotion/promotionTemplate/ico_chk_off.png") no-repeat 0 0;
+  cursor: pointer;
+  vertical-align: top;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.swiperPopupWrap .btnClose {
+  float: right;
+  width: 42px;
+  height: 42px;
+  background: url("//ticketImage.interpark.com/TicketImage/uidev/desktop/images/pages/promotion/promotionTemplate/btn_close.png") center center no-repeat;
+  border: 0;
+}
+
+.wrap {
+  background: #eee;
+  text-align: left;
+}
+
+.sportsDetailHeader {
+  background: #fff;
+  height: 40px;
+  padding: 12px 0;
+}
+
+.sportsDetailHeader .sportsDetailContent {
+  position: relative;
+  text-align: right;
+  font-size: 0;
+  line-height: 0;
+  z-index: 1;
+}
+
+.sportsDetailHeader .teamName {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  font-size: 15px;
+  line-height: 19px;
+}
+
+.sportsDetailHeader div.selectBox {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  border: 1px solid #aaa;
+  width: 186px;
+  line-height: 36px;
+  height: 38px;
+  cursor: pointer;
+  background: url("//ticketimage.interpark.com/TicketImage/uidev/desktop/images/pages/category/sportsLeisure/sports/clubDetail/sel_down.gif") 168px 15px no-repeat;
+  padding-left: 12px;
+  text-align: left;
+  font-size: 14px;
+  color: #666;
+  position: relative;
+}
+
+.sportsDetailHeader div.selectBox ul {
+  width: 198px;
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  border: 1px solid #aaa;
+  background: #fff url("//ticketimage.interpark.com/TicketImage/uidev/desktop/images/pages/category/sportsLeisure/sports/clubDetail/sel_up.gif") 168px 15px no-repeat;
+  display: none;
+}
+
+.sportsDetailHeader div.selectBox ul li {
+  width: 198px;
+  height: 40px;
+}
+
+.sportsDetailHeader div.selectBox ul li a {
+  display: block;
+  line-height: 38px;
+  text-decoration: none;
+  font-size: 14px;
+  color: #666;
+  text-indent: 12px;
+}
+
+.sportsDetailHeader div.selectBox ul li a:hover {
+  background: #f4f4f4;
+}
+
+.sportsDetailHeader div.selectBox.open ul {
+  display: block;
+}
+
+.sportsDetailHeader div.selectTeam {
+  margin-right: 5px;
+}
+
+.sportsDetailTop {
+  height: 282px;
+  background: #130d0c url("//ticketimage.interpark.com/TicketImage/uidev/desktop/images/pages/category/sportsLeisure/sports/clubDetail/topBg.jpg") center center no-repeat;
+  padding-top: 22px;
+}
+
+.sportsDetailTop.bgImg_07002 {
+  background: #000 url("//ticketimage.interpark.com/TicketImage/uidev/desktop/images/pages/category/sportsLeisure/sports/clubDetail/07002.jpg") center 0 no-repeat;
+}
+
+.sportsDetailTop.bgImg_07003 {
+  background: #000 url("//ticketimage.interpark.com/TicketImage/uidev/desktop/images/pages/category/sportsLeisure/sports/clubDetail/07003.jpg") center 0 no-repeat;
+}
+
+.sportsDetailTop.bgImg_07004 {
+  background: #ff7e8e url("//ticketimage.interpark.com/TicketImage/uidev/desktop/images/pages/category/sportsLeisure/sports/clubDetail/07004.jpg") center 0 no-repeat;
+}
+
+.sportsDetailTop .logo {
+  width: 260px;
+  height: 260px;
+  float: left;
+  margin-right: 64px;
+}
+
+.sportsDetailTop .teamContents {
+  padding-top: 7px;
+}
+
+.sportsDetailTop .teamContents .teamName {
+  font-size: 12px;
+  color: #a59a95;
+}
+
+.sportsDetailTop .teamContents .teamName_kor {
+  color: #fff;
+  font-size: 44px;
+  position: relative;
+  top: -6px;
+  margin-bottom: 1px;
+}
+
+.sportsDetailTop .teamContents .teamRank {
+  margin-bottom: 4px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.sportsDetailTop .teamContents .teamRank span {
+  display: inline-block;
+  width: 75px;
+}
+
+.sportsDetailTop .teamContents .teamGround {
+  margin-bottom: 39px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.sportsDetailTop .teamContents .teamGround span {
+  display: inline-block;
+  width: 75px;
+}
+
+.sportsDetailTop .teamContents table th {
+  height: 32px;
+  border-right: 1px solid #261d12;
+  border-left: 1px solid #7d7464;
+  padding-left: 40px;
+  vertical-align: top;
+  text-align: left;
+}
+
+.sportsDetailTop .teamContents table th:first-child {
+  border-left: 0;
+  padding-left: 0;
+}
+
+.sportsDetailTop .teamContents table th:last-child {
+  border-right: 0;
+}
+
+.sportsDetailTop .teamContents table td {
+  height: 58px;
+  border-right: 1px solid #261d12;
+  border-left: 1px solid #7d7464;
+  padding-left: 40px;
+}
+
+.sportsDetailTop .teamContents table td:first-child {
+  border-left: 0;
+  padding-left: 0;
+}
+
+.sportsDetailTop .teamContents table td:last-child {
+  border-right: 0;
+}
+
+.sportsDetailTop .teamContents table td .num {
+  height: 58px;
+  width: 45px;
+  background: url("//ticketimage.interpark.com/TicketImage/uidev/desktop/images/pages/category/sportsLeisure/sports/clubDetail/numbers.png") 0 0 no-repeat;
+  float: left;
+}
+
+.sportsDetailTop .teamContents table td .num.num1 {
+  width: 27px;
+}
+
+.sportsDetailTop .teamContents table td .num.num2 {
+  background-position: -27px 0;
+}
+
+.sportsDetailTop .teamContents table td .num.num3 {
+  background-position: -72px 0;
+}
+
+.sportsDetailTop .teamContents table td .num.num4 {
+  background-position: -118px 0;
+}
+
+.sportsDetailTop .teamContents table td .num.num5 {
+  background-position: -170px 0;
+}
+
+.sportsDetailTop .teamContents table td .num.num6 {
+  background-position: -219px 0;
+}
+
+.sportsDetailTop .teamContents table td .num.num7 {
+  background-position: -269px 0;
+  width: 44px;
+}
+
+.sportsDetailTop .teamContents table td .num.num8 {
+  background-position: -313px 0;
+}
+
+.sportsDetailTop .teamContents table td .num.num9 {
+  background-position: -364px 0;
+}
+
+.sportsDetailTop .teamContents table td .num.num0 {
+  background-position: -415px 0;
+  width: 47px;
+}
+
+.sportsDetailTop .teamContents.type2 {
+  padding-top: 84px;
+}
+
+.sportsDetailTop .teamContents.type2 table {
+  display: none;
+}
+
+.sportsDetailTop .teamContents.type2 .teamRank {
+  display: none;
+}
+
+.sportsDetailContent {
+  position: relative;
+  width: 960px;
+  margin: 0 auto;
+}
+
+.sportsDetailContent .rollingBannerWrap {
+  position: absolute;
+  top: 32px;
+  left: -164px;
+}
+
+.sportsDetailContent .rollingBannerWrap .bannerWrapper {
+  width: 148px;
+  margin: 0;
+  position: relative;
+}
+
+.sportsDetailContent .rollingBannerWrap .bannerWrapper ul {
+  position: relative;
+  width: 147px;
+  height: 246px;
+  overflow: hidden;
+}
+
+.sportsDetailContent .rollingBannerWrap .bannerWrapper ul li {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0 1px;
+}
+
+.sportsDetailContent .rollingBannerWrap .bannerWrapper ul li a {
+  display: block;
+}
+
+.sportsDetailContent .rollingBannerWrap .bannerWrapper ul li a img {
+  display: block;
+  width: 100%;
+}
+
+.sportsDetailContent .rollingBannerWrap .bannerWrapper .bx-controls {
+  position: absolute;
+  left: 0;
+  bottom: -20px;
+  z-index: 10;
+  width: 100%;
+}
+
+.sportsDetailContent .rollingBannerWrap .bannerWrapper .bx-controls .bx-pager {
+  text-align: center;
+  font-size: 0;
+}
+
+.sportsDetailContent .rollingBannerWrap .bannerWrapper .bx-controls .bx-pager .bx-pager-item {
+  display: inline-block;
+  padding: 0 1px;
+}
+
+.sportsDetailContent .rollingBannerWrap .bannerWrapper .bx-controls .bx-pager .bx-pager-item a {
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: url("//ticketimage.interpark.com/TicketImage/uidev/desktop/images/pages/category/sportsLeisure/sports/clubDetail/icon_rollingDot.png") no-repeat 0 0;
+  font-size: 0;
+  overflow: hidden;
+}
+
+.sportsDetailContent .rollingBannerWrap .bannerWrapper .bx-controls .bx-pager .bx-pager-item a.active {
+  background-position: -8px 0;
+}
+
+.sportsDetailTicketCast {
+  height: 38px;
+  border-top: 1px solid #282b31;
+  border-bottom: 1px solid #282b31;
+  background: #2f323a;
+  margin-bottom: 30px;
+}
+
+.sportsDetailTicketCast .ticketCast {
+  display: block;
+  padding: 9px 0 0 40px;
+  float: left;
+  height: 24px;
+  color: #fff;
+  text-decoration: none;
+  background: url("//ticketimage.interpark.com/TicketImage/uidev/desktop/images/pages/category/sportsLeisure/sports/clubDetail/offHeart.gif") 0 7px no-repeat;
+}
+
+.sportsDetailTicketCast .ticketCast b {
+  color: #ff8f8f;
+}
+
+.sportsDetailTicketCast .ticketCast.on {
+  background: url("//ticketimage.interpark.com/TicketImage/uidev/desktop/images/pages/category/sportsLeisure/sports/clubDetail/onHeart.gif") 0 7px no-repeat;
+}
+
+.sportsDetailTicketCast .sns {
+  position: absolute;
+  top: -1px;
+  right: 0;
+}
+
+.sportsDetailTicketCast .sns.twitter {
+  right: 40px;
+}
+
+.certifiateWrap {
+  width: 960px;
+  margin: 0 auto 26px;
+  text-align: center;
+}
+
+.certifiateWrap p {
+  padding: 8px 0 11px;
+  background-color: #1d88ea;
+  font-size: 12px;
+  font-style: normal;
+  color: #fff;
+}
+
+.selfCertification {
+  border-bottom: 1px solid #ddd;
+  height: 35px;
+  background: #fff;
+  position: relative;
+  padding: 16px 130px 0 20px;
+  color: #666;
+  margin-bottom: 25px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.selfCertification a {
+  display: block;
+  width: 120px;
+  height: 51px;
+  line-height: 51px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #6fbaff;
+  text-decoration: none;
+}
+
+.buyTitle {
+  height: 32px;
+  position: relative;
+  font-size: 16px;
+}
+
+.buyTitle a {
+  display: block;
+  padding-right: 14px;
+  background: url("//ticketimage.interpark.com/TicketImage/uidev/desktop/images/pages/category/sportsLeisure/sports/clubDetail/allSchedule.gif") right 4px no-repeat;
+  width: 70px;
+  position: absolute;
+  top: 4px;
+  right: 0;
+  text-decoration: none;
+  color: #666;
+  font-size: 12px;
+}
+
+.buyTitle b {
+  display: inline-block;
+  font-weight: normal;
+}
+
+.buyTitle span {
+  position: relative;
+  display: inline-block;
+  margin-left: 7px;
+  padding-left: 12px;
+  font-size: 12px;
+  color: #333;
+  vertical-align: 2px;
+}
+
+.buyTitle span:before {
+  position: absolute;
+  left: 0;
+  top: -1px;
+  content: "|";
+  display: block;
+  font-size: 12px;
+  color: #666;
+}
+
+.specialBanner {
+  margin-bottom: 10px;
+}
+
+.specialMatch {
+  padding-top: 40px;
+  height: 47px;
+}
+
+.timeSchedule {
+  display: flex;
+  width: 960px;
+  height: 120px;
+  border-bottom: 1px solid #ddd;
+  background: #fff url("//ticketimage.interpark.com/TicketImage/uidev/desktop/images/pages/category/sportsLeisure/sports/clubDetail/timeSchedule_1.gif") 0 0 repeat-y;
+  padding-left: 22px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.timeSchedule .num {
+  height: 30px;
+  width: 20px;
+  background: url("//ticketimage.interpark.com/TicketImage/uidev/desktop/images/pages/category/sportsLeisure/sports/clubDetail/numbers.png") 0 -70px no-repeat;
+  margin-right: 2px;
+}
+
+.timeSchedule .num.num1 {
+  width: 11px;
+}
+
+.timeSchedule .num.num2 {
+  background-position: -11px -70px;
+}
+
+.timeSchedule .num.num3 {
+  background-position: -32px -70px;
+}
+
+.timeSchedule .num.num4 {
+  background-position: -52px -70px;
+  width: 23px;
+}
+
+.timeSchedule .num.num5 {
+  background-position: -77px -70px;
+}
+
+.timeSchedule .num.num6 {
+  background-position: -98px -70px;
+  width: 22px;
+}
+
+.timeSchedule .num.num7 {
+  background-position: -120px -70px;
+}
+
+.timeSchedule .num.num8 {
+  background-position: -141px -70px;
+  width: 21px;
+}
+
+.timeSchedule .num.num9 {
+  background-position: -164px -70px;
+  width: 22px;
+}
+
+.timeSchedule .num.num0 {
+  background-position: -187px -70px;
+  width: 24px;
+}
+
+.timeSchedule .num.dot {
+  background-position: -213px -70px;
+  width: 4px;
+}
+
+.timeSchedule .num.colon {
+  background-position: -219px -70px;
+  width: 4px;
+}
+
+.timeSchedule .scheduleDate {
+  display: flex;
+  height: 30px;
+  width: 134px;
+  margin-right: 20px;
+  margin-top: 45px;
+  border-right: 1px solid #eee;
+}
+
+.timeSchedule .scheduleDate .date {
+  color: #999;
+  width: 20px;
+  height: 30px;
+  line-height: 45px;
+  vertical-align: bottom;
+  overflow: hidden;
+  font-size: 12px;
+  font-style: normal;
+}
+
+.timeSchedule .scheduleTime {
+  display: flex;
+  height: 30px;
+  width: 127px;
+  margin-right: 20px;
+  margin-top: 45px;
+  border-right: 1px solid #eee;
+}
+
+.timeSchedule .teamMatch {
+  display: flex;
+  width: 318px;
+  height: 104px;
+  padding-top: 16px;
+  margin-right: 20px;
+  background: url("//ticketimage.interpark.com/TicketImage/uidev/desktop/images/pages/category/sportsLeisure/sports/clubDetail/versus.gif") 148px 52px no-repeat;
+}
+
+.timeSchedule .teamMatch > div {
+  width: 135px;
+  margin-right: 48px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.timeSchedule .teamMatch > div a {
+  display: block;
+  color: #33333b;
+}
+
+.timeSchedule .teamMatch > div a:hover {
+  color: #e16464;
+  text-decoration: underline;
+}
+
+.timeSchedule .teamMatch > div.team2 {
+  margin-right: 0;
+}
+
+.timeSchedule .teamMatch > div a img {
+  width: 70px;
+  height: 70px;
+}
+
+.timeSchedule .textInfoBox {
+  width: 318px;
+  height: 121px;
+  margin-right: 20px;
+  white-space: nowrap;
+  font-size: 0;
+}
+
+.timeSchedule .textInfoBox p {
+  display: inline-block;
+  overflow: hidden;
+  width: 100%;
+  max-height: 57px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: normal;
+  word-break: break-all;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #333;
+}
+
+.timeSchedule .textInfoBox:before {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  content: "";
+}
+
+.timeSchedule .ground {
+  height: 30px;
+  padding-left: 20px;
+  background: url("//ticketimage.interpark.com/TicketImage/uidev/desktop/images/pages/category/sportsLeisure/sports/clubDetail/borderLeft.gif") 0 45px no-repeat;
+  display: table;
+  width: 125px;
+  height: 120px;
+  margin-right: 22px;
+}
+
+.timeSchedule .ground > div {
+  display: table-cell;
+  height: 120px;
+  vertical-align: middle;
+}
+
+.timeSchedule .ground > div div {
+  font-size: 11px;
+  color: #999;
+  line-height: 12px;
+}
+
+.timeSchedule .ground > div div.preMatch {
+  height: 24px;
+  font-size: 0;
+  line-height: 0;
+}
+
+.timeSchedule .ground span {
+  color: #333;
+  font-size: 14px;
+  font-style: normal;
+  position: relative;
+  line-height: 14px;
+}
+
+.timeSchedule .btns {
+  height: 120px;
+  width: 130px;
+}
+
+.timeSchedule .btns > a {
+  display: block;
+  width: 130px;
+  height: 70px;
+  padding-top: 50px;
+  background: #2f323a;
+  color: #fff;
+  text-align: center;
+  line-height: 16px;
+  font-size: 14px;
+  font-style: normal;
+  text-decoration: none;
+}
+
+.timeSchedule .btns > a b,
+.timeSchedule .btns > a span {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.timeSchedule .btns > a.btn2 {
+  padding-top: 42px;
+  height: 78px;
+}
+
+.timeSchedule .btns > a.double {
+  line-height: 18px;
+  padding-top: 40px;
+  height: 80px;
+}
+
+.timeSchedule .btns > a.BtnColor_F {
+  background: #aaa;
+}
+
+.timeSchedule .btns > a.BtnColor_C {
+  background: #2f323a;
+}
+
+.timeSchedule .btns > a.BtnColor_Y {
+  background: #ff655b;
+}
+
+.timeSchedule .btns > a.BtnColor_B {
+  background: #1d88ea;
+}
+
+.timeSchedule .btns > a.BtnColor_P, .timeSchedule .btns > a.BtnColor_D {
+  background: #6cd7d8;
+}
+
+.timeSchedule .btns.twoBtn a {
+  padding-top: 20px;
+  height: 39px;
+  margin-top: 2px;
+}
+
+.timeSchedule .btns.twoBtn a:first-child {
+  margin-top: 0;
+}
+
+.timeSchedule .btns.twoBtn a.btn2 {
+  padding-top: 13px;
+  height: 46px;
+}
+
+.timeSchedule .btns.twoBtn a.double {
+  height: 48px;
+  padding-top: 11px;
+  line-height: 18px;
+}
+
+.timeSchedule .btns.certifiate a {
+  padding-top: 7px;
+  height: 38px;
+  margin-top: 2px;
+}
+
+.timeSchedule .btns.certifiate a b,
+.timeSchedule .btns.certifiate a span {
+  display: block;
+  line-height: 14px;
+}
+
+.timeSchedule .btns.certifiate a:first-child {
+  margin-top: 0;
+  padding-top: 27px;
+  height: 46px;
+}
+
+.timeSchedule .btns.certifiate a.btn2:first-child {
+  margin-top: 0;
+  padding-top: 7px;
+  height: 66px;
+  line-height: 26px;
+}
+
+.timeSchedule.lineColor_F {
+  background-image: url("//ticketimage.interpark.com/TicketImage/uidev/desktop/images/pages/category/sportsLeisure/sports/clubDetail/timeSchedule_2.gif");
+}
+
+.timeSchedule.lineColor_C {
+  background-image: url("//ticketimage.interpark.com/TicketImage/uidev/desktop/images/pages/category/sportsLeisure/sports/clubDetail/timeSchedule_1.gif");
+}
+
+.timeSchedule.lineColor_Y {
+  background-image: url("//ticketimage.interpark.com/TicketImage/uidev/desktop/images/pages/category/sportsLeisure/sports/clubDetail/timeSchedule_3.gif");
+}
+
+.timeSchedule.lineColor_P, .timeSchedule.lineColor_D {
+  background-image: url("//ticketimage.interpark.com/TicketImage/uidev/desktop/images/pages/category/sportsLeisure/sports/clubDetail/timeSchedule_4.gif");
+}
+
+.sportsDetailContent .moreBtn {
+  border-bottom: 1px solid #ddd;
+  display: block;
+  height: 36px;
+  background: #fff url("//ticketimage.interpark.com/TicketImage/uidev/desktop/images/pages/category/sportsLeisure/sports/clubDetail/moreBtn.gif") 510px center no-repeat;
+  font-size: 15px;
+  padding-top: 14px;
+  text-decoration: none;
+  color: #666;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.sportsDetailContent .moreBtn:hover {
+  text-decoration: none;
+  color: #666;
+}
+
+.sportsDetailContent .banner {
+  display: block;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 30px;
+}
+
+.victory {
+  padding: 15px 20px 0;
+}
+
+.victory .victoryTitle span {
+  font-size: 16px;
+  color: #2f323a;
+  display: block;
+  margin-bottom: 7px;
+}
+
+.victory .victoryTitle ul {
+  margin-bottom: 16px;
+}
+
+.victory .victoryTitle ul li {
+  text-indent: 8px;
+  color: #999;
+  background: url("//ticketimage.interpark.com/TicketImage/uidev/desktop/images/pages/category/sportsLeisure/sports/clubDetail/dotbullet.gif") 0 8px no-repeat;
+  margin-bottom: 2px;
+}
+
+.victory .victoryTitle a {
+  padding-right: 12px;
+  background: url("//ticketimage.interpark.com/TicketImage/uidev/desktop/images/pages/category/sportsLeisure/sports/clubDetail/ruleAnchor.gif") right 6px no-repeat;
+}
+
+.victory .victoryTitle a b {
+  color: #666;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  padding-bottom: 1px;
+  border-bottom: 1px solid #666;
+}
+
+.victory .victoryBoard {
+  position: relative;
+  padding-top: 46px;
+}
+
+.victory .victoryBoard .write {
+  display: block;
+  width: 140px;
+  height: 40px;
+  position: absolute;
+  top: -28px;
+  right: 0;
+  background: #6fbaff;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  line-height: 40px;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.victory .victoryBoard .buyerOnly {
+  position: absolute;
+  top: 49px;
+  right: 0;
+  text-align: right;
+}
+
+.victory .victoryBoard .buyerOnly input {
+  margin: 3px 0 0;
+}
+
+.victory .victoryBoard .buyerOnly label {
+  color: #666;
+  padding-left: 4px;
+}
+
+.victory .victoryBoard .board {
+  border-top: 1px solid #ddd;
+  margin-bottom: 8px;
+}
+
+.victory .victoryBoard .board .article {
+  border-bottom: 1px solid #f4f4f4;
+  padding: 17px 0 0;
+  height: 83px;
+  background: url("//ticketimage.interpark.com/TicketImage/uidev/desktop/images/pages/category/sportsLeisure/sports/clubDetail/boardOff.gif") 853px 48px no-repeat;
+  overflow: hidden;
+}
+
+.victory .victoryBoard .board .article.open {
+  background-image: url("//ticketimage.interpark.com/TicketImage/uidev/desktop/images/pages/category/sportsLeisure/sports/clubDetail/boardOn.gif");
+}
+
+.victory .victoryBoard .board .article .logos {
+  width: 174px;
+  background: url("//ticketimage.interpark.com/TicketImage/uidev/desktop/images/pages/category/sportsLeisure/sports/clubDetail/versus_board.gif") 60px 0 no-repeat;
+  font-size: 0;
+  line-height: 0;
+  margin-right: 24px;
+  float: left;
+  padding-top: 3px;
+  margin-bottom: 20px;
+}
+
+.victory .victoryBoard .board .article .logos img {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  margin-left: 30px;
+}
+
+.victory .victoryBoard .board .article .logos img:first-child {
+  margin-left: 0;
+}
+
+.victory .victoryBoard .board .article .boardInfo {
+  width: 720px;
+  float: left;
+  height: 60px;
+  cursor: pointer;
+}
+
+.victory .victoryBoard .board .article .boardInfo > b {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+
+.victory .victoryBoard .board .article .boardInfo > div {
+  margin-bottom: 9px;
+}
+
+.victory .victoryBoard .board .article .boardInfo .userInfo {
+  height: 16px;
+  line-height: 16px;
+  margin-bottom: 0;
+}
+
+.victory .victoryBoard .board .article .boardInfo .userInfo > img {
+  padding-right: 3px;
+}
+
+.victory .victoryBoard .board .article .boardInfo .userInfo span {
+  line-height: 16px;
+  color: #999;
+  font-size: 11px;
+  background: url("//ticketimage.interpark.com/TicketImage/uidev/desktop/images/pages/category/sportsLeisure/sports/clubDetail/tabLine.gif") right 3px no-repeat;
+  padding-right: 13px;
+  display: inline-block;
+  margin-right: 12px;
+}
+
+.victory .victoryBoard .board .article .boardInfo .userInfo span.grade {
+  font-size: 0;
+  line-height: 0;
+}
+
+.victory .victoryBoard .board .article .txtArea {
+  background: #f4f4f4;
+  padding: 17px 20px 22px;
+}
+
+.victory .victoryBoard .board .article .txtArea > div {
+  background: url("//ticketimage.interpark.com/TicketImage/uidev/desktop/images/pages/category/sportsLeisure/sports/clubDetail/articleBg.gif") 0 bottom repeat-x;
+  line-height: 16px;
+  color: #666;
+  padding-bottom: 20px;
+}
+
+.victory .victoryBoard .board .article .txtArea > div.reply {
+  padding: 9px 0 12px;
+}
+
+.victory .victoryBoard .board .article .txtArea > div.reply div {
+  padding-left: 21px;
+  background: url("//ticketimage.interpark.com/TicketImage/uidev/desktop/images/pages/category/sportsLeisure/sports/clubDetail/replyBg.gif") 0 3px no-repeat;
+}
+
+.victory .victoryBoard .board .article .txtArea > div.last {
+  background: none;
+}
+
+.victory .victoryBoard .board .article .txtArea > div.textarea {
+  height: 66px;
+  background: none;
+}
+
+.victory .victoryBoard .board .article .txtArea > div.textarea textarea {
+  height: 44px;
+  width: 719px;
+  border: 1px solid #ececec;
+  border-right: 0;
+  float: left;
+  padding: 10px;
+  resize: none;
+}
+
+.victory .victoryBoard .board .article .txtArea > div.textarea .btn {
+  display: block;
+  float: left;
+  width: 140px;
+  height: 66px;
+  background: #aaa;
+  color: #fff;
+  font-weight: bold;
+  line-height: 66px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.victory .victoryBoard .board .article .clearFix {
+  clear: both;
+}
+
+.victory .victoryBoard .manipulate {
+  height: 30px;
+  font-size: 0;
+  line-height: 0;
+}
+
+.victory .victoryBoard .manipulate div.selectBox {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  border: 1px solid #ddd;
+  width: 108px;
+  line-height: 26px;
+  height: 28px;
+  cursor: pointer;
+  background: url("//ticketimage.interpark.com/TicketImage/uidev/desktop/images/pages/category/sportsLeisure/sports/clubDetail/sel_down.gif") 95px 10px no-repeat;
+  padding-left: 10px;
+  text-align: left;
+  font-size: 12px;
+  color: #666;
+  position: relative;
+  margin-right: 4px;
+}
+
+.victory .victoryBoard .manipulate div.selectBox ul {
+  width: 118px;
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  border: 1px solid #ddd;
+  background: #fff url("//ticketimage.interpark.com/TicketImage/uidev/desktop/images/pages/category/sportsLeisure/sports/clubDetail/sel_up.gif") 168px 15px no-repeat;
+  display: none;
+}
+
+.victory .victoryBoard .manipulate div.selectBox ul li {
+  width: 118px;
+  height: 28px;
+}
+
+.victory .victoryBoard .manipulate div.selectBox ul li a {
+  display: block;
+  line-height: 28px;
+  text-decoration: none;
+  font-size: 12px;
+  color: #666;
+  text-indent: 12px;
+}
+
+.victory .victoryBoard .manipulate div.selectBox ul li a:hover {
+  background: #f4f4f4;
+}
+
+.victory .victoryBoard .manipulate div.selectBox.open ul {
+  display: block;
+}
+
+.victory .victoryBoard .manipulate div.selectTeam {
+  margin-right: 5px;
+}
+
+.victory .victoryBoard .manipulate input {
+  width: 188px;
+  height: 28px;
+  padding: 0;
+  line-height: 28px;
+  border: 1px solid #ddd;
+  border-right: 0;
+  display: inline-block;
+  font-size: 12px;
+}
+
+.victory .victoryBoard .manipulate ul {
+  float: right;
+  text-align: right;
+  height: 16px;
+  font-size: 0;
+  line-height: 0;
+  padding-top: 6px;
+}
+
+.victory .victoryBoard .manipulate ul li {
+  width: 28px;
+  text-align: center;
+  background: url("//ticketimage.interpark.com/TicketImage/uidev/desktop/images/pages/category/sportsLeisure/sports/clubDetail/pagingBar.gif") left 4px no-repeat;
+  display: inline-block;
+  height: 16px;
+  line-height: 16px;
+}
+
+.victory .victoryBoard .manipulate ul li a {
+  display: block;
+  width: 28px;
+  height: 16px;
+  line-height: 16px;
+  font-size: 12px;
+  text-decoration: none;
+  color: #999;
+}
+
+.victory .victoryBoard .manipulate ul li.btn {
+  width: 11px;
+  background: none;
+}
+
+.victory .victoryBoard .manipulate ul li.btn a {
+  width: 11px;
+  font-size: 0;
+  line-height: 0;
+  padding-top: 3px;
+  height: 13px;
+}
+
+.victory .victoryBoard .manipulate ul li.selected a {
+  color: #ff655b;
+  font-weight: bold;
+}
+
+.victory .victoryBoard .manipulate a.btn {
+  display: inline-block;
+  width: 50px;
+  height: 30px;
+  background: #aaa;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  line-height: 30px;
+  font-size: 12px;
+}
+
+.victory .victoryBoard ul.tab {
+  height: 26px;
+}
+
+.victory .victoryBoard ul.tab li {
+  display: inline-block;
+  *display: inilne;
+  *zoom: 1;
+  height: 26px;
+  background: url("//ticketimage.interpark.com/TicketImage/uidev/desktop/images/pages/category/sportsLeisure/sports/clubDetail/tabLine.gif") left 7px no-repeat;
+}
+
+.victory .victoryBoard ul.tab li a {
+  display: inline-block;
+  *display: inilne;
+  *zoom: 1;
+  padding: 0 12px;
+  line-height: 20px;
+  color: #999;
+  text-decoration: none;
+}
+
+.victory .victoryBoard ul.tab li a.selected {
+  color: #666;
+  font-weight: bold;
+}
+
+.victory .victoryBoard ul.tab li a.live {
+  padding-top: 7px;
+}
+
+.victory .victoryBoard ul.tab li:first-child {
+  background: none;
+}
+
+.victory .victoryBoard ul.tab li:first-child a {
+  padding-left: 0;
+}
+
+.noGameResultWrap {
+  padding: 254px 0 120px;
+  background: url("//ticketimage.interpark.com/TicketImage/uidev/desktop/images/pages/category/sportsLeisure/sports/clubDetail/img_noSearch.png") no-repeat 50% 90px;
+  text-align: center;
+}
+
+.noGameResultWrap p {
+  font-size: 22px;
+  font-style: normal;
+  line-height: 24px;
+  color: #666;
+}
+
+.innerLayerWrpper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: none;
+}
+
+.innerLayerWrpper.visible {
+  display: block;
+}
+
+.innerLayerWrpper.skEvent {
+  position: absolute;
+}
+
+.innerLayerWrpper .layerContentsWrap {
+  position: relative;
+}
+
+.innerLayerWrpper .layerContentsWrap > .closeLayer {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 25px;
+  height: 25px;
+  background: url("//ticketimage.interpark.com/TicketImage/uidev/desktop/images/pages/category/sportsLeisure/sports/clubDetail/icons_closeBtn.png") no-repeat 0 0;
+}
+
+.innerLayerWrpper .layerContentsWrap > .closeLayer span {
+  font-size: 0;
+  overflow: hidden;
+}
+
+.innerLayerWrpper .layerContentsWrap .infoImg img {
+  display: block;
+}
+
+.innerLayerWrpper .layerContentsWrap .infoImg .closeLayer {
+  position: absolute;
+  left: 50%;
+  margin-left: -30px;
+  bottom: 15px;
+  display: inline-block;
+  width: 60px;
+  height: 24px;
+  background: url("//ticketimage.interpark.com/TicketImage/uidev/desktop/images/pages/category/sportsLeisure/sports/clubDetail/icons_closeTextBtn.png") no-repeat 0 0;
+}
+
+.innerLayerWrpper .layerContentsWrap .infoImg .closeLayer span {
+  font-size: 0;
+  overflow: hidden;
+}
+
+.innerLayerWrpper .layerContentsWrap .infoImg .eventBtn {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  margin-left: -105px;
+}
+
+.sportsTabWrapper {
+  width: 960px;
+  padding-bottom: 40px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.sportsTabWrapper .tabWrapper ul.tabWrap {
+  display: table;
+  width: 100%;
+  height: 60px;
+  background-color: #2f323b;
+  table-layout: fixed;
+}
+
+.sportsTabWrapper .tabWrapper ul.tabWrap li {
+  display: table-cell;
+  border-left: 1px solid #555;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.sportsTabWrapper .tabWrapper ul.tabWrap li.active {
+  background-color: #fff;
+}
+
+.sportsTabWrapper .tabWrapper ul.tabWrap li.active span {
+  display: block;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: bold;
+  color: #2f323b;
+}
+
+.sportsTabWrapper .tabWrapper ul.tabWrap li:first-child {
+  border-left: 0;
+}
+
+.sportsTabWrapper .tabWrapper ul.tabWrap li span {
+  display: block;
+  font-size: 16px;
+  font-style: normal;
+  color: #999;
+}
+
+.sportsTabWrapper .tabContentsWrapper {
+  padding: 40px 40px 0;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap {
+  width: 100%;
+  display: none;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap.current {
+  display: block;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap h3 {
+  font-size: 18px;
+  font-style: normal;
+  color: #333;
+  padding-bottom: 8px;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents {
+  padding-bottom: 40px;
+  font-size: 14px;
+  font-style: normal;
+  color: #333;
+  line-height: 1.7;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents img {
+  display: block;
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper {
+  padding: 40px;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper img {
+  display: block;
+  width: 100%;
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .visualModule {
+  position: relative;
+  padding-top: 60px;
+  text-align: center;
+  background-color: #26cec1;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .visualModule .visualTitle {
+  font-size: 43px;
+  line-height: 1.2;
+  color: #000;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .visualModule .visualTitle .spot {
+  display: block;
+  color: #fff;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .visualModule .infoTextSub {
+  margin-top: 10px;
+  font-size: 19px;
+  line-height: 1.4;
+  color: #666;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .visualModule .visualImgArea {
+  font-size: 0;
+  line-height: 0;
+  margin: 0 158px;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .visualModule .appDownload {
+  width: 400px;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  padding: 24px 0;
+  font-size: 0;
+  line-height: 0;
+  background-color: #fff;
+  border-radius: 10px;
+  border: 1px solid #000;
+  box-sizing: border-box;
+  box-shadow: 2px 8px 10px rgba(0, 0, 0, 0.3);
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .visualModule .appDownload a {
+  display: inline-block;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .visualModule .appDownload a:first-child {
+  margin-right: 23px;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .visualModule .appDownload a img {
+  display: inline-block;
+  width: auto;
+  height: 50px;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .repeatColumn {
+  position: relative;
+  padding: 60px 30px;
+  text-align: center;
+  border-bottom: 20px solid #f8f8f8;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .repeatColumn .title {
+  display: inline-block;
+  padding-bottom: 18px;
+  font-size: 40px;
+  line-height: 1.2;
+  color: #000;
+  font-weight: bold;
+  box-shadow: inset 0 -2px black;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .repeatColumn .infoText {
+  display: block;
+  margin-top: 30px;
+  padding: 0 20px;
+  font-size: 22px;
+  line-height: 1.2;
+  text-align: center;
+  font-weight: bold;
+  color: #000;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .repeatColumn .infoTextSub {
+  margin-top: 10px;
+  font-size: 19px;
+  line-height: 1.4;
+  color: #666;
+  text-align: center;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .repeatColumn .subTitle {
+  margin-top: 87px;
+  font-size: 22px;
+  line-height: 40px;
+  color: #000;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .repeatColumn .subTitle:first-of-type {
+  margin-top: 40px;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .ticketUseModule .infoTextSub:first-of-type {
+  font-size: 20px;
+  margin-top: 20px;
+  line-height: 28px;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .ticketUseModule .ticketUseImgArea img {
+  width: 500px;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .getBenefitsModule .getBenefitsImgArea {
+  margin-top: 40px;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .getBenefitsModule .getBenefitsImgArea img {
+  width: 476px;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .getBenefitsModule .infoTextSub:first-of-type {
+  margin-top: 35px;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .noticeModule {
+  padding: 85px 60px 80px;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .noticeModule .title {
+  font-size: 22px;
+  line-height: 48px;
+  color: #000;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .noticeModule .noticeList {
+  margin-top: 10px;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .noticeModule .noticeList li {
+  position: relative;
+  margin-top: 15px;
+  font-size: 19px;
+  line-height: 1.4;
+  text-align: left;
+  text-align: justify;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .noticeModule .noticeList li:first-child {
+  margin-top: 0;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .noticeModule .noticeList li.point01 {
+  color: #dc941b;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .noticeModule .noticeList li:before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: -20px;
+  border-radius: 50%;
+  width: 4px;
+  height: 4px;
+  background-color: #000;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .footBannerModule .footBnner {
+  margin: 0 40px 12px 45px;
+  min-height: 100px;
+  padding: 20px 30px 20px 135px;
+  font-size: 19px;
+  line-height: 27px;
+  color: #666;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background: url("//ticketimage.interpark.com/TicketImage/uidev/desktop/images/pages/category/sportsLeisure/sports/clubDetail/icon_ticket.png") no-repeat 30px center;
+  background-size: 90px 90px;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .footBannerModule .footBnner .spot {
+  display: block;
+  margin-top: 11px;
+  font-size: 24px;
+  line-height: 27px;
+  color: #000;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .swiperSaveArea,
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .swiperGiftArea {
+  position: relative;
+  overflow: hidden;
+  width: 524px;
+  width: 420px;
+  margin: 60px auto 0;
+  padding: 0 60px;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .swiperSaveArea .swiperList li.item span,
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .swiperGiftArea .swiperList li.item span {
+  display: block;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .swiperSaveArea .swiperList li.item .infoText,
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .swiperSaveArea .swiperList li.item .infoTextSub,
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .swiperGiftArea .swiperList li.item .infoText,
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .swiperGiftArea .swiperList li.item .infoTextSub {
+  padding: 0;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .swiperSaveArea .swiperList li .icon,
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .swiperGiftArea .swiperList li .icon {
+  display: inline-block;
+  padding-left: 24px;
+  background: url("//ticketimage.interpark.com/TicketImage/uidev/desktop/images/pages/category/sportsLeisure/sports/clubDetail/icon_click.png") no-repeat 0 0;
+  background-size: 20px 20px;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .swiperSaveArea .swiperList li .ticketSaveImgArea,
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .swiperGiftArea .swiperList li .ticketSaveImgArea {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  width: 300px;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .swiperSaveArea .bx-prev,
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .swiperSaveArea .bx-next,
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .swiperGiftArea .bx-prev,
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .swiperGiftArea .bx-next {
+  position: absolute;
+  top: 0;
+  margin: auto 0;
+  width: 60px;
+  height: 100%;
+  text-indent: -9999px;
+  background: #fff;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .swiperSaveArea .bx-prev:before,
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .swiperSaveArea .bx-next:before,
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .swiperGiftArea .bx-prev:before,
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .swiperGiftArea .bx-next:before {
+  content: "";
+  position: absolute;
+  top: 275px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 30px;
+  height: 30px;
+  border: 4px solid #333;
+  border-top: 0;
+  border-left: 0;
+  transform: rotate(135deg);
+  pointer-events: none;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .swiperSaveArea .bx-prev.disabled:before,
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .swiperSaveArea .bx-next.disabled:before,
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .swiperGiftArea .bx-prev.disabled:before,
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .swiperGiftArea .bx-next.disabled:before {
+  border-color: #d7d7d7;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .swiperSaveArea .bx-prev,
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .swiperGiftArea .bx-prev {
+  left: 0;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .swiperSaveArea .bx-next,
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .swiperGiftArea .bx-next {
+  right: 0;
+}
+
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .swiperSaveArea .bx-next:before,
+.sportsTabWrapper .tabContentsWrapper .tabcontentsWrap .dataContents .ticketUsageGuideWrapper .swiperGiftArea .bx-next:before {
+  transform: rotate(-45deg);
+}
