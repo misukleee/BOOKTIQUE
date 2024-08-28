@@ -8,7 +8,9 @@ public interface PlayService {
 
 	public List<ShowVo> playList();
 
-	public List<ShowVo> playRec(ShowVo showVo);  
+	public List<ShowVo> playRec(ShowVo showVo);
+
+	public List<ShowVo> playHot(ShowVo showVo);  
 
 	 
 }

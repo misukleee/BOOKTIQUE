@@ -8,7 +8,9 @@ public interface PlayMapper {
 
 	public List<ShowVo> playList();
 
-	public List<ShowVo> playRecList(ShowVo showVo);  
+	public List<ShowVo> playRecList(ShowVo showVo);
+
+	public List<ShowVo> playHot(ShowVo showVo);  
 
 } 
 

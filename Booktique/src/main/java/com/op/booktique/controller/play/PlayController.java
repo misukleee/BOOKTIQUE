@@ -29,7 +29,12 @@ public class PlayController {
 		List<ShowVo> playList = playService.playList();
 		log.info("연극 메인 -> playList : {}" ,playList);
 		
+		ShowVo showVo = new ShowVo();
+		List<ShowVo> playHotList = playService.playHot(showVo);
+		log.info("연극 메인 -> playHotList : {}", playHotList);
+		
 		model.addAttribute("playList", playList);  
+		model.addAttribute("playHotList", playHotList);  
 		
 		return "play/playMain";
 	}
@@ -39,6 +44,7 @@ public class PlayController {
 	@ResponseBody
 	public List<ShowVo> areaRecList(@RequestBody ShowVo showVo) {
 		log.info("연극 메인 지도");
+		log.info("연극 메인 지도 -> showVo : {}", showVo);
 		
 		List<ShowVo> playRecList = playService.playRec(showVo);
 		log.info("연극 메인 지도 -> playRecList : {}", playRecList);
@@ -46,6 +52,7 @@ public class PlayController {
 		return playRecList;
 	}
 	
+
  
 	
 

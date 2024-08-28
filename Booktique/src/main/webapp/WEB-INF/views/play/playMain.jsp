@@ -1,14 +1,31 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+<%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
 
 <!-- 슬라이드 -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
 
 
 <style>
+/*------------------------------------인기슬라이드---------------------------------------*/
+.gradient-overlay {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 35%, rgba(255, 255, 255, 0.8) 90%); /* 위쪽은 투명, 아래쪽은 흰색 그라데이션 */
+    pointer-events: none; /* 오버레이가 클릭 이벤트를 방해하지 않도록 설정 */
+}
+
+
+/*------------------------------------인기슬라이드---------------------------------------*/
 /*------------------------------------지도---------------------------------------*/
 .area {
 	position: absolute;
@@ -20,13 +37,16 @@
 	left: 15px;
 	padding: 2px;
 }
+
 .info {
 	font-size: 12px;
 	padding: 5px;
 }
+
 .info .title {
 	font-weight: bold;
 }
+
 #mapDiv {
 	display: flex;
 	align-items: center;
@@ -37,8 +57,22 @@
 	width: 100%;
 	justify-content: center;
 }
-/*------------------------------------지도---------------------------------------*/
 
+.recImg {
+	height: 318px;
+	width: 268px;
+	margin-left: 8px;
+}
+
+#playRec {
+	width: 50%;
+	height: 450px;
+	border: 2px solid;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+/*------------------------------------지도---------------------------------------*/
 
 /*-----------------------------------전체보기--------------------------------------*/
 .ProductList_contents__eUxgq {
@@ -65,6 +99,7 @@
 .TicketItem_contentsWrap__xCe3A {
 	padding: 5px;
 }
+
 .Panel_subWrap__5147a {
 	min-height: 100vh;
 }
@@ -86,16 +121,30 @@
 		<br>
 
 		<!-- 슬라이드  시작 -->
-		<div style="border: 2px solid;"
+		<div
 			class="HorizontalList_wrap__5c3c0 swiper-initialized swiper-horizontal swiper-pointer-events">
 			<div class="swiper-wrapper"
-				style="transition-duration: 0ms; transform: translate3d(-1615px, 0px, 0px);">
-				<c:forEach var="i" begin="1" end="10">
+				style="transition-duration: 0ms; transform: translate3d(-1615px, 0px, 0px); padding-left: 21px;">
+				<c:forEach var="playHotList" items="${playHotList}" varStatus="stat">
 					<div style="width: 290px; margin-right: 20px;"
 						class="swiper-slide HorizontalList_swiperSlide__fce1f BigBanner_bannerSlide__WNhKi not-intersecting">
 
-						<img style="width: 100%; height: 100%; border-radius: 15px;"
-							src="/resources/img/연극이미지1.jpg">
+						<a href="https://tickets.interpark.com/contents/bridge/24005706"
+							class="BigBanner_link__GCNo8"> 
+							<img 
+								sizes="(max-width: 1023px) 33vw, 25vw"
+								style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;"
+								src="${playHotList.mainImg}">
+								 <div class="gradient-overlay"></div>
+
+							<ul class="BigBanner_contents__R9Ifu" style="color: rgb(0, 0, 0);">
+								<li class="BigBanner_subTitle__uw_f4"></li>
+								<li class="BigBanner_title__seLOS">${playHotList.showName}</li>
+								<li class="BigBanner_placeName__tk6Gd">${playHotList.detailImg}</li>
+								<li class="BigBanner_playDate__48Hsf">${playHotList.startDate}~${playHotList.endDate}</li>
+							</ul>
+
+						</a>
 
 					</div>
 				</c:forEach>
@@ -105,47 +154,34 @@
 
 	</div>
 
+
 	<!-- 슬라이드  끝 -->
 
 	<!-- 광고 배너 시작 -->
 
-	<article class="Panel_wrap__b444b">
-		<section class="Panel_subWrap__5147a">
-			<div class="Panel_contents__f7025 Panel_pd-l__27d91">
-				<div class="MiniBanner_miniBanner__2ec1f GMiniBanner">
-					<ul class="MiniBanner_miniBannerInner__58520">
-						<li class=""><a class="Ticket_Minibanner_PC"
-							href="https://events.interpark.com/exhibition?exhibitionCode=240305008"><img
-								alt="［로터리 티켓］ 연극 〈엔젤스 인 아메리카 - 파트원:밀레니엄이 다가온다〉"
-								crossorigin="anonymous" fetchpriority="high" decoding="async"
-								data-nimg="fill" class="MiniBanner_promotionImage__36e77"
-								style="position: absolute; height: 100%; width: 100%; left: 0; top: 0; right: 0; bottom: 0; color: transparent"
-								sizes="413px"
-								srcset="/contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2408%2F240821094451_24010807.gif&amp;w=16&amp;q=75 16w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2408%2F240821094451_24010807.gif&amp;w=32&amp;q=75 32w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2408%2F240821094451_24010807.gif&amp;w=48&amp;q=75 48w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2408%2F240821094451_24010807.gif&amp;w=64&amp;q=75 64w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2408%2F240821094451_24010807.gif&amp;w=96&amp;q=75 96w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2408%2F240821094451_24010807.gif&amp;w=128&amp;q=75 128w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2408%2F240821094451_24010807.gif&amp;w=256&amp;q=75 256w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2408%2F240821094451_24010807.gif&amp;w=384&amp;q=75 384w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2408%2F240821094451_24010807.gif&amp;w=640&amp;q=75 640w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2408%2F240821094451_24010807.gif&amp;w=750&amp;q=75 750w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2408%2F240821094451_24010807.gif&amp;w=828&amp;q=75 828w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2408%2F240821094451_24010807.gif&amp;w=1080&amp;q=75 1080w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2408%2F240821094451_24010807.gif&amp;w=1200&amp;q=75 1200w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2408%2F240821094451_24010807.gif&amp;w=1920&amp;q=75 1920w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2408%2F240821094451_24010807.gif&amp;w=2048&amp;q=75 2048w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2408%2F240821094451_24010807.gif&amp;w=3840&amp;q=75 3840w"
-								src="https://tickets.interpark.com/contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2408%2F240821094451_24010807.gif&amp;w=3840&amp;q=75"></a></li>
-						<li class=""><a class="Ticket_Minibanner_PC"
-							href="https://events.interpark.com/page?pageId=CCC000014P1#subCorner_220608004"><img
-								alt="공연, 이달의 혜택" crossorigin="anonymous" fetchpriority="high"
-								decoding="async" data-nimg="fill"
-								class="MiniBanner_promotionImage__36e77"
-								style="position: absolute; height: 100%; width: 100%; left: 0; top: 0; right: 0; bottom: 0; color: transparent"
-								sizes="413px"
-								srcset="/contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2402%2F240205060138_19018229.gif&amp;w=16&amp;q=75 16w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2402%2F240205060138_19018229.gif&amp;w=32&amp;q=75 32w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2402%2F240205060138_19018229.gif&amp;w=48&amp;q=75 48w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2402%2F240205060138_19018229.gif&amp;w=64&amp;q=75 64w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2402%2F240205060138_19018229.gif&amp;w=96&amp;q=75 96w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2402%2F240205060138_19018229.gif&amp;w=128&amp;q=75 128w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2402%2F240205060138_19018229.gif&amp;w=256&amp;q=75 256w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2402%2F240205060138_19018229.gif&amp;w=384&amp;q=75 384w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2402%2F240205060138_19018229.gif&amp;w=640&amp;q=75 640w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2402%2F240205060138_19018229.gif&amp;w=750&amp;q=75 750w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2402%2F240205060138_19018229.gif&amp;w=828&amp;q=75 828w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2402%2F240205060138_19018229.gif&amp;w=1080&amp;q=75 1080w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2402%2F240205060138_19018229.gif&amp;w=1200&amp;q=75 1200w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2402%2F240205060138_19018229.gif&amp;w=1920&amp;q=75 1920w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2402%2F240205060138_19018229.gif&amp;w=2048&amp;q=75 2048w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2402%2F240205060138_19018229.gif&amp;w=3840&amp;q=75 3840w"
-								src="https://tickets.interpark.com/contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2402%2F240205060138_19018229.gif&amp;w=3840&amp;q=75"></a></li>
-						<li class=""><a class="Ticket_Minibanner_PC"
-							href="https://events.interpark.com/exhibition?exhibitionCode=200630010"><img
-								alt="혜화역 5번출구" crossorigin="anonymous" fetchpriority="high"
-								decoding="async" data-nimg="fill"
-								class="MiniBanner_promotionImage__36e77"
-								style="position: absolute; height: 100%; width: 100%; left: 0; top: 0; right: 0; bottom: 0; color: transparent"
-								sizes="413px"
-								srcset="/contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2404%2F240416024641_24000709.gif&amp;w=16&amp;q=75 16w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2404%2F240416024641_24000709.gif&amp;w=32&amp;q=75 32w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2404%2F240416024641_24000709.gif&amp;w=48&amp;q=75 48w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2404%2F240416024641_24000709.gif&amp;w=64&amp;q=75 64w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2404%2F240416024641_24000709.gif&amp;w=96&amp;q=75 96w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2404%2F240416024641_24000709.gif&amp;w=128&amp;q=75 128w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2404%2F240416024641_24000709.gif&amp;w=256&amp;q=75 256w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2404%2F240416024641_24000709.gif&amp;w=384&amp;q=75 384w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2404%2F240416024641_24000709.gif&amp;w=640&amp;q=75 640w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2404%2F240416024641_24000709.gif&amp;w=750&amp;q=75 750w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2404%2F240416024641_24000709.gif&amp;w=828&amp;q=75 828w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2404%2F240416024641_24000709.gif&amp;w=1080&amp;q=75 1080w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2404%2F240416024641_24000709.gif&amp;w=1200&amp;q=75 1200w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2404%2F240416024641_24000709.gif&amp;w=1920&amp;q=75 1920w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2404%2F240416024641_24000709.gif&amp;w=2048&amp;q=75 2048w, /contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2404%2F240416024641_24000709.gif&amp;w=3840&amp;q=75 3840w"
-								src="https://tickets.interpark.com/contents/_next/image?url=http%3A%2F%2Fticketimage.interpark.com%2FTCMS3.0%2FGMain%2FPlay%2F2404%2F240416024641_24000709.gif&amp;w=3840&amp;q=75"></a></li>
-					</ul>
-				</div>
-			</div>
-		</section>
-	</article>
+	<div class="Panel_contents__f7025 Panel_pd-l__27d91"
+		style="margin-left: 313px;">
+		<div class="MiniBanner_miniBanner__2ec1f GMiniBanner">
+			<ul class="MiniBanner_miniBannerInner__58520">
+				<li class=""><a class="Ticket_Minibanner_PC"
+					href="https://events.interpark.com/exhibition?exhibitionCode=240305008">
+						<img alt="［로터리 티켓］ 연극 〈엔젤스 인 아메리카 - 파트원:밀레니엄이 다가온다〉"
+						style="position: absolute; height: 100%; width: 100%; left: 0; top: 0; right: 0; bottom: 0; color: transparent"
+						sizes="413px" src="/resources/img/play/배너1.png">
+				</a></li>
+				<li class=""><a class="Ticket_Minibanner_PC"
+					href="https://events.interpark.com/page?pageId=CCC000014P1#subCorner_220608004"><img
+						class="MiniBanner_promotionImage__36e77"
+						style="position: absolute; height: 100%; width: 100%; left: 0; top: 0; right: 0; bottom: 0; color: transparent"
+						sizes="413px" src="/resources/img/play/배너2.png"></a></li>
+				<li class=""><a class="Ticket_Minibanner_PC"
+					href="https://events.interpark.com/exhibition?exhibitionCode=200630010"><img
+						class="MiniBanner_promotionImage__36e77"
+						style="position: absolute; height: 100%; width: 100%; left: 0; top: 0; right: 0; bottom: 0; color: transparent"
+						sizes="413px" src="/resources/img/play/배너3.png"></a></li>
+			</ul>
+		</div>
+	</div>
 
 	<!-- 광고 배너 끝 -->
 
@@ -161,8 +197,7 @@
 			<div id="mapDiv">
 
 				<div id="map" style="width: 17%; height: 610px;"></div>
-				<div id="playRec"
-					style="width: 50%; height: 420px; border: 2px solid;"></div>
+				<div id="playRec"></div>
 
 			</div>
 
@@ -173,24 +208,25 @@
 
 
 	<!-- 전체 리스트  -->
-	<article id="playList" class="ProductList_productListWrapper__frZE_ GProductList Panel_wrap__b444b">
+	<article id="playList"
+		class="ProductList_productListWrapper__frZE_ GProductList Panel_wrap__b444b">
 		<section class="Panel_subWrap__5147a">
 			<div class="Panel_title__4b2ff">
 				<h2>연극 둘러보기</h2>
 			</div>
-			<hr style="border: 1px solid #e8e8e8; width: 80%;" >
+			<hr style="border: 1px solid #e8e8e8; width: 80%;">
 			<div class="Panel_contents__f7025 Panel_fill-scroll__8271f">
 
 				<div class="ProductList_contents__eUxgq" aria-label="상품 리스트">
 
 					<c:forEach var="playList" items="${playList}" varStatus="stat">
-						<a role="link" tabindex="0" class="TicketItem_ticketItem__"
-							gtm-label="런투패밀리">
+						<a role="link" tabindex="0" class="TicketItem_ticketItem__">
 							<div class="TicketItem_imageWrap__iVEOw">
 								<img src="${playList.mainImg}" data-nimg="fill"
 									class="TicketItem_image__U6xq6"
 									sizes="(max-width: 1023px) 104px, 25vw"
 									style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
+									
 							</div>
 							<ul class="TicketItem_contentsWrap__xCe3A">
 								<li class="TicketItem_goodsName__Ju76j">${playList.showName}</li>
@@ -311,16 +347,23 @@ document.getElementById('listBtn').addEventListener('click', function() {
 			customOverlay.setMap(null);
 		});
 
+		/**
+			지도의 구역을 누르면 옆 div에 그 지역의 진행중인 연극 공연 3개 정도 보여주기
+		*/
 		kakao.maps.event.addListener(polygon, 'click', function(mouseEvent) {
 			let areaName = area.name;
 			console.log(areaName," 입니다");
 			
 			let hallAddr = areaName;
 			
+			let data = {
+				hallAddr: hallAddr
+			}
+			
 			$.ajax({
 			    url: "/play/playRecList",
 			    contentType: "application/json;charset=utf-8",
-			    data: JSON.stringify({ hallAddr: hallAddr }),
+			    data: JSON.stringify(data),
 			    type: "post",
 			    dataType: "json",
 			    beforeSend: function(xhr) {
@@ -328,14 +371,37 @@ document.getElementById('listBtn').addEventListener('click', function() {
 			    },
 			    success: function(result) {
 			        console.log("result >> ", result);
-			    }
+			        
+			        let htmlContent = "";
+						
+			        // 결과가 배열인 경우에만 처리
+			        if (Array.isArray(result) && result.length > 0) {
+			            // 최대 3개 항목만 처리
+			            result.slice(0, 3).forEach(item => {
+			                htmlContent += '<div style="width:30%; height:100%; margin-top:20px;">';
+			                htmlContent += '<a role="link">';
+			                htmlContent += '<img src="' + item.mainImg + '" class="recImg" >';
+			                htmlContent += '<ul class="TicketItem_contentsWrap__xCe3A" style="align-items: center;">';
+			                htmlContent += '<li class="TicketItem_goodsName__Ju76j">' + item.showName + '</li>';
+			                htmlContent += '<li class="TicketItem_placeName__ls_9C">' + item.detailImg + '</li>';
+			                htmlContent += '<li class="TicketItem_playDate__5ePr2" style="display: -webkit-box;">' + item.startDate + ' ~ ' + item.endDate + '</li>';
+			                htmlContent += '</ul>';
+			                htmlContent += '</a>';
+			                htmlContent += '</div>';
+			            });
+
+			            document.getElementById("playRec").innerHTML = htmlContent;
+					}else{
+			            document.getElementById("playRec").innerHTML = "<h1 style='font-size:25px;'>지금 진행중인 연극 공연 내역이 없습니다.</h1>";
+					}
+				}
+
+
 			});
 
-
-		});
-
-	} 
-</script> 
+		}); 
+	}
+</script>
 
 
 <script>

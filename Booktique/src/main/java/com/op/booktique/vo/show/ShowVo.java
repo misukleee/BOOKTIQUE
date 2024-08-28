@@ -28,4 +28,6 @@ public class ShowVo {
 	private String showStatus;       // 공연상태
 	
 	private List<HallVO> hallList;   // 공연장목록
+	
+    private String hallAddr; 
 }
