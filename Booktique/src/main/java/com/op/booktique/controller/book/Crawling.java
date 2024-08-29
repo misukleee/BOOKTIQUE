@@ -24,7 +24,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class Crawling {
-    private WebDriver driver;
+    private WebDriver driver; 
     private WebElement element;
     private String url;
 
