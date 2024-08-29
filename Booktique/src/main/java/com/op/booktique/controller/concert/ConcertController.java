@@ -36,12 +36,14 @@ public class ConcertController {
 //		List<ConcertVO> concertList = new ArrayList<ConcertVO>();
 		List<ConcertVO> minibannerList = new ArrayList<ConcertVO>();
 		ConcertVO test1 = new ConcertVO();
+		test1.setShowSq("C2024081600001");
 		test1.setShowName("비투비 콘서트");
 		test1.setSubImg("올림픽공원 체조경기장");
 		test1.setDetailImg("2024.7.12");
 		test1.setMainImg("/resources/img/콘서트이미지.gif");
 		minibannerList.add(test1);
 		ConcertVO test2 = new ConcertVO();
+		test2.setShowSq("C2024081600002");
 		test2.setShowName("이창섭 단독 콘서트");
 		test2.setSubImg("올림픽공원 핸드볼경기장");
 		test2.setDetailImg("2024.9.12");

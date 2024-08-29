@@ -269,8 +269,7 @@ div.BigBanner_bigBannerWrap__ZIaFE {
 					<!-- 6번 반복 시작 -->
 					<c:forEach var="concert" items="${minibannerList}" varStatus="stat">
 						<li class=""><a class="Ticket_Minibanner_PC"
-							href="https://tickets.interpark.com/goods/24009876"><img
-								alt="NELL CLUB CONCERT 2024 ‘Our Eutopia’"
+							href="/concert/detail?showSq=${concert.showSq}"><img
 								crossorigin="anonymous" fetchpriority="high" decoding="async"
 								data-nimg="fill" class="MiniBanner_promotionImage__36e77"
 								style="position: absolute; height: 100%; width: 100%; left: 0; top: 0; right: 0; bottom: 0; color: transparent"
@@ -294,7 +293,7 @@ div.BigBanner_bigBannerWrap__ZIaFE {
 					<div class="swiper-wrapper">
 						<c:forEach var="concert" items="${allList}" varStatus="stat">
 							<div id="openSlide" class="swiper-slide HorizontalList_swiperSlide__fce1f">
-								<a role="link" tabindex="0"
+								<a role="link" tabindex="0" href="/concert/detail?showSq=${concert.showSq}"
 									class="TicketOpenItem_ticketOpenItem__CocKp"><div
 										class="TicketOpenItem_imageWrap__0L8do">
 										<img loading="eager" decoding="async" data-nimg="fill" class=""
@@ -401,7 +400,7 @@ div.BigBanner_bigBannerWrap__ZIaFE {
 				class="ProductList_contents__eUxgq InfiniteList_list__3c511 InfiniteList_column-desktop-5__9cab3 InfiniteList_column-mobile-1__853f7 InfiniteList_ticket-list__dfe68"
 				aria-label="상품 리스트">
 				<c:forEach var="concert" items="${allList}" varStatus="stat">
-					<a role="link" tabindex="0"
+					<a role="link" tabindex="0" href="/concert/detail?showSq=${concert.showSq}"
 						class="TicketItem_ticketItem__ TicketItem_ticketItem__H51Vs"
 						gtm-label="2024 2NE1 CONCERT ［WELCOME BACK］ IN SEOUL">
 						<div class="TicketItem_imageWrap__iVEOw">
