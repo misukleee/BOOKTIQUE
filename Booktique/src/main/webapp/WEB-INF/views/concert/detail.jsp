@@ -1,5 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-${concertOne}
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%-- ${concertOne} --%>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" async=""
+	src="./dingo music concert 〈Killing Voice〉_files/appboy.min.js.다운로드"></script>
+<script
+	src="./dingo music concert 〈Killing Voice〉_files/929060091512589"
+	async=""></script>
+<script async=""
+	src="./dingo music concert 〈Killing Voice〉_files/fbevents.js.다운로드"></script>
+<script type="text/javascript" async=""
+	src="./dingo music concert 〈Killing Voice〉_files/js"></script>
+<script async=""
+	src="./dingo music concert 〈Killing Voice〉_files/gtm.js.다운로드"></script>
 <script>
       (function(w,d,s,l,i){w[l]=w[l]||[];
         w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js', });
@@ -45,23 +58,23 @@ ${concertOne}
 </noscript>
 <title>dingo music concert 〈Killing Voice〉</title>
 <link rel="stylesheet" type="text/css"
-	href="./dingo music concert 〈Killing Voice〉_files/chunk.common.css">
+	href="/resources/css/play/chunk.common.css">
 <script charset="utf-8"
 	src="./dingo music concert 〈Killing Voice〉_files/chunk.common.js.다운로드"></script>
 <link rel="stylesheet" type="text/css"
-	href="./dingo music concert 〈Killing Voice〉_files/chunk.swiper.css">
+	href="/resources/css/play/chunk.swiper.css">
 <script charset="utf-8"
 	src="./dingo music concert 〈Killing Voice〉_files/chunk.swiper.js.다운로드"></script>
 <script charset="utf-8"
 	src="./dingo music concert 〈Killing Voice〉_files/chunk.defaultVendors~header.js.다운로드"></script>
 <link rel="stylesheet" type="text/css"
-	href="./dingo music concert 〈Killing Voice〉_files/chunk.header.css">
+	href="/resources/css/play/chunk.header.css">
 <script charset="utf-8"
 	src="./dingo music concert 〈Killing Voice〉_files/chunk.header.js.다운로드"></script>
 <script charset="utf-8"
 	src="./dingo music concert 〈Killing Voice〉_files/chunk.0.js.다운로드"></script>
 <link rel="stylesheet" type="text/css"
-	href="./dingo music concert 〈Killing Voice〉_files/chunk.19.css">
+	href="/resources/css/play/chunk.19.css">
 <script charset="utf-8"
 	src="./dingo music concert 〈Killing Voice〉_files/chunk.19.js.다운로드"></script>
 <script charset="utf-8"
@@ -71,11 +84,11 @@ ${concertOne}
 <script charset="utf-8"
 	src="./dingo music concert 〈Killing Voice〉_files/chunk.default~goods_detail~streaming.js.다운로드"></script>
 <link rel="stylesheet" type="text/css"
-	href="./dingo music concert 〈Killing Voice〉_files/chunk.goods_detail.css">
+	href="/resources/css/play/chunk.goods_detail.css">
 <script charset="utf-8"
 	src="./dingo music concert 〈Killing Voice〉_files/chunk.goods_detail.js.다운로드"></script>
 <link rel="stylesheet" type="text/css"
-	href="./dingo music concert 〈Killing Voice〉_files/chunk.footer.css">
+	href="/resources/css/play/chunk.footer.css">
 <script charset="utf-8"
 	src="./dingo music concert 〈Killing Voice〉_files/chunk.footer.js.다운로드"></script>
 <script charset="utf-8"
@@ -195,8 +208,7 @@ ${concertOne}
             }
           }
           </script>
-<link rel="stylesheet"
-	href="./dingo music concert 〈Killing Voice〉_files/7f85a56ba4.css">
+<link rel="stylesheet" href="/resources/css/play/7f85a56ba4.css">
 <style id="ab-css-definitions-3-2-0">
 .ab-pause-scrolling, body.ab-pause-scrolling, html.ab-pause-scrolling {
 	overflow: hidden;
@@ -2284,7 +2296,18 @@ body>.ab-feed .ab-no-cards-message {
 			height="0" width="0" style="display: none; visibility: hidden"
 			id="tag-manager"></iframe>
 	</noscript>
+	<div id="container">
+		<div class="leftWingWrapper">
+			<ul></ul>
+		</div>
+		<div class="contents" style="">
 			<div class="productWrapper">
+				<div class="skip">
+					<a href="https://tickets.interpark.com/goods/24010728#productSide">상품
+						예매 바로가기</a><a
+						href="https://tickets.interpark.com/goods/24010728#productMainBody">상품
+						요약정보 건너뛰기</a>
+				</div>
 				<div class="productMain">
 					<div class="productMainTop">
 						<div class="summary">
@@ -2411,7 +2434,7 @@ body>.ab-feed .ab-no-cards-message {
 										</div>
 									</div>
 								</div>
-								<h2 class="prdTitle">dingo music concert 〈Killing Voice〉</h2>
+								<h2 class="prdTitle">${concertOne.showName}</h2>
 								<p class="prdTitleSmall"></p>
 								<div class="prdSection">
 									<div class="tagText">
@@ -2424,8 +2447,8 @@ body>.ab-feed .ab-no-cards-message {
 								<div class="posterBox">
 									<div class="posterBoxTop ">
 										<img class="posterBoxImage"
-											src="./dingo music concert 〈Killing Voice〉_files/24010728_p.gif"
-											alt="dingo music concert 〈Killing Voice〉">
+											src="${concertOne.mainImg}"
+											alt="${concertOne.showName}">
 									</div>
 									<div class="posterBoxBottom">
 										<div class="prdCast">
@@ -2468,13 +2491,13 @@ body>.ab-feed .ab-no-cards-message {
 									<li class="infoItem"><strong class="infoLabel">장소</strong>
 									<div class="infoDesc">
 											<a class="infoBtn" data-popup="info-place" role="button"
-												href="https://tickets.interpark.com/goods/24010728#">올림픽공원
-												핸드볼경기장<i>(자세히)</i>
+												href="https://tickets.interpark.com/goods/24010728#">${concertOne.subImg}<i>(자세히)</i>
 											</a>
 										</div></li>
 									<li class="infoItem"><strong class="infoLabel">공연기간</strong>
 									<div class="infoDesc">
-											<p class="infoText">2024.09.07 ~2024.09.08</p>
+<%-- 											<p class="infoText"><fmt:formatDate value="${concertOne.detailImg}" pattern="yyyy.mm.dd"/></p> --%>
+											<p class="infoText">${concertOne.detailImg}</p>
 										</div></li>
 									<li class="infoItem"><strong class="infoLabel">공연시간</strong>
 									<div class="infoDesc">
@@ -2925,10 +2948,12 @@ body>.ab-feed .ab-no-cards-message {
 					</div>
 				</div>
 			</div>
-<!-- 		<div class="topButtonWrapper "> -->
-<!-- 			<a href="https://tickets.interpark.com/goods/24010728#" -->
-<!-- 				class="topButton"><span class="blind">맨 위로</span></a> -->
-<!-- 		</div> -->
+		</div>
+		<div class="topButtonWrapper ">
+			<a href="https://tickets.interpark.com/goods/24010728#"
+				class="topButton"><span class="blind">맨 위로</span></a>
+		</div>
+	</div>
 	<noscript>
 		<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5QCJFLB"
 			height=0 width=0 style="display: none; visibility: hidden;"></iframe>
