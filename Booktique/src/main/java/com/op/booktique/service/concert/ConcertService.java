@@ -6,4 +6,5 @@ import com.op.booktique.vo.concert.ConcertVO;
 
 public interface ConcertService {
 	public List<ConcertVO> list();
+	public ConcertVO selOne(String showSq);
 }

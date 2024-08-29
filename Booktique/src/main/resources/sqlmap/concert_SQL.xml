@@ -21,6 +21,7 @@
 	)
 </insert>
 
+<!-- 전체 콘서트 가져오기 -->
 <select id="list" resultType="com.op.booktique.vo.concert.ConcertVO">
 	SELECT
 	    show_sq
@@ -32,6 +33,21 @@
 	    show
 	WHERE
 	    show_cat = '콘서트'
+</select>
+
+<!-- 한 개 콘서트 가져오기 -->
+<select id="selOne" resultType="com.op.booktique.vo.concert.ConcertVO" parameterType="String">
+	SELECT
+	    show_sq
+	  , main_img
+	  , sub_img
+	  , detail_img
+	  , show_name
+	FROM
+	    show
+	WHERE
+	    show_cat = '콘서트'
+	AND show_sq = #{showSq}
 </select>
 
 </mapper>

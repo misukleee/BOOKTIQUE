@@ -134,14 +134,13 @@ div.BigBanner_bigBannerWrap__ZIaFE {
 			<c:forEach var="concert" items="${allList}" varStatus="stat">
 				<div id="mainSlide"
 					class="swiper-slide HorizontalList_swiperSlide__fce1f BigBanner_bannerSlide__WNhKi">
-					<a href="https://tickets.interpark.com/goods/24012290"
-						class="BigBanner_link__GCNo8"><img
-						alt="2024 타임캡슐 슈퍼콘서트 전국투어 in 일산" crossorigin="anonymous"
-						fetchpriority="high" loading="eager" decoding="async"
+					<a href="/concert/detail?showSq=${concert.showSq}"
+						class="BigBanner_link__GCNo8">
+						<img fetchpriority="high" loading="eager" decoding="async"
 						data-nimg="fill" class=""
 						style="position: absolute; height: 100%; width: 100%; left: 0; top: 0; right: 0; bottom: 0; color: transparent"
 						sizes="(max-width: 1023px) 33vw, 25vw"
-						src="/resources/img/콘서트이미지.gif" />
+						src="${concert.mainImg}" />
 						<ul class="BigBanner_contents__R9Ifu" style="color: #FFFFFF">
 							<li class="BigBanner_subTitle__uw_f4">일반예매 티켓오픈</li>
 							<li class="BigBanner_title__seLOS">${concert.showName}</li>
@@ -268,14 +267,14 @@ div.BigBanner_bigBannerWrap__ZIaFE {
 			<div class="MiniBanner_miniBanner__2ec1f GMiniBanner">
 				<ul class="MiniBanner_miniBannerInner__58520">
 					<!-- 6번 반복 시작 -->
-					<c:forEach var="concert" items="${allList}" varStatus="stat">
+					<c:forEach var="concert" items="${minibannerList}" varStatus="stat">
 						<li class=""><a class="Ticket_Minibanner_PC"
 							href="https://tickets.interpark.com/goods/24009876"><img
 								alt="NELL CLUB CONCERT 2024 ‘Our Eutopia’"
 								crossorigin="anonymous" fetchpriority="high" decoding="async"
 								data-nimg="fill" class="MiniBanner_promotionImage__36e77"
 								style="position: absolute; height: 100%; width: 100%; left: 0; top: 0; right: 0; bottom: 0; color: transparent"
-								sizes="413px" src="/resources/img/콘서트이미지.gif" /></a></li>
+								sizes="413px" src="${concert.mainImg}" /></a></li>
 					</c:forEach>
 					<!-- 6번 반복 끝 -->
 				</ul>
@@ -298,11 +297,10 @@ div.BigBanner_bigBannerWrap__ZIaFE {
 								<a role="link" tabindex="0"
 									class="TicketOpenItem_ticketOpenItem__CocKp"><div
 										class="TicketOpenItem_imageWrap__0L8do">
-										<img alt="애론 골드버그 트리오 내한공연" crossorigin="anonymous"
-											loading="eager" decoding="async" data-nimg="fill" class=""
+										<img loading="eager" decoding="async" data-nimg="fill" class=""
 											style="position: absolute; height: 100%; width: 100%; left: 0; top: 0; right: 0; bottom: 0; color: transparent"
 											sizes="(max-width: 760px) 25vw, (max-width: 1279px) 25vw, 20vw"
-											src="/resources/img/콘서트이미지.gif" />
+											src="${concert.mainImg}" />
 									</div>
 									<ul class="TicketOpenItem_contents__Z90Pb">
 										<li class="TicketOpenItem_saleBadgeWrap__8U26r"><span class="TicketOpenItem_red__fTit3">단독판매</span></li>
