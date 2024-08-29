@@ -10,16 +10,17 @@ public class CampVO {
 	private String campAddr;
 	private String campPhone;
 	private String campUrl;
-	private String refundment;
+	private String facilitiesInfo;
 	private String campEtc;
-	private String corpName;
-	private String corpNo;
+	private String campCategory;
+	private String period;
 	private String campOption;
 	private String campMainImg;
 	private String campDetailImg;
 	private String campSubImg;
 	private String toilet;
 	private String shower;
-	private String firesensor;
+	private String campIntro;
+	
 	
 }
