@@ -19,6 +19,11 @@ public class ConcertServiceImpl implements ConcertService{
 	public List<ConcertVO> list() {
 		return concertMapper.list();
 	}
+	
+	@Override
+	public List<ConcertVO> listRandom(int num) {
+		return concertMapper.listRandom(num);
+	}
 
 	@Override
 	public ConcertVO selOne(String showSq) {

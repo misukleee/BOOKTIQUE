@@ -35,6 +35,27 @@
 	    show_cat = '콘서트'
 </select>
 
+<!-- 랜덤으로 콘서트 몇개 가져오기 -->
+<select id="listRandom" resultType="com.op.booktique.vo.concert.ConcertVO" parameterType="int">
+	SELECT
+	    T.*
+	FROM
+	(
+	    SELECT
+	        show_sq
+	      , main_img
+	      , sub_img
+	      , detail_img
+	      , show_name
+	    FROM
+	        show
+	    WHERE
+	        show_cat = '콘서트'
+	    ORDER BY DBMS_RANDOM.RANDOM()
+	) T
+	WHERE ROWNUM <![CDATA[<=]]> #{num}
+</select>
+
 <!-- 한 개 콘서트 가져오기 -->
 <select id="selOne" resultType="com.op.booktique.vo.concert.ConcertVO" parameterType="String">
 	SELECT

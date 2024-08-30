@@ -23,4 +23,5 @@ public class ConcertVO {
 	private String viewAge;
 	private String showStatus;
 
+	private String bannerImg;
 }

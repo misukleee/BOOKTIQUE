@@ -131,7 +131,7 @@ div.BigBanner_bigBannerWrap__ZIaFE {
 	class="GBigBanner BigBanner_bigBannerWrap__ZIaFE HorizontalList_swiperWrap__4f4d9 HorizontalList_swiperButtonCenter__bd963">
 	<div class="mySwiper HorizontalList_wrap__5c3c0">
 		<div class="swiper-wrapper">
-			<c:forEach var="concert" items="${allList}" varStatus="stat">
+			<c:forEach var="concert" items="${bigbannerList}" varStatus="stat">
 				<div id="mainSlide"
 					class="swiper-slide HorizontalList_swiperSlide__fce1f BigBanner_bannerSlide__WNhKi">
 					<a href="/concert/detail?showSq=${concert.showSq}"
@@ -270,10 +270,10 @@ div.BigBanner_bigBannerWrap__ZIaFE {
 					<c:forEach var="concert" items="${minibannerList}" varStatus="stat">
 						<li class=""><a class="Ticket_Minibanner_PC"
 							href="/concert/detail?showSq=${concert.showSq}"><img
-								crossorigin="anonymous" fetchpriority="high" decoding="async"
+								fetchpriority="high" decoding="async"
 								data-nimg="fill" class="MiniBanner_promotionImage__36e77"
 								style="position: absolute; height: 100%; width: 100%; left: 0; top: 0; right: 0; bottom: 0; color: transparent"
-								sizes="413px" src="${concert.mainImg}" /></a></li>
+								sizes="413px" src="${concert.bannerImg}" /></a></li>
 					</c:forEach>
 					<!-- 6번 반복 끝 -->
 				</ul>
