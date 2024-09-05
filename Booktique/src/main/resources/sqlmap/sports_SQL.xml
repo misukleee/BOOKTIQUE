@@ -19,8 +19,7 @@
 	    <result property="teamName" column="TEAM_NAME" />
 	    <result property="teamDirector" column="TEAM_DIRECTOR" />
 	    <result property="teamInfo" column="TEAM_INFO" />
-	    <result property="teamLogoImg1" column="TEAM_LOGO_IMG1"/>
-	    <result property="teamLogoImg2" column="TEAM_LOGO_IMG2"/>
+	    <result property="teamLogoImg" column="TEAM_LOGO_IMG" />
 	</resultMap>
 
  
